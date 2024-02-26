@@ -1,77 +1,97 @@
+import express, { json } from "express";
+import mongoose, { Schema } from "mongoose";
+import UserModel from "./models/user.js";
+import { connectToDb } from "./db.js";
+
 const PORT = process.env.PORT || 3000;
-const express = require('express');
-const mongoose = require('mongoose');
 const APP = express();
 APP.use(express.json());
 
-// await mongoose.connect('mongodb://127.0.0.1/my_database');
+const dbUri =
+	"mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@dnd-server.hs2qbe7.mongodb.net/?retryWrites=true&w=majority&appName=dnd-server";
+// "mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@dnd-server.hs2qbe7.mongodb.net/?retryWrites=true&w=majority";
+
+// mongoose.connect("mongodb://localhost:27017/character-builder");
+// 	.then((info) => {
+// 		APP.listen(PORT, () => console.log("listening on port...", PORT));
+// 		console.log("success", info);
+// 	})
+// 	.catch((err) => {
+// 		console.log(err);
+// 	});
 
 // MongoCreds: USER: grandonsmith Pass: HvXMQJi50TCmyb80
-// mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@testapi.3dyzzyz.mongodb.net/?retryWrites=true&w=majority
+// mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@dnd-server.hs2qbe7.mongodb.net/?retryWrites=true&w=majority&appName=dnd-server
 
-const courses = [
-    {id: 1, name: 'course1'},
-    {id: 2, name: 'course2'},
-    {id: 3, name: 'course3'},
-]
+// const courses = [
+// 	{ id: 1, name: "course1" },
+// 	{ id: 2, name: "course2" },
+// 	{ id: 3, name: "course3" },
+// ];
 
-APP.get('/', (req, res) => {
-    res.send('hello world!');
-})
+//db connection
+connectToDb("mongodb://0.0.0.0:27017/character-builder");
 
-APP.get('/api/courses', (req, res) => {
-    res.send(courses)
-})
+APP.post("/newUser", (req, res) => {
+	const user = new UserModel(req.body);
+	user
+		.save()
+		.then((user) => {
+			res.status(201).send(user);
+		})
+		.catch((error) => {
+			res.status(400).send(error);
+		});
+});
 
-APP.get('/api/courses/:id', (req, res) => {
-   const course = courses.find(c => c.id === parseInt(req.params.id));
-   if(!course) {
-    //return 404 status
-    res.status(404).send('course with given ID not found')
-   }
-   else {
-    res.send(course)
-   }
- })
+// {
+// 	"email": "Testing",
+// 	"username": "Still testing",
+// 	"password": "Testing password",
+// }
 
-APP.post('/api/courses', (req, res) => {
-    // look into JOI package for validation
-    //at top of file -> const Joi = require('joi');
+APP.listen(PORT, () => console.log("listening on port...", PORT));
 
-    // const SCHEMA  = {
-    //     name: Joi.string().min(3).required()
-    // }
+// APP.get("/", (req, res) => {
+// 	res.send("hello world!");
+// });
 
-    // const RESULT Joi.validate(req.body, SCHEMA)
+// APP.post("/api/courses", (req, res) => {
+// 	// look into JOI package for validation
+// 	//at top of file -> const Joi = require('joi');
 
-    if(!req.body.name || req.body.name.length < 3) {
-        // 400 == bad request
-        req.status(400).send('name is required and must be > 3 char');
-        return;
-    }
-    const course = {
-        id: courses.length + 1,
-        name: req.body.name
-    }
-    courses.push(course);
-    res.send(course);
-})
+// 	// const SCHEMA  = {
+// 	//     name: Joi.string().min(3).required()
+// 	// }
 
-APP.put('/api/courses/:id', (req, res) => {
-    //look up course
-    // if not existing, return 404
-    const course = courses.find(c => c.id === parseInt(req.params.id));
-    if(!course) {
-        //return 404 status
-        res.status(404).send('course with given ID not found')
-       }
+// 	// const RESULT Joi.validate(req.body, SCHEMA)
 
-    //validate
-    // if invalid, return 400 - bad request
+// 	if (!req.body.name || req.body.name.length < 3) {
+// 		// 400 == bad request
+// 		req.status(400).send("name is required and must be > 3 char");
+// 		return;
+// 	}
+// 	const course = {
+// 		id: courses.length + 1,
+// 		name: req.body.name,
+// 	};
+// 	courses.push(course);
+// 	res.send(course);
+// });
 
-    //update course
-})
+// APP.put("/api/courses/:id", (req, res) => {
+// 	//look up course
+// 	// if not existing, return 404
+// 	const course = courses.find(
+// 		(c) => c.id === parseInt(req.params.id)
+// 	);
+// 	if (!course) {
+// 		//return 404 status
+// 		res.status(404).send("course with given ID not found");
+// 	}
 
-APP.listen(PORT, () => console.log('listening on port...', PORT))
+// 	//validate
+// 	// if invalid, return 400 - bad request
 
-mongoose.connect('mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@testapi.3dyzzyz.mongodb.net/?retryWrites=true&w=majority')
+// 	//update course
+// });
