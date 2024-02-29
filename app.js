@@ -9,54 +9,28 @@ const saltRounds = 10;
 const PORT = process.env.PORT || 3000;
 const APP = express();
 APP.use(express.json());
+
+// var corsOptions = {
+// 	origin: "http://localhost:5173",
+// 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+// };
+
 APP.use(cors());
 
 const dbUri =
 	"mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@dnd-server.hs2qbe7.mongodb.net/?retryWrites=true&w=majority&appName=dnd-server";
 // "mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@dnd-server.hs2qbe7.mongodb.net/?retryWrites=true&w=majority";
 
-// mongoose.connect("mongodb://localhost:27017/character-builder");
-// 	.then((info) => {
-// 		APP.listen(PORT, () => console.log("listening on port...", PORT));
-// 		console.log("success", info);
-// 	})
-// 	.catch((err) => {
-// 		console.log(err);
-// 	});
-
 // MongoCreds: USER: grandonsmith Pass: HvXMQJi50TCmyb80
 // mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@dnd-server.hs2qbe7.mongodb.net/?retryWrites=true&w=majority&appName=dnd-server
 
-// const courses = [
-// 	{ id: 1, name: "course1" },
-// 	{ id: 2, name: "course2" },
-// 	{ id: 3, name: "course3" },
-// ];
-
 function decodeText(string) {
-	// Step 1: instantiate the text decoder
 	const dec = new TextDecoder();
-
-	// Step 2: split the string into a hex array
-	// this uses a regex to split into 2-character groups
-	const hexArr = string.match(/../g);
-
-	// Step 3: Convert the 'normal' array to a Uint8 array.
-	// As above, the `.from()` method takes a map function as
-	// the second parameter, this time converting the hex string
-	// to a number
-	const buffer = Uint8Array.from(hexArr, (point) =>
-		parseInt(point, 16)
+	return dec.decode(
+		Uint8Array.from(string.match(/../g), (point) =>
+			parseInt(point, 16)
+		)
 	);
-
-	// Step 4: Decode the buffer into text
-	const text = dec.decode(buffer);
-
-	// Step 5: return the decoded string
-	return text;
-
-	//also, as above, this can be boiled down to one line:
-	// return dec.decode(Uint8Array.from(string.match(/../g), point => parseInt(point, 16)));
 }
 
 //db connection
@@ -69,9 +43,15 @@ APP.post("/api/auth/newUser", async (req, res) => {
 	const emailExists = await UserModel.findOne({
 		email: email,
 	}).exec();
+	console.log("here", emailExists);
 
 	if (emailExists !== null) {
-		return res.status(400);
+		return res.json({
+			errorMsg: "That email is already in use.",
+			error: true,
+			ok: false,
+			status: 400,
+		});
 	}
 
 	await bcrypt.hash(DECODEPASS, saltRounds).then((hash) => {
@@ -80,10 +60,21 @@ APP.post("/api/auth/newUser", async (req, res) => {
 
 		User.save()
 			.then((user) => {
-				res.status(201).send(user);
+				res.json({
+					errorMsg: null,
+					error: false,
+					ok: true,
+					status: 201,
+					data: user,
+				});
 			})
 			.catch((error) => {
-				res.status(400).send("Something went wrong.");
+				res.json({
+					errorMsg: error,
+					error: true,
+					ok: false,
+					status: 400,
+				});
 			});
 	});
 });
@@ -91,31 +82,43 @@ APP.post("/api/auth/newUser", async (req, res) => {
 APP.post("/api/auth/login", async (req, res) => {
 	const { email, password } = req.body;
 	const DECODEPASS = decodeText(password);
-	console.log("I see you", password, DECODEPASS);
 
-	// await bcrypt.hash(DECODEPASS, saltRounds, function (err, hash) {
-	// 	// Store hash in your password DB.
-	// 	console.log("hash", hash, err);
-	// });
+	const user = await UserModel.findOne({
+		email: email,
+	}).exec();
 
-	// bcrypt.compare(
-	// 	DECODEPASS,
-	// 	"$2b$05$bnYZDTtsmfVlc4sUM21bJOr4RIOK/HJfp1VU2vVYgGpfn.njpIaE6",
-	// 	function (err, result) {
-	// 		// result == true
-	// 		console.log("success?", result, err);
-	// 	}
-	// );
+	if (user === null) {
+		return res.json({
+			errorMsg: "We didn't find that email in our system.",
+			error: true,
+			ok: false,
+			status: 404,
+		});
+	}
 
-	//$2b$05$bnYZDTtsmfVlc4sUM21bJOr4RIOK/HJfp1VU2vVYgGpfn.njpIaE6
-	res.send(JSON.stringify({ msg: "hi there!!" }));
+	bcrypt
+		.compare(DECODEPASS, user.password)
+		.then((result) => {
+			console.log("result", result);
+			if (result === false) {
+				res.json({
+					errorMsg: "Password incorrect.",
+					error: true,
+					ok: false,
+					status: 404,
+				});
+			} else {
+				res.json({
+					errorMsg: null,
+					error: false,
+					ok: true,
+					status: 200,
+					data: null,
+				});
+			}
+		})
+		.catch((err) => console.log(err));
 });
-
-// {
-// 	"email": "Testing",
-// 	"username": "Still testing",
-// 	"password": "Testing password",
-// }
 
 APP.listen(PORT, () => console.log("listening on port...", PORT));
 
