@@ -1,28 +1,40 @@
 import express, { json } from "express";
 import mongoose, { Schema } from "mongoose";
+import bodyParser from "body-parser";
 import UserModel from "./models/user.js";
-import { connectToDb } from "./db.js";
+import passport from "passport";
+import passportlocal from "passport-local";
 import cors from "cors";
 import bcrypt from "bcrypt";
-const saltRounds = 10;
+import { connectToDb } from "./db.js";
+// import { DotenvConfigOptions } from "dotenv";
 
+const LocalStrategy = passportlocal.Strategy;
+const SALTROUNDS = 10;
 const PORT = process.env.PORT || 3000;
-const APP = express();
-APP.use(express.json());
+const app = express();
 
-// var corsOptions = {
-// 	origin: "http://localhost:5173",
-// 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-// };
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(require("serve-static")(__dirname + "/../../public"));
+app.use(require("cookie-parser")());
+app.use(
+	require("express-session")({
+		secret: "keyboard cat",
+		resave: true,
+		saveUninitialized: true,
+	})
+);
+app.use(passport.initialize());
+app.use(passport.session());
+const CORSOPTIONS = {
+	origin: ["http://localhost:3000", "http://localhost:5713"],
+	credentials: true,
+	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 
-APP.use(cors());
-
-const dbUri =
-	"mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@dnd-server.hs2qbe7.mongodb.net/?retryWrites=true&w=majority&appName=dnd-server";
-// "mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@dnd-server.hs2qbe7.mongodb.net/?retryWrites=true&w=majority";
-
-// MongoCreds: USER: grandonsmith Pass: HvXMQJi50TCmyb80
-// mongodb+srv://grandonsmith:HvXMQJi50TCmyb80@dnd-server.hs2qbe7.mongodb.net/?retryWrites=true&w=majority&appName=dnd-server
+app.use(cors(CORSOPTIONS));
 
 function decodeText(string) {
 	const dec = new TextDecoder();
@@ -36,14 +48,13 @@ function decodeText(string) {
 //db connection
 connectToDb("mongodb://0.0.0.0:27017/character-builder");
 
-APP.post("/api/auth/newUser", async (req, res) => {
+app.post("/api/auth/newUser", async (req, res) => {
 	const { email, password, username } = req.body;
 	const DECODEPASS = decodeText(password);
 
 	const emailExists = await UserModel.findOne({
 		email: email,
 	}).exec();
-	console.log("here", emailExists);
 
 	if (emailExists !== null) {
 		return res.json({
@@ -54,7 +65,7 @@ APP.post("/api/auth/newUser", async (req, res) => {
 		});
 	}
 
-	await bcrypt.hash(DECODEPASS, saltRounds).then((hash) => {
+	await bcrypt.hash(DECODEPASS, SALTROUNDS).then((hash) => {
 		const USERDATA = { email, password: hash, username };
 		const User = new UserModel(USERDATA);
 
@@ -79,7 +90,7 @@ APP.post("/api/auth/newUser", async (req, res) => {
 	});
 });
 
-APP.post("/api/auth/login", async (req, res) => {
+app.post("/api/auth/login", async (req, res) => {
 	const { email, password } = req.body;
 	const DECODEPASS = decodeText(password);
 
@@ -99,7 +110,6 @@ APP.post("/api/auth/login", async (req, res) => {
 	bcrypt
 		.compare(DECODEPASS, user.password)
 		.then((result) => {
-			console.log("result", result);
 			if (result === false) {
 				res.json({
 					errorMsg: "Password incorrect.",
@@ -120,48 +130,4 @@ APP.post("/api/auth/login", async (req, res) => {
 		.catch((err) => console.log(err));
 });
 
-APP.listen(PORT, () => console.log("listening on port...", PORT));
-
-// APP.get("/", (req, res) => {
-// 	res.send("hello world!");
-// });
-
-// APP.post("/api/courses", (req, res) => {
-// 	// look into JOI package for validation
-// 	//at top of file -> const Joi = require('joi');
-
-// 	// const SCHEMA  = {
-// 	//     name: Joi.string().min(3).required()
-// 	// }
-
-// 	// const RESULT Joi.validate(req.body, SCHEMA)
-
-// 	if (!req.body.name || req.body.name.length < 3) {
-// 		// 400 == bad request
-// 		req.status(400).send("name is required and must be > 3 char");
-// 		return;
-// 	}
-// 	const course = {
-// 		id: courses.length + 1,
-// 		name: req.body.name,
-// 	};
-// 	courses.push(course);
-// 	res.send(course);
-// });
-
-// APP.put("/api/courses/:id", (req, res) => {
-// 	//look up course
-// 	// if not existing, return 404
-// 	const course = courses.find(
-// 		(c) => c.id === parseInt(req.params.id)
-// 	);
-// 	if (!course) {
-// 		//return 404 status
-// 		res.status(404).send("course with given ID not found");
-// 	}
-
-// 	//validate
-// 	// if invalid, return 400 - bad request
-
-// 	//update course
-// });
+app.listen(PORT, () => console.log("listening on port...", PORT));
