@@ -1,7 +1,7 @@
 import express, { json } from "express";
-import mongoose, { Schema } from "mongoose";
 import bodyParser from "body-parser";
-import UserModel from "./models/user.js";
+import UserModel from "./models/User.js";
+import CharacterModel from "./models/Character.js";
 import passport from "passport";
 import passportlocal from "passport-local";
 import cors from "cors";
@@ -151,10 +151,36 @@ app.post("/api/auth/login", (req, res, next) => {
 	})(req, res, next);
 });
 
+app.post("/api/character/create", async (req, res) => {
+	try {
+		const characterData = req.body;
+
+		// Optional: Validate required fields manually if needed
+		if (
+			!characterData.name ||
+			!characterData.race ||
+			!characterData.classes?.length
+		) {
+			return res
+				.status(400)
+				.json({ message: "Missing required fields." });
+		}
+
+		// Create and save character
+		const savedCharacter = CharacterModel.create(req.body);
+		return res.status(201).json(savedCharacter);
+	} catch (err) {
+		console.error("Error creating character:", err);
+		return res
+			.status(500)
+			.json({ message: "Server error", error: err.message });
+	}
+});
+
 app.get("/api/auth/profile", (req, res) => {
-	if (!req.isAuthenticated())
-		return res.status(401).json({ message: "Unauthorized" });
-	console.log(req.user);
+	// if (!req.isAuthenticated())
+	// 	return res.status(401).json({ message: "Unauthorized" });
+	// console.log(req.user);
 	res.send({ user: req.user });
 });
 
