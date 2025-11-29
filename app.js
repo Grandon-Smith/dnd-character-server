@@ -2,6 +2,7 @@ import express, { json } from "express";
 import bodyParser from "body-parser";
 import UserModel from "./models/User.js";
 import CharacterModel from "./models/Character.js";
+import SpellModel from "./models/Spell.js";
 import passport from "passport";
 import passportlocal from "passport-local";
 import cors from "cors";
@@ -241,3 +242,50 @@ app.post("/api/auth/logout", (req, res) => {
 // });
 
 app.listen(PORT, () => console.log("listening on port...", PORT));
+
+//  SPELL SCRAPER CODE TO BE WORKED ON!------------------------------->
+// const BASE_URL = "https://www.dnd5eapi.co";
+
+// async function connectDB() {
+// 	await mongoose.connect(process.env.MONGO_URI, {
+// 		useNewUrlParser: true,
+
+// 		useUnifiedTopology: true,
+// 	});
+
+// 	console.log("🗃️ Connected to MongoDB");
+// }
+
+// async function fetchAndStoreSpells() {
+//   console.log('fetching stuff')
+// 	try {
+//     const listResponse = await fetch(`${BASE_URL}/api/2014/spells`);
+// 		const spellList = listResponse.data.results;
+// 		for (const spell of spellList) {
+// 			const detailResponse = await fetch(
+// 				`${BASE_URL}${spell.url}`
+// 			);
+// 			const spellData = detailResponse.data;
+// 			await SpellModel.findOneAndUpdate(
+// 				{ index: spellData.index },
+// 				spellData,
+// 				{ upsert: true, new: true }
+// 			);
+// 			console.log(`✅ Saved: ${spellData.name}`);
+// 		}
+// 	} catch (err) {
+// 		console.error("❌ Error fetching spells:", err.message);
+// 	}
+// }
+
+// (async () => {
+// 	await connectDB();
+// 	await fetchAndStoreSpells();
+// 	mongoose.disconnect();
+// })();
+
+// (async () => {
+//   await connectDB();
+//   await fetchAndStoreSpells();
+//   mongoose.disconnect();
+// })();
