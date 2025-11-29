@@ -146,17 +146,38 @@ app.post("/api/auth/login", (req, res, next) => {
 			res.json({
 				message: "Login successful",
 				token,
-				user: { id: user.id, email: user.email },
+				user: {
+					id: user.id,
+					email: user.email,
+					username: user.username,
+				},
 			});
 		});
 	})(req, res, next);
 });
 
+app.post("/api/auth/logout", (req, res) => {
+	req.logout(() => res.json({ message: "Logged out" }));
+});
+
+app.get("/api/auth/profile", async (req, res) => {
+	const user = await UserModel.findOne({
+		email: "grandon.smith@yahoo.com",
+	});
+	res.send({ user });
+});
+
 app.post("/api/character/create", async (req, res) => {
 	try {
 		const characterData = req.body;
+		const user = await UserModel.findOne({
+			email: "grandon.smith@yahoo.com",
+		});
 
-		// Optional: Validate required fields manually if needed
+		// Attach real user ID instead of trusting client data
+		characterData.player = user._id;
+
+		// Basic validation (optional)
 		if (
 			!characterData.name ||
 			!characterData.race ||
@@ -167,8 +188,9 @@ app.post("/api/character/create", async (req, res) => {
 				.json({ message: "Missing required fields." });
 		}
 
-		// Create and save character
-		const savedCharacter = CharacterModel.create(req.body);
+		// Save character
+		const savedCharacter = await CharacterModel.create(characterData);
+
 		return res.status(201).json(savedCharacter);
 	} catch (err) {
 		console.error("Error creating character:", err);
@@ -178,68 +200,30 @@ app.post("/api/character/create", async (req, res) => {
 	}
 });
 
-app.get("/api/auth/profile", (req, res) => {
-	// if (!req.isAuthenticated())
-	// 	return res.status(401).json({ message: "Unauthorized" });
-	// console.log(req.user);
-	res.send({ user: req.user });
+app.get("/api/character/get-all", async (req, res) => {
+	try {
+		// Temporary hardcoded user until JWT is added
+		const user = await UserModel.findOne({
+			email: "grandon.smith@yahoo.com",
+		});
+
+		if (!user) {
+			return res.status(404).json({ message: "User not found" });
+		}
+
+		// Find all characters that belong to this user
+		const characters = await CharacterModel.find({
+			player: user._id,
+		});
+
+		return res.status(200).json(characters);
+	} catch (err) {
+		console.error("Error fetching characters:", err);
+		return res
+			.status(500)
+			.json({ message: "Server error", error: err.message });
+	}
 });
-
-app.post("/api/auth/logout", (req, res) => {
-	req.logout(() => res.json({ message: "Logged out" }));
-});
-
-// app.post("/api/auth/login", async (req, res) => {
-// 	const { email, password } = req.body;
-// 	console.log("info", email, password);
-// 	if (!email || !password) {
-// 		return res.json({
-// 			errorMsg: "There was an error",
-// 			error: true,
-// 			ok: false,
-// 			status: 500,
-// 		});
-// 	}
-
-// 	const DECODEPASS = decodeText(password);
-// 	console.log("info", email, DECODEPASS);
-
-// 	const user = await UserModel.findOne({
-// 		email: email,
-// 	}).exec();
-
-// 	if (user === null) {
-// 		return res.json({
-// 			errorMsg: "We didn't find that email in our system.",
-// 			error: true,
-// 			ok: false,
-// 			status: 404,
-// 		});
-// 	}
-
-// 	bcrypt
-// 		.compare(DECODEPASS, user.password)
-// 		.then((result) => {
-// 			console.log("resulte", result);
-// 			if (result === false) {
-// 				res.json({
-// 					errorMsg: "Password incorrect.",
-// 					error: true,
-// 					ok: false,
-// 					status: 404,
-// 				});
-// 			} else {
-// 				res.json({
-// 					errorMsg: null,
-// 					error: false,
-// 					ok: true,
-// 					status: 200,
-// 					data: null,
-// 				});
-// 			}
-// 		})
-// 		.catch((err) => console.log(err));
-// });
 
 app.listen(PORT, () => console.log("listening on port...", PORT));
 
