@@ -15,11 +15,6 @@ const LocalStrategy = passportlocal.Strategy;
 const SALTROUNDS = 10;
 const PORT = process.env.PORT || 3000;
 const app = express();
-// const CORS_OPTIONS = {
-// 	origin: ["http://localhost:5713"],
-// 	credentials: true,
-// 	optionsSuccessStatus: 200,
-// };
 
 app.use(express.json());
 app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
@@ -170,12 +165,6 @@ app.get("/api/auth/profile", async (req, res) => {
 app.post("/api/character/create", async (req, res) => {
 	try {
 		const characterData = req.body;
-		const user = await UserModel.findOne({
-			email: "grandon.smith@yahoo.com",
-		});
-
-		// Attach real user ID instead of trusting client data
-		characterData.player = user._id;
 
 		// Basic validation (optional)
 		if (
@@ -188,6 +177,19 @@ app.post("/api/character/create", async (req, res) => {
 				.json({ message: "Missing required fields." });
 		}
 
+		//find user based on id. NEED TO UPDATE FOR USE WITH JWT
+		const user = await UserModel.findOne({
+			email: "grandon.smith@yahoo.com",
+		});
+
+		// Attach real user ID instead of trusting client data
+		characterData.player = user._id;
+
+		// assign saving throws based on class chosen
+		characterData.savingThrowProficiencies =
+			CLASS_SAVING_THROWS[
+				characterData.classes[0].name.toLowerCase()
+			];
 		// Save character
 		const savedCharacter = await CharacterModel.create(characterData);
 
@@ -226,6 +228,21 @@ app.get("/api/character/get-all", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log("listening on port...", PORT));
+
+const CLASS_SAVING_THROWS = {
+	barbarian: ["strength", "constitution"],
+	bard: ["dexterity", "charisma"],
+	cleric: ["wisdom", "charisma"],
+	druid: ["intelligence", "wisdom"],
+	fighter: ["strength", "constitution"],
+	monk: ["strength", "dexterity"],
+	paladin: ["wisdom", "charisma"],
+	ranger: ["dexterity", "wisdom"],
+	rogue: ["dexterity", "intelligence"],
+	sorcerer: ["constitution", "charisma"],
+	warlock: ["wisdom", "charisma"],
+	wizard: ["intelligence", "wisdom"],
+};
 
 //  SPELL SCRAPER CODE TO BE WORKED ON!------------------------------->
 // const BASE_URL = "https://www.dnd5eapi.co";

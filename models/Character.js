@@ -32,7 +32,7 @@ const Character = mongoose.model(
 		background: { type: String },
 		alignment: { type: String },
 		experiencePoints: { type: Number, default: 0 },
-		stats: { type: StatSchema, required: true },
+		abilityScores: { type: StatSchema, required: true },
 		hitPoints: {
 			max: { type: Number, required: true },
 			current: { type: Number, required: true },
@@ -41,7 +41,8 @@ const Character = mongoose.model(
 		armorClass: { type: Number, required: true },
 		speed: { type: Number, required: true },
 		initiative: { type: Number, required: true },
-		proficiencies: [String],
+		skillProficiencies: [String],
+		savingThrowProficiencies: [String],
 		inventory: [],
 		spells: [String],
 		notes: { type: String },
