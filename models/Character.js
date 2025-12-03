@@ -42,6 +42,7 @@ const Character = mongoose.model(
 		speed: { type: Number, required: true },
 		initiative: { type: Number, required: true },
 		skillProficiencies: [String],
+		background: { type: String, required: true },
 		savingThrowProficiencies: [String],
 		inventory: [],
 		spells: [String],
