@@ -186,6 +186,24 @@ app.get("/api/auth/profile", isAuthenticated, async (req, res) => {
   res.send({ user });
 });
 
+app.post("/api/test/user", isAuthenticated, (req, res) => {
+  try {
+    // The authenticated user object is available here as req.user
+    const user = req.user;
+
+    // Check if a user is actually logged in
+    if (!user) {
+      return res.status(401).send({ message: "User not authenticated" });
+    }
+
+    // Send the user data
+    res.send({ user });
+  } catch (error) {
+    console.error(error); // Use console.error for better logging
+    res.status(500).send({ error: "Internal Server Error" });
+  }
+});
+
 // Prefix routes with namespace
 app.use("/api/character", characterRoutes);
 
