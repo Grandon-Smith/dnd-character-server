@@ -4,18 +4,15 @@ import UserModel from "../models/User.js";
 
 export const getAllCharacters = async (req, res) => {
   try {
-    // Temporary hardcoded user until JWT is added
-    const user = await UserModel.findOne({
-      email: req.user.email,
-    });
+    const userId = req.user._id;
 
-    if (!user) {
+    if (!userId) {
       return res.status(404).json({ message: "User not found" });
     }
 
     // Find all characters that belong to this user
     const characters = await CharacterModel.find({
-      player: user._id,
+      player: userId,
     });
 
     return res.status(200).json(characters);
@@ -40,14 +37,13 @@ export const createCharacter = async (req, res) => {
       return res.status(400).json({ message: "Missing required fields." });
     }
 
-    //find user based on id. NEED TO UPDATE FOR USE WITH JWT
-    const user = await UserModel.findOne({
-      email: req.user.email,
-    });
+    const userId = req.user._id;
 
-    // Attach real user ID instead of trusting client data
-    characterData.player = user._id;
+    characterData.player = userId;
 
+    if (!userId) {
+      return res.status(404).json({ message: "User not found" });
+    }
     // assign saving throws based on class chosen
     characterData.savingThrowProficiencies =
       CLASS_SAVING_THROWS[characterData.classes[0].name.toLowerCase()];
