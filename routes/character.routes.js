@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 
-import { isAuthenticated } from "../app.js";
+import { isAuthenticated } from "../utils/passport.js";
 import {
   createCharacter,
   getAllCharacters,
