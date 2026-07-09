@@ -1,0 +1,262 @@
+{
+  "classKey": "ranger",
+  "subclasses": [
+    {
+      "key": "hunter",
+      "classKey": "ranger",
+      "name": "Hunter",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["martial", "versatile", "survival"],
+      "desc": [
+        "Hunters learn specialized techniques for combating the threats of the wilderness, tailoring their abilities to overcome a variety of foes."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "hunters_prey",
+          "archetype_subchoice": {
+            "referenceKey": "hunters_prey_options"
+          }
+        },
+        {
+          "level": 7,
+          "key": "defensive_tactics",
+          "archetype_subchoice": {
+            "referenceKey": "defensive_tactics_options"
+          }
+        },
+        {
+          "level": 11,
+          "key": "multiattack",
+          "archetype_subchoice": {
+            "referenceKey": "hunter_multiattack_options"
+          }
+        },
+        {
+          "level": 15,
+          "key": "superior_hunters_defense",
+          "archetype_subchoice": {
+            "referenceKey": "superior_hunters_defense_options"
+          }
+        }
+      ]
+    },
+    {
+      "key": "beast_master",
+      "classKey": "ranger",
+      "name": "Beast Master",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["companion", "martial", "nature"],
+      "desc": [
+        "The Beast Master forms a powerful bond with an animal companion, fighting alongside it as an inseparable team."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "rangers_companion",
+          "referenceKey": "beast_companion_options"
+        },
+        {
+          "level": 7,
+          "key": "exceptional_training"
+        },
+        {
+          "level": 11,
+          "key": "bestial_fury"
+        },
+        {
+          "level": 15,
+          "key": "share_spells"
+        }
+      ]
+    },
+    {
+      "key": "gloom_stalker",
+      "classKey": "ranger",
+      "name": "Gloom Stalker",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["stealth", "darkness", "ambush"],
+      "desc": [
+        "Gloom Stalkers thrive in darkness, hunting the terrors that lurk beneath the surface and in the shadows."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "dread_ambusher"
+        },
+        {
+          "level": 3,
+          "key": "umbral_sight"
+        },
+        {
+          "level": 3,
+          "key": "gloom_stalker_magic",
+          "referenceKey": "gloom_stalker_spell_list"
+        },
+        {
+          "level": 7,
+          "key": "iron_mind"
+        },
+        {
+          "level": 11,
+          "key": "stalkers_flurry"
+        },
+        {
+          "level": 15,
+          "key": "shadowy_dodge"
+        }
+      ]
+    },
+    {
+      "key": "horizon_walker",
+      "classKey": "ranger",
+      "name": "Horizon Walker",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["planar", "teleportation", "force"],
+      "desc": [
+        "Horizon Walkers protect the world from threats originating on other planes of existence, wielding magic that manipulates space itself."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "detect_portal"
+        },
+        {
+          "level": 3,
+          "key": "planar_warrior"
+        },
+        {
+          "level": 3,
+          "key": "horizon_walker_magic",
+          "referenceKey": "horizon_walker_spell_list"
+        },
+        {
+          "level": 7,
+          "key": "ethereal_step"
+        },
+        {
+          "level": 11,
+          "key": "distant_strike"
+        },
+        {
+          "level": 15,
+          "key": "spectral_defense"
+        }
+      ]
+    },
+    {
+      "key": "monster_slayer",
+      "classKey": "ranger",
+      "name": "Monster Slayer",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["monster_hunter", "magic", "martial"],
+      "desc": [
+        "Monster Slayers dedicate themselves to defeating the deadliest supernatural creatures through careful study and relentless pursuit."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "hunters_sense"
+        },
+        {
+          "level": 3,
+          "key": "slayers_prey"
+        },
+        {
+          "level": 3,
+          "key": "monster_slayer_magic",
+          "referenceKey": "monster_slayer_spell_list"
+        },
+        {
+          "level": 7,
+          "key": "supernatural_defense"
+        },
+        {
+          "level": 11,
+          "key": "magic_users_nemesis"
+        },
+        {
+          "level": 15,
+          "key": "slayers_counter"
+        }
+      ]
+    },
+    {
+      "key": "fey_wanderer",
+      "classKey": "ranger",
+      "name": "Fey Wanderer",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["fey", "charm", "psychic"],
+      "desc": [
+        "Fey Wanderers have been touched by the magic of the Feywild, gaining mystical charm and supernatural resilience."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "dreadful_strikes"
+        },
+        {
+          "level": 3,
+          "key": "otherworldly_glamour"
+        },
+        {
+          "level": 3,
+          "key": "fey_wanderer_magic",
+          "referenceKey": "fey_wanderer_spell_list"
+        },
+        {
+          "level": 7,
+          "key": "beguiling_twist"
+        },
+        {
+          "level": 11,
+          "key": "fey_reinforcements"
+        },
+        {
+          "level": 15,
+          "key": "misty_wanderer"
+        }
+      ]
+    },
+    {
+      "key": "swarmkeeper",
+      "classKey": "ranger",
+      "name": "Swarmkeeper",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["swarm", "nature", "battlefield_control"],
+      "desc": [
+        "Swarmkeepers forge a magical bond with a swarm of nature spirits that aid them in combat and exploration."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "gathered_swarm"
+        },
+        {
+          "level": 3,
+          "key": "swarmkeeper_magic",
+          "referenceKey": "swarmkeeper_spell_list"
+        },
+        {
+          "level": 7,
+          "key": "writhing_tide"
+        },
+        {
+          "level": 11,
+          "key": "mighty_swarm"
+        },
+        {
+          "level": 15,
+          "key": "swarming_dispersal"
+        }
+      ]
+    }
+  ]
+}

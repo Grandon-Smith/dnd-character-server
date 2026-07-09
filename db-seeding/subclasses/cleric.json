@@ -1,0 +1,174 @@
+{
+  "classKey": "cleric",
+  "subclasses": [
+    {
+      "key": "knowledge_domain",
+      "classKey": "cleric",
+      "name": "Knowledge Domain",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["knowledge", "skills", "divination"],
+      "desc": [
+        "The gods of knowledge value learning and understanding above all else. Their followers study esoteric lore, collect forgotten knowledge, and uncover hidden truths."
+      ],
+      "features": [
+        { "level": 1, "key": "blessings_of_knowledge" },
+        { "level": 2, "key": "knowledge_of_the_ages" },
+        { "level": 6, "key": "read_thoughts" },
+        { "level": 8, "key": "potent_spellcasting" },
+        { "level": 17, "key": "visions_of_the_past" }
+      ]
+    },
+    {
+      "key": "life_domain",
+      "classKey": "cleric",
+      "name": "Life Domain",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["healing", "support", "restoration"],
+      "desc": [
+        "The Life domain focuses on the vibrant positive energy that sustains all living creatures. Clerics of Life are unmatched healers."
+      ],
+      "features": [
+        { "level": 1, "key": "bonus_proficiency_heavy_armor" },
+        { "level": 1, "key": "disciple_of_life" },
+        { "level": 2, "key": "preserve_life" },
+        { "level": 6, "key": "blessed_healer" },
+        { "level": 8, "key": "divine_strike" },
+        { "level": 17, "key": "supreme_healing" }
+      ]
+    },
+    {
+      "key": "light_domain",
+      "classKey": "cleric",
+      "name": "Light Domain",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["fire", "radiant", "offense"],
+      "desc": [
+        "The Light domain emphasizes the power of light to banish darkness, reveal truth, and burn away evil."
+      ],
+      "features": [
+        { "level": 1, "key": "bonus_cantrip_light" },
+        { "level": 1, "key": "warding_flare" },
+        { "level": 2, "key": "radiance_of_the_dawn" },
+        { "level": 6, "key": "improved_flare" },
+        { "level": 8, "key": "potent_spellcasting" },
+        { "level": 17, "key": "corona_of_light" }
+      ]
+    },
+    {
+      "key": "nature_domain",
+      "classKey": "cleric",
+      "name": "Nature Domain",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["nature", "elements", "defense"],
+      "desc": [
+        "Gods of nature are as varied as the natural world itself, inspiring clerics who protect the wilderness and command its power."
+      ],
+      "features": [
+        { "level": 1, "key": "acolyte_of_nature" },
+        { "level": 1, "key": "bonus_proficiency_heavy_armor" },
+        { "level": 2, "key": "charm_animals_and_plants" },
+        { "level": 6, "key": "dampen_elements" },
+        { "level": 8, "key": "divine_strike" },
+        { "level": 17, "key": "master_of_nature" }
+      ]
+    },
+    {
+      "key": "tempest_domain",
+      "classKey": "cleric",
+      "name": "Tempest Domain",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["storm", "lightning", "thunder"],
+      "desc": [
+        "The Tempest domain governs storms, the sea, and the raw destructive power of nature."
+      ],
+      "features": [
+        { "level": 1, "key": "bonus_proficiencies_martial_heavy" },
+        { "level": 1, "key": "wrath_of_the_storm" },
+        { "level": 2, "key": "destructive_wrath" },
+        { "level": 6, "key": "thunderbolt_strike" },
+        { "level": 8, "key": "divine_strike" },
+        { "level": 17, "key": "stormborn" }
+      ]
+    },
+    {
+      "key": "trickery_domain",
+      "classKey": "cleric",
+      "name": "Trickery Domain",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["illusion", "stealth", "deception"],
+      "desc": [
+        "Gods of trickery delight in mischief, deception, and upsetting the established order."
+      ],
+      "features": [
+        { "level": 1, "key": "blessing_of_the_trickster" },
+        { "level": 2, "key": "invoke_duplicity" },
+        { "level": 6, "key": "cloak_of_shadows" },
+        { "level": 8, "key": "divine_strike" },
+        { "level": 17, "key": "improved_duplicity" }
+      ]
+    },
+    {
+      "key": "war_domain",
+      "classKey": "cleric",
+      "name": "War Domain",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["martial", "combat", "offense"],
+      "desc": [
+        "War has many manifestations. Clerics of the War domain excel in battle and inspire others to fight with courage."
+      ],
+      "features": [
+        { "level": 1, "key": "bonus_proficiencies_martial_heavy" },
+        { "level": 1, "key": "war_priest" },
+        { "level": 2, "key": "guided_strike" },
+        { "level": 6, "key": "war_gods_blessing" },
+        { "level": 8, "key": "divine_strike" },
+        { "level": 17, "key": "avatar_of_battle" }
+      ]
+    },
+    {
+      "key": "forge_domain",
+      "classKey": "cleric",
+      "name": "Forge Domain",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["crafting", "fire", "defense"],
+      "desc": [
+        "The gods of the Forge inspire artisans, smiths, and warriors to create and protect. Clerics of this domain are masters of metalworking and imbue armor and weapons with divine power."
+      ],
+      "features": [
+        { "level": 1, "key": "bonus_proficiencies_heavy_smiths_tools" },
+        { "level": 1, "key": "blessing_of_the_forge" },
+        { "level": 2, "key": "artisans_blessing" },
+        { "level": 6, "key": "soul_of_the_forge" },
+        { "level": 8, "key": "divine_strike" },
+        { "level": 17, "key": "saint_of_forge_and_fire" }
+      ]
+    },
+    {
+      "key": "grave_domain",
+      "classKey": "cleric",
+      "name": "Grave Domain",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["death", "healing", "support"],
+      "desc": [
+        "Gods of the Grave watch over the boundary between life and death. Their clerics seek to preserve the natural cycle and oppose undeath."
+      ],
+      "features": [
+        { "level": 1, "key": "circle_of_mortality" },
+        { "level": 1, "key": "eyes_of_the_grave" },
+        { "level": 2, "key": "path_to_the_grave" },
+        { "level": 6, "key": "sentinel_at_deaths_door" },
+        { "level": 8, "key": "potent_spellcasting" },
+        { "level": 17, "key": "keeper_of_souls" }
+      ]
+    }
+  ]
+}

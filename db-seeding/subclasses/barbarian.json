@@ -1,0 +1,184 @@
+{
+  "classKey": "barbarian",
+  "subclasses": [
+    {
+      "key": "berserker",
+      "classKey": "barbarian",
+      "name": "Path of the Berserker",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["martial", "rage", "offense"],
+      "desc": [
+        "For some barbarians, rage is a means to an end—that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in the chaos of battle, heedless of your own health or well-being."
+      ],
+      "features": [
+        { "level": 3, "key": "frenzy" },
+        { "level": 6, "key": "mindless_rage" },
+        { "level": 10, "key": "intimidating_presence" },
+        { "level": 14, "key": "retaliation" }
+      ]
+    },
+    {
+      "key": "totem_warrior",
+      "classKey": "barbarian",
+      "name": "Path of the Totem Warrior",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["spiritual", "survival", "versatile"],
+      "desc": [
+        "The Path of the Totem Warrior is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration."
+      ],
+      "features": [
+        { "level": 3, "key": "spirit_seeker" },
+        {
+          "level": 3,
+          "key": "totem_spirit",
+          "archetype_subchoice": {
+            "referenceKey": "totem_spirit_options"
+          }
+        },
+        {
+          "level": 6,
+          "key": "aspect_of_the_beast",
+          "archetype_subchoice": {
+            "referenceKey": "totem_spirit_options"
+          }
+        },
+        { "level": 10, "key": "spirit_walker" },
+        {
+          "level": 14,
+          "key": "totemic_attunement",
+          "archetype_subchoice": {
+            "referenceKey": "totem_spirit_options"
+          }
+        }
+      ]
+    },
+    {
+      "key": "battlerager",
+      "classKey": "barbarian",
+      "name": "Path of the Battlerager",
+      "source": "sword_coast_adventurers_guide",
+      "version": "2014",
+      "tags": ["martial", "armor", "offense"],
+      "desc": [
+        "Known as Kuldjargh ('axe idiot') in Dwarvish, battleragers are barbarians who wear spiked armor and hurl themselves into combat."
+      ],
+      "features": [
+        { "level": 3, "key": "battlerager_armor" },
+        { "level": 6, "key": "reckless_abandon" },
+        { "level": 10, "key": "battlerager_charge" },
+        { "level": 14, "key": "spiked_retribution" }
+      ]
+    },
+    {
+      "key": "ancestral_guardian",
+      "classKey": "barbarian",
+      "name": "Path of the Ancestral Guardian",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["guardian", "support", "spirits"],
+      "desc": [
+        "Some barbarians call upon the spirits of their ancestors to protect themselves and their allies."
+      ],
+      "features": [
+        { "level": 3, "key": "ancestral_protectors" },
+        { "level": 6, "key": "spirit_shield" },
+        { "level": 10, "key": "consult_the_spirits" },
+        { "level": 14, "key": "vengeful_ancestors" }
+      ]
+    },
+    {
+      "key": "storm_herald",
+      "classKey": "barbarian",
+      "name": "Path of the Storm Herald",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["elemental", "storm", "aura"],
+      "desc": ["Barbarians who channel the power of nature's fiercest storms."],
+      "features": [
+        {
+          "level": 3,
+          "key": "storm_aura",
+          "archetype_subchoice": {
+            "referenceKey": "storm_aura_options"
+          }
+        },
+        {
+          "level": 6,
+          "key": "storm_soul",
+          "archetype_subchoice": {
+            "referenceKey": "storm_aura_options"
+          }
+        },
+        { "level": 10, "key": "shielding_storm" },
+        {
+          "level": 14,
+          "key": "raging_storm",
+          "archetype_subchoice": {
+            "referenceKey": "storm_aura_options"
+          }
+        }
+      ]
+    },
+    {
+      "key": "zealot",
+      "classKey": "barbarian",
+      "name": "Path of the Zealot",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["divine", "damage", "resilience"],
+      "desc": [
+        "Some deities inspire their followers to pitch themselves into a ferocious battle fury. These barbarians are zealots, warriors who channel divine power into their rage."
+      ],
+      "features": [
+        { "level": 3, "key": "divine_fury" },
+        { "level": 3, "key": "warrior_of_the_gods" },
+        { "level": 6, "key": "fanatical_focus" },
+        { "level": 10, "key": "zealous_presence" },
+        { "level": 14, "key": "rage_beyond_death" }
+      ]
+    },
+    {
+      "key": "beast",
+      "classKey": "barbarian",
+      "name": "Path of the Beast",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["primal", "transformation", "natural_weapons"],
+      "desc": ["The beast lurks within you, ready to emerge when you rage."],
+      "features": [
+        {
+          "level": 3,
+          "key": "form_of_the_beast",
+          "archetype_subchoice": {
+            "referenceKey": "form_of_the_beast_options"
+          }
+        },
+        { "level": 6, "key": "bestial_soul" },
+        { "level": 10, "key": "infectious_fury" },
+        { "level": 14, "key": "call_the_hunt" }
+      ]
+    },
+    {
+      "key": "wild_magic",
+      "classKey": "barbarian",
+      "name": "Path of Wild Magic",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["magic", "chaos", "support"],
+      "desc": ["Your rage taps into the chaotic forces of wild magic."],
+      "features": [
+        { "level": 3, "key": "magic_awareness" },
+        {
+          "level": 3,
+          "key": "wild_surge",
+          "referenceKey": "wild_surge_table"
+        },
+        { "level": 6, "key": "bolstering_magic" },
+        { "level": 10, "key": "unstable_backlash" },
+        { "level": 14, "key": "controlled_surge" }
+      ]
+    }
+  ]
+}

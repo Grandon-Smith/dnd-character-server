@@ -1,0 +1,243 @@
+{
+  "classKey": "druid",
+  "subclasses": [
+    {
+      "key": "circle_of_the_land",
+      "classKey": "druid",
+      "name": "Circle of the Land",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["spellcasting", "nature", "versatile"],
+      "desc": [
+        "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a deep connection with a particular region of the natural world."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "bonus_cantrip"
+        },
+        {
+          "level": 2,
+          "key": "natural_recovery"
+        },
+        {
+          "level": 2,
+          "key": "circle_spells",
+          "archetype_subchoice": {
+            "referenceKey": "circle_of_the_land_options"
+          }
+        },
+        {
+          "level": 6,
+          "key": "lands_stride"
+        },
+        {
+          "level": 10,
+          "key": "natures_ward"
+        },
+        {
+          "level": 14,
+          "key": "natures_sanctuary"
+        }
+      ]
+    },
+    {
+      "key": "circle_of_the_moon",
+      "classKey": "druid",
+      "name": "Circle of the Moon",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["wild_shape", "combat", "transformation"],
+      "desc": [
+        "Druids of the Circle of the Moon are fierce guardians of the wild who transform into powerful beasts to defend the natural world."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "combat_wild_shape"
+        },
+        {
+          "level": 2,
+          "key": "circle_forms"
+        },
+        {
+          "level": 6,
+          "key": "primal_strike"
+        },
+        {
+          "level": 10,
+          "key": "elemental_wild_shape",
+          "referenceKey": "elemental_wild_shape_options"
+        },
+        {
+          "level": 14,
+          "key": "thousand_forms"
+        }
+      ]
+    },
+    {
+      "key": "circle_of_dreams",
+      "classKey": "druid",
+      "name": "Circle of Dreams",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["fey", "healing", "support"],
+      "desc": [
+        "The Circle of Dreams draws its power from the Feywild, offering comfort, healing, and protection to allies."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "balm_of_the_summer_court"
+        },
+        {
+          "level": 6,
+          "key": "hearth_of_moonlight_and_shadow"
+        },
+        {
+          "level": 10,
+          "key": "hidden_paths"
+        },
+        {
+          "level": 14,
+          "key": "walker_in_dreams"
+        }
+      ]
+    },
+    {
+      "key": "circle_of_the_shepherd",
+      "classKey": "druid",
+      "name": "Circle of the Shepherd",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["spirits", "summoning", "support"],
+      "desc": [
+        "The Circle of the Shepherd nurtures the bond between the mortal world and the spirits of nature, empowering allies and summoned creatures."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "speech_of_the_woods"
+        },
+        {
+          "level": 2,
+          "key": "spirit_totem",
+          "archetype_subchoice": {
+            "referenceKey": "spirit_totem_options"
+          }
+        },
+        {
+          "level": 6,
+          "key": "mighty_summoner"
+        },
+        {
+          "level": 10,
+          "key": "guardian_spirit"
+        },
+        {
+          "level": 14,
+          "key": "faithful_summons"
+        }
+      ]
+    },
+    {
+      "key": "circle_of_spores",
+      "classKey": "druid",
+      "name": "Circle of Spores",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["fungus", "necrotic", "melee"],
+      "desc": [
+        "Druids of the Circle of Spores see life and death as parts of a single cycle, drawing power from fungi and decay."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "halo_of_spores"
+        },
+        {
+          "level": 2,
+          "key": "symbiotic_entity"
+        },
+        {
+          "level": 6,
+          "key": "fungal_infestation"
+        },
+        {
+          "level": 10,
+          "key": "spreading_spores"
+        },
+        {
+          "level": 14,
+          "key": "fungal_body"
+        }
+      ]
+    },
+    {
+      "key": "circle_of_stars",
+      "classKey": "druid",
+      "name": "Circle of Stars",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["stars", "divination", "spellcasting"],
+      "desc": [
+        "The Circle of Stars studies the heavens and channels the power of the constellations."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "star_map"
+        },
+        {
+          "level": 2,
+          "key": "starry_form",
+          "archetype_subchoice": {
+            "referenceKey": "starry_form_options"
+          }
+        },
+        {
+          "level": 6,
+          "key": "cosmic_omen"
+        },
+        {
+          "level": 10,
+          "key": "twinkling_constellations"
+        },
+        {
+          "level": 14,
+          "key": "full_of_stars"
+        }
+      ]
+    },
+    {
+      "key": "circle_of_wildfire",
+      "classKey": "druid",
+      "name": "Circle of Wildfire",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["fire", "spirit", "summoning"],
+      "desc": [
+        "The Circle of Wildfire teaches that destruction is a natural precursor to creation, wielding cleansing fire alongside a primal spirit."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "summon_wildfire_spirit",
+          "referenceKey": "wildfire_spirit"
+        },
+        {
+          "level": 2,
+          "key": "enhanced_bond"
+        },
+        {
+          "level": 6,
+          "key": "cauterizing_flames"
+        },
+        {
+          "level": 10,
+          "key": "blazing_revival"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "classKey": "monk",
+  "subclasses": [
+    {
+      "key": "way_of_the_open_hand",
+      "classKey": "monk",
+      "name": "Way of the Open Hand",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["martial", "control", "unarmed"],
+      "desc": [
+        "Monks of the Way of the Open Hand master the ultimate martial arts discipline, using precise strikes to manipulate and disable their foes."
+      ],
+      "features": [
+        { "level": 3, "key": "open_hand_technique" },
+        { "level": 6, "key": "wholeness_of_body" },
+        { "level": 11, "key": "tranquility" },
+        { "level": 17, "key": "quivering_palm" }
+      ]
+    },
+    {
+      "key": "way_of_shadow",
+      "classKey": "monk",
+      "name": "Way of Shadow",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["stealth", "shadow", "magic"],
+      "desc": [
+        "Monks of the Way of Shadow follow a tradition of stealth and deception, employing shadow magic and secrecy to achieve their goals."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "shadow_arts",
+          "referenceKey": "shadow_arts_options"
+        },
+        { "level": 6, "key": "shadow_step" },
+        { "level": 11, "key": "cloak_of_shadows" },
+        { "level": 17, "key": "opportunist" }
+      ]
+    },
+    {
+      "key": "way_of_the_four_elements",
+      "classKey": "monk",
+      "name": "Way of the Four Elements",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["elemental", "spellcasting", "ki"],
+      "desc": [
+        "Monks of the Way of the Four Elements harness the elemental forces of air, earth, fire, and water through disciplined ki."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "disciple_of_the_elements",
+          "archetype_subchoice": {
+            "referenceKey": "elemental_disciplines"
+          }
+        }
+      ]
+    },
+    {
+      "key": "way_of_the_drunken_master",
+      "classKey": "monk",
+      "name": "Way of the Drunken Master",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["mobility", "martial", "evasion"],
+      "desc": [
+        "Monks of the Way of the Drunken Master weave staggering movements into an unpredictable and graceful fighting style."
+      ],
+      "features": [
+        { "level": 3, "key": "bonus_proficiencies_drunken_master" },
+        { "level": 3, "key": "drunken_technique" },
+        { "level": 6, "key": "tipsy_sway" },
+        { "level": 11, "key": "drunkards_luck" },
+        { "level": 17, "key": "intoxicated_frenzy" }
+      ]
+    },
+    {
+      "key": "way_of_the_kensei",
+      "classKey": "monk",
+      "name": "Way of the Kensei",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["weapons", "martial", "precision"],
+      "desc": [
+        "Kensei monks seek perfection through mastery of weapon combat, treating the blade and bow as extensions of their bodies."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "path_of_the_kensei",
+          "archetype_subchoice": {
+            "referenceKey": "kensei_weapons"
+          }
+        },
+        { "level": 6, "key": "one_with_the_blade" },
+        { "level": 11, "key": "sharpen_the_blade" },
+        { "level": 17, "key": "unerring_accuracy" }
+      ]
+    },
+    {
+      "key": "way_of_the_sun_soul",
+      "classKey": "monk",
+      "name": "Way of the Sun Soul",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["radiant", "ranged", "ki"],
+      "desc": [
+        "Monks of the Way of the Sun Soul channel radiant energy into devastating ranged and melee attacks."
+      ],
+      "features": [
+        { "level": 3, "key": "radiant_sun_bolt" },
+        { "level": 6, "key": "searing_arc_strike" },
+        { "level": 11, "key": "searing_sunburst" },
+        { "level": 17, "key": "sun_shield" }
+      ]
+    },
+    {
+      "key": "way_of_mercy",
+      "classKey": "monk",
+      "name": "Way of Mercy",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["healing", "necrotic", "support"],
+      "desc": [
+        "Monks of the Way of Mercy learn to manipulate the life force of others, bringing healing to allies and suffering to enemies."
+      ],
+      "features": [
+        { "level": 3, "key": "implements_of_mercy" },
+        { "level": 3, "key": "hand_of_healing" },
+        { "level": 3, "key": "hand_of_harm" },
+        { "level": 6, "key": "physicians_touch" },
+        { "level": 11, "key": "flurry_of_healing_and_harm" },
+        { "level": 17, "key": "hand_of_ultimate_mercy" }
+      ]
+    },
+    {
+      "key": "way_of_the_astral_self",
+      "classKey": "monk",
+      "name": "Way of the Astral Self",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["astral", "psionic", "martial"],
+      "desc": [
+        "Monks of the Way of the Astral Self manifest their inner spirit as a powerful astral form."
+      ],
+      "features": [
+        { "level": 3, "key": "arms_of_the_astral_self" },
+        { "level": 6, "key": "visage_of_the_astral_self" },
+        { "level": 11, "key": "body_of_the_astral_self" },
+        { "level": 17, "key": "awakened_astral_self" }
+      ]
+    }
+  ]
+}

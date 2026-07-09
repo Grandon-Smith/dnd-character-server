@@ -1,0 +1,336 @@
+{
+  "classKey": "wizard",
+  "subclasses": [
+    {
+      "key": "school_of_abjuration",
+      "classKey": "wizard",
+      "name": "School of Abjuration",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["defense", "protection", "magic"],
+      "desc": [
+        "Abjurers specialize in protective magic, wards, and spells that banish or negate harmful effects."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "abjuration_savant"
+        },
+        {
+          "level": 2,
+          "key": "arcane_ward"
+        },
+        {
+          "level": 6,
+          "key": "projected_ward"
+        },
+        {
+          "level": 10,
+          "key": "improved_abjuration"
+        },
+        {
+          "level": 14,
+          "key": "spell_resistance"
+        }
+      ]
+    },
+    {
+      "key": "school_of_conjuration",
+      "classKey": "wizard",
+      "name": "School of Conjuration",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["summoning", "teleportation", "creation"],
+      "desc": [
+        "Conjurers specialize in creating objects, creatures, and effects by manipulating magical energies."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "conjuration_savant"
+        },
+        {
+          "level": 2,
+          "key": "minor_conjuration"
+        },
+        {
+          "level": 6,
+          "key": "benign_transposition"
+        },
+        {
+          "level": 10,
+          "key": "focused_conjuration"
+        },
+        {
+          "level": 14,
+          "key": "durable_summons"
+        }
+      ]
+    },
+    {
+      "key": "school_of_divination",
+      "classKey": "wizard",
+      "name": "School of Divination",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["knowledge", "prediction", "utility"],
+      "desc": [
+        "Diviners seek to understand the past, present, and future through magical insight."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "divination_savant"
+        },
+        {
+          "level": 2,
+          "key": "portent"
+        },
+        {
+          "level": 6,
+          "key": "expert_divination"
+        },
+        {
+          "level": 10,
+          "key": "the_third_eye"
+        },
+        {
+          "level": 14,
+          "key": "greater_portent"
+        }
+      ]
+    },
+    {
+      "key": "school_of_enchantment",
+      "classKey": "wizard",
+      "name": "School of Enchantment",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["charm", "control", "social"],
+      "desc": [
+        "Enchanters specialize in magic that influences minds and emotions."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "enchantment_savant"
+        },
+        {
+          "level": 2,
+          "key": "hypnotic_gaze"
+        },
+        {
+          "level": 6,
+          "key": "instinctive_charm"
+        },
+        {
+          "level": 10,
+          "key": "split_enchantment"
+        },
+        {
+          "level": 14,
+          "key": "alter_memories"
+        }
+      ]
+    },
+    {
+      "key": "school_of_evocation",
+      "classKey": "wizard",
+      "name": "School of Evocation",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["damage", "elemental", "combat"],
+      "desc": [
+        "Evokers harness magical energy to create powerful destructive effects."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "evocation_savant"
+        },
+        {
+          "level": 2,
+          "key": "sculpt_spells"
+        },
+        {
+          "level": 6,
+          "key": "potent_cantrip"
+        },
+        {
+          "level": 10,
+          "key": "empowered_evocation"
+        },
+        {
+          "level": 14,
+          "key": "overchannel"
+        }
+      ]
+    },
+    {
+      "key": "school_of_illusion",
+      "classKey": "wizard",
+      "name": "School of Illusion",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["illusion", "deception", "utility"],
+      "desc": [
+        "Illusionists manipulate perception and create false realities through magical deception."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "illusion_savant"
+        },
+        {
+          "level": 2,
+          "key": "improved_minor_illusion"
+        },
+        {
+          "level": 6,
+          "key": "malleable_illusions"
+        },
+        {
+          "level": 10,
+          "key": "illusory_self"
+        },
+        {
+          "level": 14,
+          "key": "illusory_reality"
+        }
+      ]
+    },
+    {
+      "key": "school_of_necromancy",
+      "classKey": "wizard",
+      "name": "School of Necromancy",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["necromancy", "undead", "life"],
+      "desc": [
+        "Necromancers study the forces of life, death, and the manipulation of vital energy."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "necromancy_savant"
+        },
+        {
+          "level": 2,
+          "key": "grim_harvest"
+        },
+        {
+          "level": 6,
+          "key": "undead_thralls"
+        },
+        {
+          "level": 10,
+          "key": "inured_to_undeath"
+        },
+        {
+          "level": 14,
+          "key": "command_undead"
+        }
+      ]
+    },
+    {
+      "key": "school_of_transmutation",
+      "classKey": "wizard",
+      "name": "School of Transmutation",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["transformation", "utility", "alchemy"],
+      "desc": [
+        "Transmuters reshape matter and energy through magical transformation."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "transmutation_savant"
+        },
+        {
+          "level": 2,
+          "key": "minor_alchemy"
+        },
+        {
+          "level": 6,
+          "key": "transmuters_stone"
+        },
+        {
+          "level": 10,
+          "key": "shapechanger"
+        },
+        {
+          "level": 14,
+          "key": "master_transmuter"
+        }
+      ]
+    },
+    {
+      "key": "war_magic",
+      "classKey": "wizard",
+      "name": "War Magic",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["combat", "abjuration", "evocation"],
+      "desc": [
+        "War mages study the combination of abjuration and evocation, learning to strengthen themselves in battle while maintaining control over destructive magic."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "arcane_deflection"
+        },
+        {
+          "level": 2,
+          "key": "tactical_wit"
+        },
+        {
+          "level": 6,
+          "key": "power_surge"
+        },
+        {
+          "level": 10,
+          "key": "durable_magic"
+        },
+        {
+          "level": 14,
+          "key": "deflecting_shroud"
+        }
+      ]
+    },
+    {
+      "key": "order_of_scribes",
+      "classKey": "wizard",
+      "name": "Order of Scribes",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["spellbook", "rituals", "arcane"],
+      "desc": [
+        "Members of the Order of Scribes are wizards devoted to magical research, using awakened spellbooks and arcane knowledge to expand their mastery of magic."
+      ],
+      "features": [
+        {
+          "level": 2,
+          "key": "wizardly_quill"
+        },
+        {
+          "level": 2,
+          "key": "awakened_spellbook",
+          "referenceKey": "awakened_spellbook_features"
+        },
+        {
+          "level": 6,
+          "key": "manifest_mind"
+        },
+        {
+          "level": 10,
+          "key": "master_scrivener"
+        },
+        {
+          "level": 14,
+          "key": "one_with_the_word"
+        }
+      ]
+    }
+  ]
+}

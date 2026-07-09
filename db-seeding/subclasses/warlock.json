@@ -1,0 +1,249 @@
+{
+  "classKey": "warlock",
+  "subclasses": [
+    {
+      "key": "the_fiend",
+      "classKey": "warlock",
+      "name": "The Fiend",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["fire", "damage", "infernal"],
+      "desc": [
+        "Warlocks who form pacts with fiends draw power from beings of the Lower Planes, gaining destructive magic and resilience."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "dark_ones_blessing"
+        },
+        {
+          "level": 6,
+          "key": "dark_ones_own_luck"
+        },
+        {
+          "level": 10,
+          "key": "fiendish_resilience"
+        },
+        {
+          "level": 14,
+          "key": "hurl_through_hell"
+        }
+      ]
+    },
+    {
+      "key": "the_great_old_one",
+      "classKey": "warlock",
+      "name": "The Great Old One",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["psionic", "eldritch", "telepathy"],
+      "desc": [
+        "Warlocks who serve Great Old Ones gain strange abilities from entities beyond mortal understanding."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "awakened_mind"
+        },
+        {
+          "level": 6,
+          "key": "entropic_ward"
+        },
+        {
+          "level": 10,
+          "key": "thought_shield"
+        },
+        {
+          "level": 14,
+          "key": "create_thrall"
+        }
+      ]
+    },
+    {
+      "key": "the_archfey",
+      "classKey": "warlock",
+      "name": "The Archfey",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["fey", "charm", "illusion"],
+      "desc": [
+        "Warlocks who make pacts with archfey gain powers of enchantment, deception, and manipulation."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "fey_presence"
+        },
+        {
+          "level": 6,
+          "key": "misty_escape"
+        },
+        {
+          "level": 10,
+          "key": "beguiling_defenses"
+        },
+        {
+          "level": 14,
+          "key": "dark_delirium"
+        }
+      ]
+    },
+    {
+      "key": "the_celestial",
+      "classKey": "warlock",
+      "name": "The Celestial",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["healing", "radiant", "support"],
+      "desc": [
+        "Warlocks who form pacts with celestial beings gain access to restorative magic and divine energy."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "bonus_cantrips"
+        },
+        {
+          "level": 1,
+          "key": "healing_light"
+        },
+        {
+          "level": 6,
+          "key": "radiant_soul"
+        },
+        {
+          "level": 10,
+          "key": "celestial_resilience"
+        },
+        {
+          "level": 14,
+          "key": "searing_vengeance"
+        }
+      ]
+    },
+    {
+      "key": "the_hexblade",
+      "classKey": "warlock",
+      "name": "The Hexblade",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["martial", "curse", "shadow"],
+      "desc": [
+        "Hexblade warlocks draw power from the Shadowfell and wield weapons connected to mysterious forces."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "hexblades_curse"
+        },
+        {
+          "level": 1,
+          "key": "hex_warrior"
+        },
+        {
+          "level": 6,
+          "key": "accursed_specter"
+        },
+        {
+          "level": 10,
+          "key": "armor_of_hexes"
+        },
+        {
+          "level": 14,
+          "key": "master_of_hexes"
+        }
+      ]
+    },
+    {
+      "key": "the_undying",
+      "classKey": "warlock",
+      "name": "The Undying",
+      "source": "sword_coast_adventurers_guide",
+      "version": "2014",
+      "tags": ["undead", "survival", "necromancy"],
+      "desc": [
+        "Warlocks of the Undying serve beings who have transcended mortality, gaining powers over life and death."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "among_the_dead"
+        },
+        {
+          "level": 6,
+          "key": "defy_death"
+        },
+        {
+          "level": 10,
+          "key": "undying_nature"
+        },
+        {
+          "level": 14,
+          "key": "indestructible_life"
+        }
+      ]
+    },
+    {
+      "key": "the_fathomless",
+      "classKey": "warlock",
+      "name": "The Fathomless",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["water", "tentacles", "control"],
+      "desc": [
+        "Fathomless warlocks draw power from oceanic entities, ancient sea creatures, and beings of the deep."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "tentacle_of_the_deeps"
+        },
+        {
+          "level": 1,
+          "key": "gift_of_the_sea"
+        },
+        {
+          "level": 6,
+          "key": "oceanic_soul"
+        },
+        {
+          "level": 10,
+          "key": "guardian_grasp"
+        },
+        {
+          "level": 14,
+          "key": "grasping_tentacles"
+        }
+      ]
+    },
+    {
+      "key": "the_undead",
+      "classKey": "warlock",
+      "name": "The Undead",
+      "source": "van_richtens_guide_to_ravenloft",
+      "version": "2014",
+      "tags": ["necrotic", "fear", "undead"],
+      "desc": [
+        "Warlocks who make pacts with undead patrons gain abilities tied to undeath and supernatural dread."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "form_of_dread"
+        },
+        {
+          "level": 6,
+          "key": "grave_touched"
+        },
+        {
+          "level": 10,
+          "key": "necrotic_husk"
+        },
+        {
+          "level": 14,
+          "key": "spirit_projection"
+        }
+      ]
+    }
+  ]
+}

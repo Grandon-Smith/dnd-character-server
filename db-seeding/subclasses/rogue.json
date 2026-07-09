@@ -1,0 +1,176 @@
+{
+  "classKey": "rogue",
+  "subclasses": [
+    {
+      "key": "thief",
+      "classKey": "rogue",
+      "name": "Thief",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["utility", "mobility", "skills"],
+      "desc": [
+        "Thieves hone their talents in stealth, infiltration, and acquiring what others seek to keep secure."
+      ],
+      "features": [
+        { "level": 3, "key": "fast_hands" },
+        { "level": 3, "key": "second_story_work" },
+        { "level": 9, "key": "supreme_sneak" },
+        { "level": 13, "key": "use_magic_device" },
+        { "level": 17, "key": "thiefs_reflexes" }
+      ]
+    },
+    {
+      "key": "assassin",
+      "classKey": "rogue",
+      "name": "Assassin",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["stealth", "combat", "deception"],
+      "desc": [
+        "Assassins specialize in infiltration, disguise, poison, and eliminating targets before they have a chance to react."
+      ],
+      "features": [
+        { "level": 3, "key": "bonus_proficiencies_assassin" },
+        { "level": 3, "key": "assassinate" },
+        { "level": 9, "key": "infiltration_expertise" },
+        { "level": 13, "key": "impostor" },
+        { "level": 17, "key": "death_strike" }
+      ]
+    },
+    {
+      "key": "arcane_trickster",
+      "classKey": "rogue",
+      "name": "Arcane Trickster",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["arcane", "illusion", "spellcasting"],
+      "desc": [
+        "Arcane Tricksters blend rogue talents with wizardly magic, relying on enchantment and illusion to outwit their foes."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "spellcasting",
+          "referenceKey": "arcane_trickster_spellcasting"
+        },
+        { "level": 3, "key": "mage_hand_legerdemain" },
+        { "level": 9, "key": "magical_ambush" },
+        { "level": 13, "key": "versatile_trickster" },
+        { "level": 17, "key": "spell_thief" }
+      ]
+    },
+    {
+      "key": "inquisitive",
+      "classKey": "rogue",
+      "name": "Inquisitive",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["investigation", "perception", "insight"],
+      "desc": [
+        "Inquisitives excel at uncovering hidden truths, reading their enemies, and detecting deception."
+      ],
+      "features": [
+        { "level": 3, "key": "ear_for_deceit" },
+        { "level": 3, "key": "eye_for_detail" },
+        { "level": 3, "key": "insightful_fighting" },
+        { "level": 9, "key": "steady_eye" },
+        { "level": 13, "key": "unerring_eye" },
+        { "level": 17, "key": "eye_for_weakness" }
+      ]
+    },
+    {
+      "key": "mastermind",
+      "classKey": "rogue",
+      "name": "Mastermind",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["support", "intrigue", "social"],
+      "desc": [
+        "Masterminds manipulate events from behind the scenes, directing allies and gathering intelligence with exceptional skill."
+      ],
+      "features": [
+        { "level": 3, "key": "master_of_intrigue" },
+        { "level": 3, "key": "master_of_tactics" },
+        { "level": 9, "key": "insightful_manipulator" },
+        { "level": 13, "key": "misdirection" },
+        { "level": 17, "key": "soul_of_deceit" }
+      ]
+    },
+    {
+      "key": "scout",
+      "classKey": "rogue",
+      "name": "Scout",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["exploration", "mobility", "survival"],
+      "desc": [
+        "Scouts combine rogue talents with wilderness expertise, acting as the eyes and ears of any adventuring party."
+      ],
+      "features": [
+        { "level": 3, "key": "skirmisher" },
+        { "level": 3, "key": "survivalist" },
+        { "level": 9, "key": "superior_mobility" },
+        { "level": 13, "key": "ambush_master" },
+        { "level": 17, "key": "sudden_strike" }
+      ]
+    },
+    {
+      "key": "swashbuckler",
+      "classKey": "rogue",
+      "name": "Swashbuckler",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["duelist", "mobility", "charisma"],
+      "desc": [
+        "Swashbucklers combine daring swordplay with agility and charm, thriving in one-on-one combat."
+      ],
+      "features": [
+        { "level": 3, "key": "fancy_footwork" },
+        { "level": 3, "key": "rakish_audacity" },
+        { "level": 9, "key": "panache" },
+        { "level": 13, "key": "elegant_maneuver" },
+        { "level": 17, "key": "master_duelist" }
+      ]
+    },
+    {
+      "key": "phantom",
+      "classKey": "rogue",
+      "name": "Phantom",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["spirits", "necrotic", "utility"],
+      "desc": [
+        "Phantoms draw power from the realm of the dead, channeling lingering spirits to aid them in life."
+      ],
+      "features": [
+        { "level": 3, "key": "whispers_of_the_dead" },
+        { "level": 3, "key": "wails_from_the_grave" },
+        { "level": 9, "key": "tokens_of_the_departed" },
+        { "level": 13, "key": "ghost_walk" },
+        { "level": 17, "key": "deaths_friend" }
+      ]
+    },
+    {
+      "key": "soulknife",
+      "classKey": "rogue",
+      "name": "Soulknife",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["psionics", "psychic", "stealth"],
+      "desc": [
+        "Soulknives wield blades of psychic energy and use psionic abilities to infiltrate, communicate, and strike unseen."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "psionic_power",
+          "referenceKey": "soulknife_psionic_power_options"
+        },
+        { "level": 3, "key": "psychic_blades" },
+        { "level": 9, "key": "soul_blades" },
+        { "level": 13, "key": "psychic_veil" },
+        { "level": 17, "key": "rend_mind" }
+      ]
+    }
+  ]
+}
