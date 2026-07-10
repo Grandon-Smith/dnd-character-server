@@ -1,0 +1,54 @@
+{
+  "key": "sorcerer",
+  "name": "Sorcerer",
+  "source": "PHB",
+  "hit_die": 6,
+  "primary_abilities": ["charisma"],
+  "saving_throws": ["constitution", "charisma"],
+  "armor_proficiencies": [],
+  "weapon_proficiencies": [
+    "dagger",
+    "dart",
+    "sling",
+    "quarterstaff",
+    "light_crossbow"
+  ],
+  "tool_proficiencies": [],
+  "skill_choices": {
+    "choose": 2,
+    "options": [
+      "arcana",
+      "deception",
+      "insight",
+      "intimidation",
+      "persuasion",
+      "religion"
+    ]
+  },
+  "starting_equipment": {
+    "choices": [
+      [
+        "light_crossbow",
+        {
+          "simple_weapon": 1
+        }
+      ],
+      ["component_pouch", "arcane_focus"],
+      ["dungeoneers_pack", "explorers_pack"]
+    ],
+    "fixed": [
+      {
+        "dagger": 2
+      }
+    ]
+  },
+  "subclass_level": 1,
+  "spellcasting": {
+    "ability": "charisma",
+    "spell_list": "sorcerer",
+    "preparation": "known",
+    "ritual_casting": false,
+    "spellcasting_focus": ["arcane_focus"],
+    "can_change_known_spells": "level_up"
+  }
+}

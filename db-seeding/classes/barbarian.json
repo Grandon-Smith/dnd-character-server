@@ -1,0 +1,48 @@
+{
+  "key": "barbarian",
+  "name": "Barbarian",
+  "source": "PHB",
+  "hitDie": 12,
+  "primaryAbilities": ["strength"],
+  "savingThrows": ["strength", "constitution"],
+  "armorProficiencies": ["light", "medium", "shields"],
+  "weaponProficiencies": ["simple", "martial"],
+  "toolProficiencies": [],
+  "skillChoices": {
+    "choose": 2,
+    "options": [
+      "animalHandling",
+      "athletics",
+      "intimidation",
+      "nature",
+      "perception",
+      "survival"
+    ]
+  },
+  "startingEquipment": {
+    "choices": [
+      [
+        "greataxe",
+        {
+          "martialMeleeWeapon": 1
+        }
+      ],
+      [
+        {
+          "handaxe": 2
+        },
+        {
+          "simpleWeapon": 1
+        }
+      ]
+    ],
+    "fixed": [
+      "explorersPack",
+      {
+        "javelin": 4
+      }
+    ]
+  },
+  "subclassLevel": 3,
+  "spellcasting": null
+}

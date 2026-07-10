@@ -1,0 +1,40 @@
+{
+  "key": "monk",
+  "name": "Monk",
+  "source": "PHB",
+  "hit_die": 8,
+  "primary_abilities": ["dexterity", "wisdom"],
+  "saving_throws": ["strength", "dexterity"],
+  "armor_proficiencies": [],
+  "weapon_proficiencies": ["simple", "shortsword"],
+  "tool_proficiencies": [],
+  "skill_choices": {
+    "choose": 2,
+    "options": [
+      "acrobatics",
+      "athletics",
+      "history",
+      "insight",
+      "religion",
+      "stealth"
+    ]
+  },
+  "starting_equipment": {
+    "choices": [
+      [
+        "shortsword",
+        {
+          "simple_weapon": 1
+        }
+      ],
+      ["dungeoneers_pack", "explorers_pack"]
+    ],
+    "fixed": [
+      {
+        "dart": 10
+      }
+    ]
+  },
+  "subclass_level": 3,
+  "spellcasting": null
+}

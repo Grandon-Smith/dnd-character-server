@@ -1,0 +1,53 @@
+{
+  "key": "ranger",
+  "name": "Ranger",
+  "source": "PHB",
+  "hit_die": 10,
+  "primary_abilities": ["dexterity", "wisdom"],
+  "saving_throws": ["strength", "dexterity"],
+  "armor_proficiencies": ["light", "medium", "shields"],
+  "weapon_proficiencies": ["simple", "martial"],
+  "tool_proficiencies": [],
+  "skill_choices": {
+    "choose": 3,
+    "options": [
+      "animal_handling",
+      "athletics",
+      "insight",
+      "investigation",
+      "nature",
+      "perception",
+      "stealth",
+      "survival"
+    ]
+  },
+  "starting_equipment": {
+    "choices": [
+      ["scale_mail", "leather_armor"],
+      [
+        {
+          "shortsword": 2
+        },
+        {
+          "simple_melee_weapon": 2
+        }
+      ],
+      ["dungeoneers_pack", "explorers_pack"]
+    ],
+    "fixed": [
+      "longbow",
+      {
+        "arrow": 20
+      }
+    ]
+  },
+  "subclass_level": 3,
+  "spellcasting": {
+    "ability": "wisdom",
+    "spell_list": "ranger",
+    "preparation": "known",
+    "ritual_casting": false,
+    "spellcasting_focus": ["druidic_focus"],
+    "can_change_known_spells": "level_up"
+  }
+}

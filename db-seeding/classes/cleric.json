@@ -1,0 +1,40 @@
+{
+  "key": "cleric",
+  "name": "Cleric",
+  "source": "PHB",
+  "hitDie": 8,
+  "primaryAbilities": ["wisdom"],
+  "savingThrows": ["wisdom", "charisma"],
+  "armorProficiencies": ["light", "medium", "shields"],
+  "weaponProficiencies": ["simple"],
+  "toolProficiencies": [],
+  "skillChoices": {
+    "choose": 2,
+    "options": ["history", "insight", "medicine", "persuasion", "religion"]
+  },
+  "startingEquipment": {
+    "choices": [
+      ["mace", "warhammer"],
+      ["scaleMail", "leatherArmor", "chainMail"],
+      [
+        "lightCrossbow",
+        {
+          "simpleWeapon": 1
+        }
+      ],
+      ["priestsPack", "explorersPack"]
+    ],
+    "fixed": ["shield", "holySymbol"]
+  },
+  "subclassLevel": 1,
+
+  "spellcasting": {
+    "ability": "wisdom",
+    "spellList": "cleric",
+    "preparation": "prepared",
+    "preparationFormula": "level + wisdomModifier",
+    "ritualCasting": true,
+    "spellcastingFocus": ["holySymbol"],
+    "canChangePreparedSpells": "longRest"
+  }
+}
