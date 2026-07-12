@@ -1,0 +1,647 @@
+[
+  {
+    "key": "elf",
+    "name": "Elf",
+    "source": "phb",
+    "description": "Slender, long-lived humanoids with keen senses and innate magical affinity.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "elvish"],
+    "ability_score_increase": {
+      "dexterity": 2
+    },
+    "racial_traits": ["darkvision", "fey_ancestry", "keen_senses", "trance"],
+    "subraces": [
+      {
+        "key": "high_elf",
+        "name": "High Elf",
+        "source": "phb",
+        "description": "Elves devoted to scholarship, artistry, and the study of magic.",
+        "ability_score_increase": {
+          "intelligence": 1
+        },
+        "racial_traits": [
+          "elf_weapon_training",
+          "high_elf_cantrip",
+          "extra_language"
+        ]
+      },
+      {
+        "key": "wood_elf",
+        "name": "Wood Elf",
+        "source": "phb",
+        "description": "Elves closely tied to forests and the natural world.",
+        "ability_score_increase": {
+          "wisdom": 1
+        },
+        "speed": 35,
+        "racial_traits": [
+          "elf_weapon_training",
+          "fleet_of_foot",
+          "mask_of_the_wild"
+        ]
+      },
+      {
+        "key": "drow",
+        "name": "Dark Elf (Drow)",
+        "source": "phb",
+        "description": "Elves adapted to life in the Underdark with innate magical abilities.",
+        "ability_score_increase": {
+          "charisma": 1
+        },
+        "racial_traits": [
+          "superior_darkvision",
+          "sunlight_sensitivity",
+          "drow_magic",
+          "drow_weapon_training"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "dwarf",
+    "name": "Dwarf",
+    "source": "phb",
+    "description": "Bold and resilient folk renowned for their endurance, craftsmanship, and deep traditions.",
+    "size": "medium",
+    "speed": 25,
+    "creature_type": "humanoid",
+    "languages": ["common", "dwarvish"],
+    "ability_score_increase": {
+      "constitution": 2
+    },
+    "racial_traits": [
+      "darkvision",
+      "dwarven_resilience",
+      "dwarven_combat_training",
+      "tool_proficiency",
+      "stonecunning"
+    ],
+    "subraces": [
+      {
+        "key": "hill_dwarf",
+        "name": "Hill Dwarf",
+        "source": "phb",
+        "description": "Wise and hardy dwarves known for exceptional resilience.",
+        "ability_score_increase": {
+          "wisdom": 1
+        },
+        "racial_traits": ["dwarven_toughness"]
+      },
+      {
+        "key": "mountain_dwarf",
+        "name": "Mountain Dwarf",
+        "source": "phb",
+        "description": "Strong dwarves accustomed to life among rugged mountains.",
+        "ability_score_increase": {
+          "strength": 2
+        },
+        "racial_traits": ["dwarven_armor_training"]
+      }
+    ]
+  },
+  {
+    "key": "halfling",
+    "name": "Halfling",
+    "source": "phb",
+    "description": "Small, resourceful folk known for their optimism, agility, and remarkable luck.",
+    "size": "small",
+    "speed": 25,
+    "creature_type": "humanoid",
+    "languages": ["common", "halfling"],
+    "ability_score_increase": {
+      "dexterity": 2
+    },
+    "racial_traits": ["lucky", "brave", "halfling_nimbleness"],
+    "subraces": [
+      {
+        "key": "lightfoot",
+        "name": "Lightfoot",
+        "source": "phb",
+        "description": "Charismatic halflings who excel at remaining unnoticed.",
+        "ability_score_increase": {
+          "charisma": 1
+        },
+        "racial_traits": ["naturally_stealthy"]
+      },
+      {
+        "key": "stout",
+        "name": "Stout",
+        "source": "phb",
+        "description": "Hardy halflings with remarkable resilience against poison.",
+        "ability_score_increase": {
+          "constitution": 1
+        },
+        "racial_traits": ["stout_resilience"]
+      }
+    ]
+  },
+  {
+    "key": "human",
+    "name": "Human",
+    "source": "phb",
+    "description": "Versatile and ambitious people whose adaptability allows them to excel in every walk of life.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common"],
+    "ability_score_increase": {
+      "strength": 1,
+      "dexterity": 1,
+      "constitution": 1,
+      "intelligence": 1,
+      "wisdom": 1,
+      "charisma": 1
+    },
+    "racial_traits": ["extra_language"],
+    "subraces": []
+  },
+  {
+    "key": "dragonborn",
+    "name": "Dragonborn",
+    "source": "phb",
+    "description": "Proud draconic humanoids who wield the elemental power of their ancestral dragons.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "draconic"],
+    "ability_score_increase": {
+      "strength": 2,
+      "charisma": 1
+    },
+    "racial_traits": [
+      "draconic_ancestry",
+      "breath_weapon",
+      "damage_resistance"
+    ],
+    "subraces": [
+      {
+        "key": "black_dragonborn",
+        "name": "Black",
+        "source": "phb",
+        "description": "Dragonborn descended from black dragons.",
+        "racial_traits": ["black_draconic_ancestry"]
+      },
+      {
+        "key": "blue_dragonborn",
+        "name": "Blue",
+        "source": "phb",
+        "description": "Dragonborn descended from blue dragons.",
+        "racial_traits": ["blue_draconic_ancestry"]
+      },
+      {
+        "key": "brass_dragonborn",
+        "name": "Brass",
+        "source": "phb",
+        "description": "Dragonborn descended from brass dragons.",
+        "racial_traits": ["brass_draconic_ancestry"]
+      },
+      {
+        "key": "bronze_dragonborn",
+        "name": "Bronze",
+        "source": "phb",
+        "description": "Dragonborn descended from bronze dragons.",
+        "racial_traits": ["bronze_draconic_ancestry"]
+      },
+      {
+        "key": "copper_dragonborn",
+        "name": "Copper",
+        "source": "phb",
+        "description": "Dragonborn descended from copper dragons.",
+        "racial_traits": ["copper_draconic_ancestry"]
+      },
+      {
+        "key": "gold_dragonborn",
+        "name": "Gold",
+        "source": "phb",
+        "description": "Dragonborn descended from gold dragons.",
+        "racial_traits": ["gold_draconic_ancestry"]
+      },
+      {
+        "key": "green_dragonborn",
+        "name": "Green",
+        "source": "phb",
+        "description": "Dragonborn descended from green dragons.",
+        "racial_traits": ["green_draconic_ancestry"]
+      },
+      {
+        "key": "red_dragonborn",
+        "name": "Red",
+        "source": "phb",
+        "description": "Dragonborn descended from red dragons.",
+        "racial_traits": ["red_draconic_ancestry"]
+      },
+      {
+        "key": "silver_dragonborn",
+        "name": "Silver",
+        "source": "phb",
+        "description": "Dragonborn descended from silver dragons.",
+        "racial_traits": ["silver_draconic_ancestry"]
+      },
+      {
+        "key": "white_dragonborn",
+        "name": "White",
+        "source": "phb",
+        "description": "Dragonborn descended from white dragons.",
+        "racial_traits": ["white_draconic_ancestry"]
+      }
+    ]
+  },
+  {
+    "key": "gnome",
+    "name": "Gnome",
+    "source": "phb",
+    "description": "Curious and inventive folk with sharp minds and an affinity for magic and craftsmanship.",
+    "size": "small",
+    "speed": 25,
+    "creature_type": "humanoid",
+    "languages": ["common", "gnomish"],
+    "ability_score_increase": {
+      "intelligence": 2
+    },
+    "racial_traits": ["darkvision", "gnome_cunning"],
+    "subraces": [
+      {
+        "key": "forest_gnome",
+        "name": "Forest Gnome",
+        "source": "phb",
+        "description": "Reclusive gnomes with an affinity for nature and illusion.",
+        "ability_score_increase": {
+          "dexterity": 1
+        },
+        "racial_traits": ["natural_illusionist", "speak_with_small_beasts"]
+      },
+      {
+        "key": "rock_gnome",
+        "name": "Rock Gnome",
+        "source": "phb",
+        "description": "Inventive gnomes known for their craftsmanship and ingenuity.",
+        "ability_score_increase": {
+          "constitution": 1
+        },
+        "racial_traits": ["artificers_lore", "tinker"]
+      }
+    ]
+  },
+  {
+    "key": "half_elf",
+    "name": "Half-Elf",
+    "source": "phb",
+    "description": "Adaptable people who inherit both human ambition and elven grace.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "elvish"],
+    "ability_score_increase": {
+      "charisma": 2
+    },
+    "choices": {
+      "ability_score_increase": {
+        "choices": [
+          "strength",
+          "dexterity",
+          "constitution",
+          "intelligence",
+          "wisdom",
+          "charisma"
+        ],
+        "amount": 1,
+        "count": 2,
+        "restrictions": {
+          "exclude": ["charisma"],
+          "unique_choices": true
+        }
+      },
+      "extra_language": {
+        "count": 1
+      }
+    },
+    "racial_traits": ["darkvision", "fey_ancestry", "skill_versatility"],
+    "subraces": []
+  },
+  {
+    "key": "half_orc",
+    "name": "Half-Orc",
+    "source": "phb",
+    "description": "Powerfully built people whose orcish heritage grants great endurance and ferocity.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "orc"],
+    "ability_score_increase": {
+      "strength": 2,
+      "constitution": 1
+    },
+    "racial_traits": [
+      "darkvision",
+      "menacing",
+      "relentless_endurance",
+      "savage_attacks"
+    ],
+    "subraces": []
+  },
+  {
+    "key": "tiefling",
+    "name": "Tiefling",
+    "source": "phb",
+    "description": "People marked by infernal heritage, possessing innate magic and resistance to fire.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "infernal"],
+    "ability_score_increase": {
+      "charisma": 2,
+      "intelligence": 1
+    },
+    "racial_traits": ["darkvision", "hellish_resistance", "infernal_legacy"],
+    "subraces": []
+  },
+  {
+    "key": "aasimar",
+    "name": "Aasimar",
+    "source": "vgtm",
+    "description": "Humanoids touched by celestial power, gifted with radiant abilities and divine heritage.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "celestial"],
+    "ability_score_increase": {
+      "charisma": 2
+    },
+    "racial_traits": [
+      "darkvision",
+      "celestial_resistance",
+      "healing_hands",
+      "light_bearer"
+    ],
+    "subraces": [
+      {
+        "key": "protector_aasimar",
+        "name": "Protector",
+        "source": "vgtm",
+        "description": "Aasimar guided by benevolent celestial guardians.",
+        "ability_score_increase": {
+          "wisdom": 1
+        },
+        "racial_traits": ["radiant_soul"]
+      },
+      {
+        "key": "scourge_aasimar",
+        "name": "Scourge",
+        "source": "vgtm",
+        "description": "Aasimar whose celestial energy burns fiercely within them.",
+        "ability_score_increase": {
+          "constitution": 1
+        },
+        "racial_traits": ["radiant_consumption"]
+      },
+      {
+        "key": "fallen_aasimar",
+        "name": "Fallen",
+        "source": "vgtm",
+        "description": "Aasimar whose celestial heritage has been tainted or abandoned.",
+        "ability_score_increase": {
+          "strength": 1
+        },
+        "racial_traits": ["necrotic_shroud"]
+      }
+    ]
+  },
+  {
+    "key": "firbolg",
+    "name": "Firbolg",
+    "source": "vgtm",
+    "description": "Gentle giants with a deep connection to nature and innate fey magic.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "elvish", "giant"],
+    "ability_score_increase": {
+      "wisdom": 2,
+      "strength": 1
+    },
+    "racial_traits": [
+      "firbolg_magic",
+      "hidden_step",
+      "powerful_build",
+      "speech_of_beast_and_leaf"
+    ],
+    "subraces": []
+  },
+  {
+    "key": "goliath",
+    "name": "Goliath",
+    "source": "vgtm",
+    "description": "Towering mountain dwellers renowned for their strength and competitive spirit.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "giant"],
+    "ability_score_increase": {
+      "strength": 2,
+      "constitution": 1
+    },
+    "racial_traits": [
+      "natural_athlete",
+      "stone_endurance",
+      "powerful_build",
+      "mountain_born"
+    ],
+    "subraces": []
+  },
+  {
+    "key": "kenku",
+    "name": "Kenku",
+    "source": "vgtm",
+    "description": "Flightless avian humanoids gifted with mimicry and stealth.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "auran"],
+    "ability_score_increase": {
+      "dexterity": 2,
+      "wisdom": 1
+    },
+    "racial_traits": ["expert_forgery", "kenku_training", "mimicry"],
+    "subraces": []
+  },
+  {
+    "key": "lizardfolk",
+    "name": "Lizardfolk",
+    "source": "vgtm",
+    "description": "Reptilian humanoids driven by practicality and survival instincts.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "draconic"],
+    "ability_score_increase": {
+      "constitution": 2,
+      "wisdom": 1
+    },
+    "racial_traits": [
+      "bite",
+      "cunning_artisan",
+      "hold_breath",
+      "hungry_jaws",
+      "natural_armor",
+      "natures_intuition"
+    ],
+    "subraces": []
+  },
+  {
+    "key": "tabaxi",
+    "name": "Tabaxi",
+    "source": "vgtm",
+    "description": "Feline humanoids driven by curiosity and blessed with remarkable agility.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "one_other"],
+    "ability_score_increase": {
+      "dexterity": 2,
+      "charisma": 1
+    },
+    "racial_traits": [
+      "darkvision",
+      "feline_agility",
+      "cats_claws",
+      "cats_talent"
+    ],
+    "subraces": []
+  },
+  {
+    "key": "triton",
+    "name": "Triton",
+    "source": "vgtm",
+    "description": "Guardians of the ocean depths gifted with aquatic adaptations and innate magic.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "primordial"],
+    "ability_score_increase": {
+      "strength": 1,
+      "constitution": 1,
+      "charisma": 1
+    },
+    "racial_traits": [
+      "amphibious",
+      "control_air_and_water",
+      "emissary_of_the_sea",
+      "guardians_of_the_depths"
+    ],
+    "subraces": []
+  },
+  {
+    "key": "bugbear",
+    "name": "Bugbear",
+    "source": "vgtm",
+    "description": "Large goblinoids that rely on brute strength and stealth to overwhelm their foes.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "goblin"],
+    "ability_score_increase": {
+      "strength": 2,
+      "dexterity": 1
+    },
+    "racial_traits": [
+      "darkvision",
+      "long_limbed",
+      "powerful_build",
+      "sneaky",
+      "surprise_attack"
+    ],
+    "subraces": []
+  },
+  {
+    "key": "goblin",
+    "name": "Goblin",
+    "source": "vgtm",
+    "description": "Small, nimble goblinoids known for their quickness and opportunistic tactics.",
+    "size": "small",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "goblin"],
+    "ability_score_increase": {
+      "dexterity": 2,
+      "constitution": 1
+    },
+    "racial_traits": ["darkvision", "fury_of_the_small", "nimble_escape"],
+    "subraces": []
+  },
+  {
+    "key": "hobgoblin",
+    "name": "Hobgoblin",
+    "source": "vgtm",
+    "description": "Disciplined goblinoids with exceptional martial training.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "goblin"],
+    "ability_score_increase": {
+      "constitution": 2,
+      "intelligence": 1
+    },
+    "racial_traits": ["darkvision", "martial_training", "saving_face"],
+    "subraces": []
+  },
+  {
+    "key": "kobold",
+    "name": "Kobold",
+    "source": "vgtm",
+    "description": "Small reptilian humanoids who thrive through cooperation and cunning.",
+    "size": "small",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "draconic"],
+    "ability_score_increase": {
+      "dexterity": 2
+    },
+    "racial_traits": [
+      "darkvision",
+      "grovel_cower_and_beg",
+      "pack_tactics",
+      "sunlight_sensitivity"
+    ],
+    "subraces": []
+  },
+  {
+    "key": "orc",
+    "name": "Orc",
+    "source": "vgtm",
+    "description": "Powerful warriors driven by fierce determination and relentless aggression.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "orc"],
+    "ability_score_increase": {
+      "strength": 2,
+      "constitution": 1,
+      "intelligence": -2
+    },
+    "racial_traits": ["darkvision", "aggressive", "menacing", "powerful_build"],
+    "subraces": []
+  },
+  {
+    "key": "yuan_ti_pureblood",
+    "name": "Yuan-ti Pureblood",
+    "source": "vgtm",
+    "description": "Humanoids with serpentine ancestry who possess potent magical resistance.",
+    "size": "medium",
+    "speed": 30,
+    "creature_type": "humanoid",
+    "languages": ["common", "abyssal", "draconic"],
+    "ability_score_increase": {
+      "charisma": 2,
+      "intelligence": 1
+    },
+    "racial_traits": [
+      "darkvision",
+      "innate_spellcasting",
+      "magic_resistance",
+      "poison_immunity"
+    ],
+    "subraces": []
+  }
+]

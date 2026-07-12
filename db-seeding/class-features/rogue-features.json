@@ -1,0 +1,79 @@
+[
+  {
+    "key": "sneak_attack",
+    "name": "Sneak Attack",
+    "source": "phb",
+    "description": "You know how to strike subtly and exploit a foe's distraction, dealing extra damage under certain conditions.",
+    "type": "passive"
+  },
+  {
+    "key": "thieves_cant",
+    "name": "Thieves' Cant",
+    "source": "phb",
+    "description": "You know Thieves' Cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation.",
+    "type": "passive"
+  },
+  {
+    "key": "cunning_action",
+    "name": "Cunning Action",
+    "source": "phb",
+    "description": "Your quick thinking and agility allow you to take the Dash, Disengage, or Hide action as a bonus action.",
+    "type": "active"
+  },
+  {
+    "key": "roguish_archetype",
+    "name": "Roguish Archetype",
+    "source": "phb",
+    "description": "Choose a Roguish Archetype, which grants additional features as you gain Rogue levels.",
+    "type": "choice"
+  },
+  {
+    "key": "steady_aim",
+    "name": "Steady Aim",
+    "source": "tcoe",
+    "description": "As a bonus action, you can give yourself advantage on your next attack roll this turn, provided you don't move during the turn.",
+    "type": "active"
+  },
+  {
+    "key": "uncanny_dodge",
+    "name": "Uncanny Dodge",
+    "source": "phb",
+    "description": "When an attacker you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.",
+    "type": "active"
+  },
+  {
+    "key": "reliable_talent",
+    "name": "Reliable Talent",
+    "source": "phb",
+    "description": "Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10.",
+    "type": "passive"
+  },
+  {
+    "key": "blindsense",
+    "name": "Blindsense",
+    "source": "phb",
+    "description": "If you are able to hear, you are aware of the location of any hidden or invisible creature within range.",
+    "type": "passive"
+  },
+  {
+    "key": "slippery_mind",
+    "name": "Slippery Mind",
+    "source": "phb",
+    "description": "You acquire greater mental strength, gaining proficiency in Wisdom saving throws.",
+    "type": "passive"
+  },
+  {
+    "key": "elusive",
+    "name": "Elusive",
+    "source": "phb",
+    "description": "You are so evasive that no attack roll has advantage against you while you aren't incapacitated.",
+    "type": "passive"
+  },
+  {
+    "key": "stroke_of_luck",
+    "name": "Stroke of Luck",
+    "source": "phb",
+    "description": "When your attack misses or you fail an ability check, you can turn the miss into a hit or treat the failed check as a 20.",
+    "type": "active"
+  }
+]

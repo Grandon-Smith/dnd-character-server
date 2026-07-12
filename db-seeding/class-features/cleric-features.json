@@ -1,0 +1,44 @@
+[
+  {
+    "key": "divine_domain",
+    "name": "Divine Domain",
+    "source": "phb",
+    "description": "Choose a Divine Domain, which grants additional features and domain spells as you gain Cleric levels.",
+    "type": "choice"
+  },
+  {
+    "key": "channel_divinity",
+    "name": "Channel Divinity",
+    "source": "phb",
+    "description": "You can channel divine energy to fuel magical effects. The available options are determined by your Divine Domain and other Cleric features.",
+    "type": "special"
+  },
+  {
+    "key": "destroy_undead",
+    "name": "Destroy Undead",
+    "source": "phb",
+    "description": "When an undead fails its saving throw against your Turn Undead, it is instantly destroyed if its challenge rating is low enough.",
+    "type": "passive"
+  },
+  {
+    "key": "divine_intervention",
+    "name": "Divine Intervention",
+    "source": "phb",
+    "description": "You can call upon your deity to intervene on your behalf. The success and effects are determined by the feature's rules.",
+    "type": "active"
+  },
+  {
+    "key": "blessed_strikes",
+    "name": "Blessed Strikes",
+    "source": "tcoe",
+    "description": "You are blessed with divine might in battle, allowing your weapon attacks or cantrips to deal extra radiant damage once on each of your turns.",
+    "type": "passive"
+  },
+  {
+    "key": "harness_divine_power",
+    "name": "Harness Divine Power",
+    "source": "tcoe",
+    "description": "You can expend a use of Channel Divinity to regain an expended spell slot of an appropriate level.",
+    "type": "active"
+  }
+]

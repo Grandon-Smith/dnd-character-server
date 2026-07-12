@@ -1,0 +1,51 @@
+[
+  {
+    "key": "bardic_inspiration",
+    "name": "Bardic Inspiration",
+    "source": "phb",
+    "description": "You inspire others through stirring words or music, allowing them to add a Bardic Inspiration die to certain rolls.",
+    "type": "active"
+  },
+  {
+    "key": "jack_of_all_trades",
+    "name": "Jack of All Trades",
+    "source": "phb",
+    "description": "You can add half your proficiency bonus, rounded down, to any ability check that doesn't already include your proficiency bonus.",
+    "type": "passive"
+  },
+  {
+    "key": "song_of_rest",
+    "name": "Song of Rest",
+    "source": "phb",
+    "description": "You can use soothing music or oration to help revitalize your wounded allies during a short rest.",
+    "type": "passive"
+  },
+  {
+    "key": "bard_college",
+    "name": "Bard College",
+    "source": "phb",
+    "description": "Choose a Bard College, which grants additional features as you gain Bard levels.",
+    "type": "choice"
+  },
+  {
+    "key": "countercharm",
+    "name": "Countercharm",
+    "source": "phb",
+    "description": "You can use musical notes or words of power to grant yourself and nearby allies advantage against being frightened or charmed.",
+    "type": "active"
+  },
+  {
+    "key": "magical_secrets",
+    "name": "Magical Secrets",
+    "source": "phb",
+    "description": "You learn spells from any class's spell list, and they count as Bard spells for you.",
+    "type": "choice"
+  },
+  {
+    "key": "superior_inspiration",
+    "name": "Superior Inspiration",
+    "source": "phb",
+    "description": "When you roll initiative and have no uses of Bardic Inspiration remaining, you regain one use.",
+    "type": "passive"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "key": "divine_sense",
+    "name": "Divine Sense",
+    "source": "phb",
+    "description": "You can open your awareness to detect the presence of powerful celestial, fiendish, and undead creatures, as well as consecrated or desecrated places.",
+    "type": "active"
+  },
+  {
+    "key": "lay_on_hands",
+    "name": "Lay on Hands",
+    "source": "phb",
+    "description": "You have a pool of healing power that you can use to restore hit points or cure certain diseases and poisons.",
+    "type": "active"
+  },
+  {
+    "key": "divine_smite",
+    "name": "Divine Smite",
+    "source": "phb",
+    "description": "When you hit a creature with a melee weapon attack, you can expend a spell slot to deal additional radiant damage to the target.",
+    "type": "active"
+  },
+  {
+    "key": "divine_health",
+    "name": "Divine Health",
+    "source": "phb",
+    "description": "The divine magic flowing through you makes you immune to disease.",
+    "type": "passive"
+  },
+  {
+    "key": "sacred_oath",
+    "name": "Sacred Oath",
+    "source": "phb",
+    "description": "Choose a Sacred Oath, which grants additional features and Channel Divinity options as you gain Paladin levels.",
+    "type": "choice"
+  },
+  {
+    "key": "channel_divinity",
+    "name": "Channel Divinity",
+    "source": "phb",
+    "description": "You can channel divine energy to fuel magical effects. The available options are determined by your Sacred Oath.",
+    "type": "special"
+  },
+  {
+    "key": "aura_of_protection",
+    "name": "Aura of Protection",
+    "source": "phb",
+    "description": "You and nearby allies gain a bonus to saving throws equal to your Charisma modifier while you are conscious.",
+    "type": "passive"
+  },
+  {
+    "key": "aura_of_courage",
+    "name": "Aura of Courage",
+    "source": "phb",
+    "description": "You and nearby allies cannot be frightened while you are conscious.",
+    "type": "passive"
+  },
+  {
+    "key": "cleansing_touch",
+    "name": "Cleansing Touch",
+    "source": "phb",
+    "description": "You can end one spell affecting yourself or another willing creature by touching the target.",
+    "type": "active"
+  }
+]

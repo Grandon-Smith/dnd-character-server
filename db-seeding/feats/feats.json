@@ -1,0 +1,531 @@
+[
+  {
+    "key": "actor",
+    "name": "Actor",
+    "source": "phb",
+    "description": "Skilled at mimicry and dramatic performance.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": ["charisma"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "alert",
+    "name": "Alert",
+    "source": "phb",
+    "description": "Exceptional awareness and quick reactions.",
+    "prerequisites": []
+  },
+  {
+    "key": "athlete",
+    "name": "Athlete",
+    "source": "phb",
+    "description": "Improved physical training and mobility.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": ["strength", "dexterity"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "charger",
+    "name": "Charger",
+    "source": "phb",
+    "description": "Make powerful attacks after rushing toward enemies.",
+    "prerequisites": []
+  },
+  {
+    "key": "crossbow_expert",
+    "name": "Crossbow Expert",
+    "source": "phb",
+    "description": "Master the use of crossbows in close combat.",
+    "prerequisites": []
+  },
+  {
+    "key": "defensive_duelist",
+    "name": "Defensive Duelist",
+    "source": "phb",
+    "description": "Use finesse weapons to parry incoming attacks.",
+    "prerequisites": [
+      {
+        "type": "weapon_property",
+        "value": "finesse"
+      }
+    ]
+  },
+  {
+    "key": "dual_wielder",
+    "name": "Dual Wielder",
+    "source": "phb",
+    "description": "Fight effectively with a weapon in each hand.",
+    "prerequisites": []
+  },
+  {
+    "key": "dungeon_delver",
+    "name": "Dungeon Delver",
+    "source": "phb",
+    "description": "Expert at detecting and surviving dungeon hazards.",
+    "prerequisites": []
+  },
+  {
+    "key": "durable",
+    "name": "Durable",
+    "source": "phb",
+    "description": "Recover more effectively from injuries.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": ["constitution"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "elemental_adept",
+    "name": "Elemental Adept",
+    "source": "phb",
+    "description": "Specialize in spells of a chosen damage type.",
+    "prerequisites": [
+      {
+        "type": "spellcasting"
+      }
+    ],
+    "choices": {
+      "damage_type": ["acid", "cold", "fire", "lightning", "thunder"]
+    },
+    "repeatable": true
+  },
+
+  {
+    "key": "grappler",
+    "name": "Grappler",
+    "source": "phb",
+    "description": "Excel at wrestling and restraining foes.",
+    "prerequisites": [
+      {
+        "type": "ability_score",
+        "ability": "strength",
+        "minimum": 13
+      }
+    ]
+  },
+  {
+    "key": "great_weapon_master",
+    "name": "Great Weapon Master",
+    "source": "phb",
+    "description": "Deliver devastating attacks with heavy weapons.",
+    "prerequisites": []
+  },
+  {
+    "key": "healer",
+    "name": "Healer",
+    "source": "phb",
+    "description": "Use healer's kits to restore additional health.",
+    "prerequisites": []
+  },
+  {
+    "key": "heavily_armored",
+    "name": "Heavily Armored",
+    "source": "phb",
+    "description": "Gain proficiency with heavy armor.",
+    "prerequisites": [
+      {
+        "type": "armor_proficiency",
+        "value": "medium"
+      }
+    ],
+    "ability_score_increase": {
+      "choices": ["strength"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "heavy_armor_master",
+    "name": "Heavy Armor Master",
+    "source": "phb",
+    "description": "Reduce damage while wearing heavy armor.",
+    "prerequisites": [
+      {
+        "type": "armor_proficiency",
+        "value": "heavy"
+      }
+    ],
+    "ability_score_increase": {
+      "choices": ["strength"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "inspiring_leader",
+    "name": "Inspiring Leader",
+    "source": "phb",
+    "description": "Bolster allies with inspiring speeches.",
+    "prerequisites": [
+      {
+        "type": "ability_score",
+        "ability": "charisma",
+        "minimum": 13
+      }
+    ]
+  },
+  {
+    "key": "keen_mind",
+    "name": "Keen Mind",
+    "source": "phb",
+    "description": "Possess an exceptional memory and sense of direction.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": ["intelligence"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "lightly_armored",
+    "name": "Lightly Armored",
+    "source": "phb",
+    "description": "Gain proficiency with light armor.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": ["strength", "dexterity"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "linguist",
+    "name": "Linguist",
+    "source": "phb",
+    "description": "Master additional languages and create ciphers.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": ["intelligence"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "lucky",
+    "name": "Lucky",
+    "source": "phb",
+    "description": "Manipulate fate through extraordinary luck.",
+    "prerequisites": []
+  },
+  {
+    "key": "mage_slayer",
+    "name": "Mage Slayer",
+    "source": "phb",
+    "description": "Specialize in combating spellcasters.",
+    "prerequisites": []
+  },
+  {
+    "key": "magic_initiate",
+    "name": "Magic Initiate",
+    "source": "phb",
+    "description": "Learn a small amount of magic from a chosen class.",
+    "prerequisites": [],
+    "choices": {
+      "spell_list": ["bard", "cleric", "druid", "sorcerer", "warlock", "wizard"]
+    }
+  },
+  {
+    "key": "martial_adept",
+    "name": "Martial Adept",
+    "source": "phb",
+    "description": "Learn Battle Master combat maneuvers.",
+    "prerequisites": []
+  },
+  {
+    "key": "medium_armor_master",
+    "name": "Medium Armor Master",
+    "source": "phb",
+    "description": "Use medium armor with greater effectiveness.",
+    "prerequisites": [
+      {
+        "type": "armor_proficiency",
+        "value": "medium"
+      }
+    ]
+  },
+  {
+    "key": "mobile",
+    "name": "Mobile",
+    "source": "phb",
+    "description": "Move swiftly across the battlefield.",
+    "prerequisites": []
+  },
+  {
+    "key": "moderately_armored",
+    "name": "Moderately Armored",
+    "source": "phb",
+    "description": "Gain proficiency with medium armor and shields.",
+    "prerequisites": [
+      {
+        "type": "armor_proficiency",
+        "value": "light"
+      }
+    ],
+    "ability_score_increase": {
+      "choices": ["strength", "dexterity"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "mounted_combatant",
+    "name": "Mounted Combatant",
+    "source": "phb",
+    "description": "Excel at fighting while mounted.",
+    "prerequisites": []
+  },
+  {
+    "key": "observant",
+    "name": "Observant",
+    "source": "phb",
+    "description": "Notice details others often miss.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": ["intelligence", "wisdom"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "polearm_master",
+    "name": "Polearm Master",
+    "source": "phb",
+    "description": "Master the use of polearms in combat.",
+    "prerequisites": []
+  },
+  {
+    "key": "resilient",
+    "name": "Resilient",
+    "source": "phb",
+    "description": "Gain proficiency in saving throws tied to a chosen ability.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": [
+        "strength",
+        "dexterity",
+        "constitution",
+        "intelligence",
+        "wisdom",
+        "charisma"
+      ],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "ritual_caster",
+    "name": "Ritual Caster",
+    "source": "phb",
+    "description": "Learn to cast ritual spells from a ritual book.",
+    "prerequisites": [
+      {
+        "type": "ability_score",
+        "choices": ["intelligence", "wisdom"],
+        "minimum": 13
+      }
+    ],
+    "choices": {
+      "spell_list": ["bard", "cleric", "druid", "sorcerer", "warlock", "wizard"]
+    }
+  },
+  {
+    "key": "savage_attacker",
+    "name": "Savage Attacker",
+    "source": "phb",
+    "description": "Strike with unusually forceful melee attacks.",
+    "prerequisites": []
+  },
+  {
+    "key": "sentinel",
+    "name": "Sentinel",
+    "source": "phb",
+    "description": "Prevent enemies from escaping your reach.",
+    "prerequisites": []
+  },
+  {
+    "key": "sharpshooter",
+    "name": "Sharpshooter",
+    "source": "phb",
+    "description": "Excel with ranged weapon attacks.",
+    "prerequisites": []
+  },
+  {
+    "key": "shield_master",
+    "name": "Shield Master",
+    "source": "phb",
+    "description": "Use shields offensively and defensively.",
+    "prerequisites": [
+      {
+        "type": "equipment",
+        "value": "shield"
+      }
+    ]
+  },
+  {
+    "key": "skilled",
+    "name": "Skilled",
+    "source": "phb",
+    "description": "Gain proficiency in additional skills or tools.",
+    "prerequisites": []
+  },
+  {
+    "key": "skulker",
+    "name": "Skulker",
+    "source": "phb",
+    "description": "Hide effectively in dim light and shadows.",
+    "prerequisites": []
+  },
+  {
+    "key": "spell_sniper",
+    "name": "Spell Sniper",
+    "source": "phb",
+    "description": "Enhance the range and precision of spell attacks.",
+    "prerequisites": [
+      {
+        "type": "spellcasting"
+      }
+    ]
+  },
+  {
+    "key": "tavern_brawler",
+    "name": "Tavern Brawler",
+    "source": "phb",
+    "description": "Fight effectively with improvised weapons.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": ["strength", "constitution"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "tough",
+    "name": "Tough",
+    "source": "phb",
+    "description": "Gain exceptional durability and stamina.",
+    "prerequisites": []
+  },
+  {
+    "key": "war_caster",
+    "name": "War Caster",
+    "source": "phb",
+    "description": "Maintain concentration and cast spells in combat.",
+    "prerequisites": [
+      {
+        "type": "spellcasting"
+      }
+    ]
+  },
+  {
+    "key": "weapon_master",
+    "name": "Weapon Master",
+    "source": "phb",
+    "description": "Gain proficiency with additional weapons.",
+    "prerequisites": [],
+    "ability_score_increase": {
+      "choices": ["strength", "dexterity"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "bountiful_luck",
+    "name": "Bountiful Luck",
+    "source": "xgte",
+    "description": "Share your extraordinary luck with allies.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "halfling"
+      }
+    ]
+  },
+  {
+    "key": "dragon_fear",
+    "name": "Dragon Fear",
+    "source": "xgte",
+    "description": "Channel draconic presence to frighten enemies.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "dragonborn"
+      }
+    ],
+    "ability_score_increase": {
+      "choices": ["strength", "constitution", "charisma"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "dragon_hide",
+    "name": "Dragon Hide",
+    "source": "xgte",
+    "description": "Develop tougher scales and natural weapons.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "dragonborn"
+      }
+    ],
+    "ability_score_increase": {
+      "choices": ["strength", "constitution", "charisma"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "drow_high_magic",
+    "name": "Drow High Magic",
+    "source": "xgte",
+    "description": "Learn additional innate drow magic.",
+    "prerequisites": [
+      {
+        "type": "subrace",
+        "value": "drow"
+      }
+    ]
+  },
+  {
+    "key": "dwarven_fortitude",
+    "name": "Dwarven Fortitude",
+    "source": "xgte",
+    "description": "Recover vitality while defending yourself.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "dwarf"
+      }
+    ],
+    "ability_score_increase": {
+      "choices": ["constitution"],
+      "amount": 1,
+      "count": 1
+    }
+  },
+  {
+    "key": "elven_accuracy",
+    "name": "Elven Accuracy",
+    "source": "xgte",
+    "description": "Strike with remarkable precision when you have advantage.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "elf"
+      }
+    ],
+    "ability_score_increase": {
+      "choices": ["dexterity", "intelligence", "wisdom", "charisma"],
+      "amount": 1,
+      "count": 1
+    }
+  }
+]

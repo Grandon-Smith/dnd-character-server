@@ -1,0 +1,93 @@
+[
+  {
+    "key": "rage",
+    "name": "Rage",
+    "source": "phb",
+    "description": "Enter a battle rage that grants bonuses to damage, resistance to certain damage types, and other benefits while raging.",
+    "type": "active"
+  },
+  {
+    "key": "reckless_attack",
+    "name": "Reckless Attack",
+    "source": "phb",
+    "description": "When you make your first attack on your turn, you can attack recklessly, gaining advantage on melee weapon attacks using Strength, but attack rolls against you have advantage until your next turn.",
+    "type": "active"
+  },
+  {
+    "key": "danger_sense",
+    "name": "Danger Sense",
+    "source": "phb",
+    "description": "You gain an uncanny sense of when things nearby aren't as they should be, granting advantage on certain Dexterity saving throws against effects you can see.",
+    "type": "passive"
+  },
+  {
+    "key": "primal_path",
+    "name": "Primal Path",
+    "source": "phb",
+    "description": "Choose a Primal Path, which grants additional features as you gain Barbarian levels.",
+    "type": "choice"
+  },
+  {
+    "key": "fast_movement",
+    "name": "Fast Movement",
+    "source": "phb",
+    "description": "Your speed increases while you aren't wearing heavy armor.",
+    "type": "passive"
+  },
+  {
+    "key": "feral_instinct",
+    "name": "Feral Instinct",
+    "source": "phb",
+    "description": "Your instincts are so honed that you have advantage on initiative rolls and can act normally in certain situations when surprised.",
+    "type": "passive"
+  },
+  {
+    "key": "brutal_critical",
+    "name": "Brutal Critical",
+    "source": "phb",
+    "description": "You can roll additional weapon damage dice when determining the extra damage for a critical hit.",
+    "type": "passive"
+  },
+  {
+    "key": "relentless_rage",
+    "name": "Relentless Rage",
+    "source": "phb",
+    "description": "While raging, you can make a Constitution saving throw to avoid being reduced to 0 hit points.",
+    "type": "passive"
+  },
+  {
+    "key": "persistent_rage",
+    "name": "Persistent Rage",
+    "source": "phb",
+    "description": "Your rage ends early only if you fall unconscious or choose to end it.",
+    "type": "passive"
+  },
+  {
+    "key": "indomitable_might",
+    "name": "Indomitable Might",
+    "source": "phb",
+    "description": "If your total for a Strength check is less than your Strength score, you can use your Strength score in place of the total.",
+    "type": "passive"
+  },
+  {
+    "key": "primal_champion",
+    "name": "Primal Champion",
+    "source": "phb",
+    "description": "Your Strength and Constitution scores increase, along with their maximum values.",
+    "type": "passive"
+  },
+  {
+    "key": "primal_knowledge",
+    "name": "Primal Knowledge",
+    "source": "tcoe",
+    "description": "You gain proficiency in an additional skill from the Barbarian skill list.",
+    "type": "choice"
+  },
+  {
+    "key": "instinctive_pounce",
+    "name": "Instinctive Pounce",
+    "source": "tcoe",
+    "description": "When you enter your rage, you can move up to half your speed as part of the same bonus action.",
+    "type": "passive"
+  }
+]

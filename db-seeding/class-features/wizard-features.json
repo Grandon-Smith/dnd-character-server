@@ -1,0 +1,37 @@
+[
+  {
+    "key": "arcane_recovery",
+    "name": "Arcane Recovery",
+    "source": "phb",
+    "description": "Once per day when you finish a short rest, you can recover expended spell slots of a combined level determined by your Wizard level.",
+    "type": "active"
+  },
+  {
+    "key": "arcane_tradition",
+    "name": "Arcane Tradition",
+    "source": "phb",
+    "description": "Choose an Arcane Tradition, which grants additional features as you gain Wizard levels.",
+    "type": "choice"
+  },
+  {
+    "key": "cantrip_formulas",
+    "name": "Cantrip Formulas",
+    "source": "tcoe",
+    "description": "After a long rest, you can replace one Wizard cantrip you know with another cantrip from the Wizard spell list.",
+    "type": "choice"
+  },
+  {
+    "key": "spell_mastery",
+    "name": "Spell Mastery",
+    "source": "phb",
+    "description": "Choose a 1st-level and a 2nd-level Wizard spell that you can cast at will without expending spell slots, subject to the feature's rules.",
+    "type": "special"
+  },
+  {
+    "key": "signature_spells",
+    "name": "Signature Spells",
+    "source": "phb",
+    "description": "Choose two 3rd-level Wizard spells as your signature spells, allowing you to cast each once without expending a spell slot before requiring a long rest.",
+    "type": "special"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "key": "ability_score_improvement",
+    "name": "Ability Score Improvement",
+    "source": "phb",
+    "description": "Increase one ability score by 2, or increase two ability scores by 1 each. Alternatively, you may choose a feat if feats are being used.",
+    "type": "choice"
+  },
+  {
+    "key": "unarmored_defense",
+    "name": "Unarmored Defense",
+    "source": "phb",
+    "description": "While you are wearing no armor, your Armor Class is determined by your class's Unarmored Defense formula.",
+    "type": "passive"
+  },
+  {
+    "key": "timeless_body",
+    "name": "Timeless Body",
+    "source": "phb",
+    "description": "The magic sustaining you causes you to age much more slowly and protects you from the frailties of old age.",
+    "type": "passive"
+  },
+  {
+    "key": "fighting_style",
+    "name": "Fighting Style",
+    "source": "phb",
+    "description": "Adopt a particular style of fighting. You can't take the same Fighting Style option more than once, even if you later gain another choice.",
+    "type": "choice"
+  },
+
+  {
+    "key": "expertise",
+    "name": "Expertise",
+    "source": "phb",
+    "description": "Choose proficient skills or tools to gain expertise, allowing you to double your proficiency bonus for checks made with them.",
+    "type": "choice"
+  },
+  {
+    "key": "extra_attack",
+    "name": "Extra Attack",
+    "source": "phb",
+    "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn.",
+    "type": "passive"
+  },
+  {
+    "key": "spellcasting",
+    "name": "Spellcasting",
+    "source": "phb",
+    "description": "You have learned to cast spells using the spellcasting rules for your class.",
+    "type": "special"
+  },
+  {
+    "key": "martial_versatility",
+    "name": "Martial Versatility",
+    "source": "tcoe",
+    "description": "Whenever you reach a level that grants an Ability Score Improvement, you can replace a Fighting Style you know with another available to Rangers.",
+    "type": "choice"
+  }
+]
