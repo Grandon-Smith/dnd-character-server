@@ -5,10 +5,18 @@
     "source": "phb",
     "description": "Skilled at mimicry and dramatic performance.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": ["charisma"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "You have advantage on Charisma (Deception) and Charisma (Performance) checks when trying to pass yourself off as a different person.",
+      "You can mimic the speech of another person or the sounds made by other creatures after hearing them for at least 1 minute. A creature that hears the sounds can determine they are imitations with a successful Wisdom (Insight) check contested by your Charisma (Deception) check."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
@@ -16,7 +24,21 @@
     "name": "Alert",
     "source": "phb",
     "description": "Exceptional awareness and quick reactions.",
-    "prerequisites": []
+    "prerequisites": [],
+    "details": [
+      "You can't be surprised while you are conscious.",
+      "Other creatures don't gain advantage on attack rolls against you as a result of being unseen by you."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": [
+        {
+          "type": "initiative",
+          "amount": 5
+        }
+      ]
+    }
   },
   {
     "key": "athlete",
@@ -24,10 +46,19 @@
     "source": "phb",
     "description": "Improved physical training and mobility.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": ["strength", "dexterity"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "Standing up from prone uses only 5 feet of your movement.",
+      "Climbing doesn't cost you extra movement.",
+      "You can make a running long jump or running high jump after moving only 5 feet on foot."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "dexterity"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
@@ -35,14 +66,43 @@
     "name": "Charger",
     "source": "phb",
     "description": "Make powerful attacks after rushing toward enemies.",
-    "prerequisites": []
+    "prerequisites": [],
+    "details": [
+      "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or to shove a creature.",
+      "If you move at least 10 feet in a straight line immediately before taking this bonus action, you gain a +5 bonus to the attack's damage roll if you chose to make a melee attack.",
+      "If you chose to shove and succeed, you push the target up to 10 feet away from you."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": [
+        {
+          "type": "charger_damage",
+          "amount": 5
+        },
+        {
+          "type": "charger_shove_distance",
+          "amount": 10
+        }
+      ]
+    }
   },
   {
     "key": "crossbow_expert",
     "name": "Crossbow Expert",
     "source": "phb",
     "description": "Master the use of crossbows in close combat.",
-    "prerequisites": []
+    "prerequisites": [],
+    "details": [
+      "You ignore the loading quality of crossbows with which you are proficient.",
+      "Being within 5 feet of a hostile creature doesn't impose disadvantage on your ranged attack rolls.",
+      "When you use the Attack action and attack with a one-handed weapon, you can use a bonus action to attack with a hand crossbow you are holding."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "defensive_duelist",
@@ -54,21 +114,55 @@
         "type": "weapon_property",
         "value": "finesse"
       }
-    ]
+    ],
+    "details": [
+      "When you are wielding a finesse weapon with which you are proficient and another creature hits you with a melee attack, you can use your reaction to add your proficiency bonus to your AC for that attack."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "dual_wielder",
     "name": "Dual Wielder",
     "source": "phb",
     "description": "Fight effectively with a weapon in each hand.",
-    "prerequisites": []
+    "prerequisites": [],
+    "details": [
+      "You gain a +1 bonus to AC while you are wielding a separate melee weapon in each hand.",
+      "You can use two-weapon fighting even when the one-handed melee weapons you are wielding aren't light.",
+      "You can draw or stow two one-handed weapons when you would normally be able to draw or stow only one."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": [
+        {
+          "type": "armor_class",
+          "amount": 1
+        }
+      ]
+    }
   },
   {
     "key": "dungeon_delver",
     "name": "Dungeon Delver",
     "source": "phb",
     "description": "Expert at detecting and surviving dungeon hazards.",
-    "prerequisites": []
+    "prerequisites": [],
+    "details": [
+      "You have advantage on Wisdom (Perception) and Intelligence (Investigation) checks made to detect secret doors.",
+      "You have advantage on saving throws made to avoid or resist traps.",
+      "You have resistance to damage dealt by traps.",
+      "You can search for traps while traveling at a normal pace instead of only at a slow pace."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "durable",
@@ -76,10 +170,17 @@
     "source": "phb",
     "description": "Recover more effectively from injuries.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": ["constitution"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "When you roll a Hit Die to regain hit points, the minimum number of hit points you regain equals twice your Constitution modifier (minimum of 2)."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["constitution"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
@@ -92,54 +193,100 @@
         "type": "spellcasting"
       }
     ],
-    "choices": {
-      "damage_type": ["acid", "cold", "fire", "lightning", "thunder"]
-    },
-    "repeatable": true
+    "details": [
+      "Choose one of the following damage types: acid, cold, fire, lightning, or thunder.",
+      "Spells you cast ignore resistance to the chosen damage type.",
+      "When you roll damage for a spell you cast that deals the chosen damage type, any 1 on a damage die is treated as a 2."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
-
   {
     "key": "grappler",
     "name": "Grappler",
     "source": "phb",
-    "description": "Excel at wrestling and restraining foes.",
+    "description": "Excel at wrestling foes into submission.",
     "prerequisites": [
       {
         "type": "ability_score",
         "ability": "strength",
         "minimum": 13
       }
-    ]
+    ],
+    "details": [
+      "You have advantage on attack rolls against a creature you are grappling.",
+      "You can use your action to try to pin a creature grappled by you. To do so, make another grapple check. If you succeed, both you and the creature are restrained until the grapple ends."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "great_weapon_master",
     "name": "Great Weapon Master",
     "source": "phb",
-    "description": "Deliver devastating attacks with heavy weapons.",
-    "prerequisites": []
+    "description": "Deliver devastating blows with heavy weapons.",
+    "prerequisites": [],
+    "details": [
+      "On your turn, when you score a critical hit with a melee weapon or reduce a creature to 0 hit points with one, you can make one melee weapon attack as a bonus action.",
+      "Before you make a melee attack with a heavy weapon that you are proficient with, you can choose to take a -5 penalty to the attack roll. If the attack hits, it deals +10 damage."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": [
+        {
+          "type": "great_weapon_master_attack_penalty",
+          "amount": -5
+        },
+        {
+          "type": "great_weapon_master_damage_bonus",
+          "amount": 10
+        }
+      ]
+    }
   },
   {
     "key": "healer",
     "name": "Healer",
     "source": "phb",
-    "description": "Use healer's kits to restore additional health.",
-    "prerequisites": []
+    "description": "Restore allies with exceptional medical skill.",
+    "prerequisites": [],
+    "details": [
+      "When you use a healer's kit to stabilize a dying creature, that creature also regains 1 hit point.",
+      "As an action, you can spend one use of a healer's kit to restore hit points to a creature. A creature can't benefit from this feat again until it finishes a short or long rest."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "heavily_armored",
     "name": "Heavily Armored",
     "source": "phb",
-    "description": "Gain proficiency with heavy armor.",
+    "description": "Gain training with heavy armor.",
     "prerequisites": [
       {
         "type": "armor_proficiency",
         "value": "medium"
       }
     ],
-    "ability_score_increase": {
-      "choices": ["strength"],
-      "amount": 1,
-      "count": 1
+    "details": ["You gain proficiency with heavy armor."],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
@@ -153,24 +300,44 @@
         "value": "heavy"
       }
     ],
-    "ability_score_increase": {
-      "choices": ["strength"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "While you are wearing heavy armor, bludgeoning, piercing, and slashing damage that you take from nonmagical weapons is reduced by 3."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": [
+        {
+          "type": "nonmagical_bps_damage_reduction",
+          "amount": 3
+        }
+      ]
     }
   },
   {
     "key": "inspiring_leader",
     "name": "Inspiring Leader",
     "source": "phb",
-    "description": "Bolster allies with inspiring speeches.",
+    "description": "Bolster companions with stirring speeches.",
     "prerequisites": [
       {
         "type": "ability_score",
         "ability": "charisma",
         "minimum": 13
       }
-    ]
+    ],
+    "details": [
+      "After spending 10 minutes inspiring your companions, choose up to six friendly creatures within 30 feet that can see or hear you and understand you. Each gains temporary hit points equal to your level + your Charisma modifier. A creature can't gain temporary hit points from this feat again until it finishes a short or long rest."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "keen_mind",
@@ -178,49 +345,92 @@
     "source": "phb",
     "description": "Possess an exceptional memory and sense of direction.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": ["intelligence"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "You always know which way is north.",
+      "You always know the number of hours left before the next sunrise or sunset.",
+      "You can accurately recall anything you have seen or heard within the past month."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["intelligence"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "lightly_armored",
     "name": "Lightly Armored",
     "source": "phb",
-    "description": "Gain proficiency with light armor.",
+    "description": "Gain training with light armor.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": ["strength", "dexterity"],
-      "amount": 1,
-      "count": 1
+    "details": ["You gain proficiency with light armor."],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "dexterity"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "linguist",
     "name": "Linguist",
     "source": "phb",
-    "description": "Master additional languages and create ciphers.",
+    "description": "Master additional languages and create secret codes.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": ["intelligence"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "You learn three languages of your choice.",
+      "You can ably create written ciphers. Others can't decipher a code you create unless you teach them, they succeed on an Intelligence check against your cipher DC, or they use magic."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["intelligence"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "lucky",
     "name": "Lucky",
     "source": "phb",
-    "description": "Manipulate fate through extraordinary luck.",
-    "prerequisites": []
+    "description": "Twist fate in your favor.",
+    "prerequisites": [],
+    "details": [
+      "You have 3 luck points.",
+      "Whenever you make an attack roll, an ability check, or a saving throw, you can spend one luck point to roll an additional d20 and choose which die to use.",
+      "When an attack roll is made against you, you can spend one luck point to roll a d20 and choose whether the attack uses your roll or the attacker's roll.",
+      "You regain all expended luck points when you finish a long rest."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "mage_slayer",
     "name": "Mage Slayer",
     "source": "phb",
-    "description": "Specialize in combating spellcasters.",
-    "prerequisites": []
+    "description": "Punish spellcasters who fight in close quarters.",
+    "prerequisites": [],
+    "details": [
+      "When a creature within 5 feet of you casts a spell, you can use your reaction to make a melee weapon attack against that creature.",
+      "When you damage a creature that is concentrating on a spell, that creature has disadvantage on the saving throw it makes to maintain its concentration.",
+      "You have advantage on saving throws against spells cast by creatures within 5 feet of you."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "magic_initiate",
@@ -228,59 +438,124 @@
     "source": "phb",
     "description": "Learn a small amount of magic from a chosen class.",
     "prerequisites": [],
-    "choices": {
-      "spell_list": ["bard", "cleric", "druid", "sorcerer", "warlock", "wizard"]
+    "details": [
+      "Choose a class: bard, cleric, druid, sorcerer, warlock, or wizard.",
+      "Learn two cantrips of your choice from that class's spell list.",
+      "Learn one 1st-level spell of your choice from the same spell list.",
+      "You can cast the 1st-level spell once without expending a spell slot, and you regain the ability to do so when you finish a long rest.",
+      "Your spellcasting ability for these spells depends on the class you chose."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "martial_adept",
     "name": "Martial Adept",
     "source": "phb",
-    "description": "Learn Battle Master combat maneuvers.",
-    "prerequisites": []
+    "description": "Learn martial maneuvers used by battle masters.",
+    "prerequisites": [],
+    "details": [
+      "You learn two maneuvers of your choice from those available to the Battle Master archetype.",
+      "You gain one superiority die, which is a d6.",
+      "This superiority die is used to fuel your maneuvers and is regained when you finish a short or long rest."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "medium_armor_master",
     "name": "Medium Armor Master",
     "source": "phb",
-    "description": "Use medium armor with greater effectiveness.",
+    "description": "Wear medium armor more effectively.",
     "prerequisites": [
       {
         "type": "armor_proficiency",
         "value": "medium"
       }
-    ]
+    ],
+    "details": [
+      "Wearing medium armor doesn't impose disadvantage on your Dexterity (Stealth) checks.",
+      "When wearing medium armor, you can add up to +3 of your Dexterity modifier to your Armor Class instead of +2."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": [
+        {
+          "type": "maximum_dexterity_bonus_to_medium_armor",
+          "amount": 3
+        }
+      ]
+    }
   },
   {
     "key": "mobile",
     "name": "Mobile",
     "source": "phb",
     "description": "Move swiftly across the battlefield.",
-    "prerequisites": []
+    "prerequisites": [],
+    "details": [
+      "When you use the Dash action, difficult terrain doesn't cost you extra movement on that turn.",
+      "When you make a melee attack against a creature, you don't provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": [
+        {
+          "type": "speed",
+          "amount": 10
+        }
+      ]
+    }
   },
   {
     "key": "moderately_armored",
     "name": "Moderately Armored",
     "source": "phb",
-    "description": "Gain proficiency with medium armor and shields.",
+    "description": "Gain training with medium armor and shields.",
     "prerequisites": [
       {
         "type": "armor_proficiency",
         "value": "light"
       }
     ],
-    "ability_score_increase": {
-      "choices": ["strength", "dexterity"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "You gain proficiency with medium armor.",
+      "You gain proficiency with shields."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "dexterity"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "mounted_combatant",
     "name": "Mounted Combatant",
     "source": "phb",
-    "description": "Excel at fighting while mounted.",
-    "prerequisites": []
+    "description": "Excel while fighting from horseback or another mount.",
+    "prerequisites": [],
+    "details": [
+      "You have advantage on melee attack rolls against any unmounted creature that is smaller than your mount.",
+      "You can force an attack targeted at your mount to target you instead.",
+      "If your mount is subjected to an effect that allows it to make a Dexterity saving throw for half damage, it instead takes no damage on a successful save and only half damage on a failed save."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "observant",
@@ -288,43 +563,75 @@
     "source": "phb",
     "description": "Notice details others often miss.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": ["intelligence", "wisdom"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "If you can see a creature's mouth while it is speaking a language you understand, you can interpret what it's saying by reading its lips."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["intelligence", "wisdom"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": [
+        {
+          "type": "passive_perception",
+          "amount": 5
+        },
+        {
+          "type": "passive_investigation",
+          "amount": 5
+        }
+      ]
     }
   },
   {
     "key": "polearm_master",
     "name": "Polearm Master",
     "source": "phb",
-    "description": "Master the use of polearms in combat.",
-    "prerequisites": []
+    "description": "Master fighting with polearms.",
+    "prerequisites": [],
+    "details": [
+      "When you take the Attack action and attack only with a glaive, halberd, quarterstaff, or spear, you can use a bonus action to make a melee attack with the opposite end of the weapon.",
+      "While you are wielding a glaive, halberd, pike, quarterstaff, or spear, other creatures provoke an opportunity attack from you when they enter your reach."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "resilient",
     "name": "Resilient",
     "source": "phb",
-    "description": "Gain proficiency in saving throws tied to a chosen ability.",
+    "description": "Become more resilient in a chosen ability.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": [
-        "strength",
-        "dexterity",
-        "constitution",
-        "intelligence",
-        "wisdom",
-        "charisma"
-      ],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "You gain proficiency in saving throws using the chosen ability."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": [
+          "strength",
+          "dexterity",
+          "constitution",
+          "intelligence",
+          "wisdom",
+          "charisma"
+        ],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "ritual_caster",
     "name": "Ritual Caster",
     "source": "phb",
-    "description": "Learn to cast ritual spells from a ritual book.",
+    "description": "Learn to cast ritual spells from a chosen class.",
     "prerequisites": [
       {
         "type": "ability_score",
@@ -332,67 +639,148 @@
         "minimum": 13
       }
     ],
-    "choices": {
-      "spell_list": ["bard", "cleric", "druid", "sorcerer", "warlock", "wizard"]
+    "details": [
+      "Choose one class: bard, cleric, druid, sorcerer, warlock, or wizard.",
+      "You receive a ritual book containing two 1st-level ritual spells of your choice from that class's spell list.",
+      "If you find a spell in written form that has the ritual tag and is on your chosen class's spell list, you can add it to your ritual book if the spell's level is no higher than half your level (rounded up) and you spend the required time and gold to copy it."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "savage_attacker",
     "name": "Savage Attacker",
     "source": "phb",
-    "description": "Strike with unusually forceful melee attacks.",
-    "prerequisites": []
+    "description": "Strike with especially devastating attacks.",
+    "prerequisites": [],
+    "details": [
+      "Once per turn when you roll damage for a melee weapon attack, you can reroll the weapon's damage dice and use either total."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "sentinel",
     "name": "Sentinel",
     "source": "phb",
     "description": "Prevent enemies from escaping your reach.",
-    "prerequisites": []
+    "prerequisites": [],
+    "details": [
+      "When you hit a creature with an opportunity attack, its speed becomes 0 for the rest of the turn.",
+      "Creatures provoke opportunity attacks from you even if they take the Disengage action before leaving your reach.",
+      "When a creature within 5 feet of you attacks a target other than you, you can use your reaction to make a melee weapon attack against that creature."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "sharpshooter",
     "name": "Sharpshooter",
     "source": "phb",
-    "description": "Excel with ranged weapon attacks.",
-    "prerequisites": []
+    "description": "Excel at making difficult ranged attacks.",
+    "prerequisites": [],
+    "details": [
+      "Attacking at long range doesn't impose disadvantage on your ranged weapon attack rolls.",
+      "Your ranged weapon attacks ignore half cover and three-quarters cover.",
+      "Before making an attack with a ranged weapon you are proficient with, you can take a -5 penalty to the attack roll. If the attack hits, it deals +10 damage."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": [
+        {
+          "type": "sharpshooter_attack_penalty",
+          "amount": -5
+        },
+        {
+          "type": "sharpshooter_damage_bonus",
+          "amount": 10
+        }
+      ]
+    }
   },
   {
     "key": "shield_master",
     "name": "Shield Master",
     "source": "phb",
-    "description": "Use shields offensively and defensively.",
-    "prerequisites": [
-      {
-        "type": "equipment",
-        "value": "shield"
-      }
-    ]
+    "description": "Use your shield for both offense and defense.",
+    "prerequisites": [],
+    "details": [
+      "If you take the Attack action on your turn, you can use a bonus action to try to shove a creature within 5 feet of you with your shield.",
+      "If you aren't incapacitated, you can add your shield's AC bonus to Dexterity saving throws against spells or other harmful effects that target only you.",
+      "If you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you can use your reaction to take no damage on a successful save while wielding a shield."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "skilled",
     "name": "Skilled",
     "source": "phb",
-    "description": "Gain proficiency in additional skills or tools.",
-    "prerequisites": []
+    "description": "Gain proficiency in a variety of skills or tools.",
+    "prerequisites": [],
+    "details": [
+      "Gain proficiency in any combination of three skills or tools of your choice."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": {
+        "choices": "any",
+        "amount": 1,
+        "count": 3
+      },
+      "other": []
+    }
   },
   {
     "key": "skulker",
     "name": "Skulker",
     "source": "phb",
-    "description": "Hide effectively in dim light and shadows.",
-    "prerequisites": []
+    "description": "Become exceptionally difficult to detect while hidden.",
+    "prerequisites": [],
+    "details": [
+      "You can try to hide when you are lightly obscured.",
+      "When you are hidden from a creature and miss it with a ranged weapon attack, making the attack doesn't reveal your position.",
+      "Dim light doesn't impose disadvantage on your Wisdom (Perception) checks relying on sight."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "spell_sniper",
     "name": "Spell Sniper",
     "source": "phb",
-    "description": "Enhance the range and precision of spell attacks.",
+    "description": "Deliver spells with exceptional precision.",
     "prerequisites": [
       {
         "type": "spellcasting"
       }
-    ]
+    ],
+    "details": [
+      "Learn one attack-roll cantrip from bard, cleric, druid, sorcerer, warlock, or wizard.",
+      "The range of your spell attacks is doubled.",
+      "Your spell attacks ignore half cover and three-quarters cover."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "tavern_brawler",
@@ -400,132 +788,796 @@
     "source": "phb",
     "description": "Fight effectively with improvised weapons.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": ["strength", "constitution"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "You are proficient with improvised weapons.",
+      "Your unarmed strike uses a d4 for damage.",
+      "When you hit a creature with an unarmed strike or improvised weapon, you can use a bonus action to attempt to grapple the target."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "constitution"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "tough",
     "name": "Tough",
     "source": "phb",
-    "description": "Gain exceptional durability and stamina.",
-    "prerequisites": []
+    "description": "Your resilience grants you additional vitality.",
+    "prerequisites": [],
+    "details": [],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": [
+        {
+          "type": "hit_points_per_level",
+          "amount": 2
+        }
+      ]
+    }
   },
   {
     "key": "war_caster",
     "name": "War Caster",
     "source": "phb",
-    "description": "Maintain concentration and cast spells in combat.",
+    "description": "Maintain concentration and cast spells in the thick of combat.",
     "prerequisites": [
       {
         "type": "spellcasting"
       }
-    ]
+    ],
+    "details": [
+      "You have advantage on Constitution saving throws that you make to maintain your concentration on a spell when you take damage.",
+      "You can perform the somatic components of spells even when you have weapons or a shield in one or both hands.",
+      "When a hostile creature's movement provokes an opportunity attack from you, you can use your reaction to cast a spell at the creature instead of making an opportunity attack."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "weapon_master",
     "name": "Weapon Master",
     "source": "phb",
-    "description": "Gain proficiency with additional weapons.",
+    "description": "Train with a wider variety of weapons.",
     "prerequisites": [],
-    "ability_score_increase": {
-      "choices": ["strength", "dexterity"],
-      "amount": 1,
-      "count": 1
+    "details": ["Gain proficiency with four weapons of your choice."],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "dexterity"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "bountiful_luck",
     "name": "Bountiful Luck",
     "source": "xgte",
-    "description": "Share your extraordinary luck with allies.",
+    "description": "Share your halfling luck with allies.",
     "prerequisites": [
       {
         "type": "race",
         "value": "halfling"
       }
-    ]
+    ],
+    "details": [
+      "When an ally within 30 feet rolls a 1 on a d20, you can use your reaction to let them reroll the die.",
+      "You can't use this feature again until the start of your next turn."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "dragon_fear",
     "name": "Dragon Fear",
     "source": "xgte",
-    "description": "Channel draconic presence to frighten enemies.",
+    "description": "Channel your draconic presence to terrify foes.",
     "prerequisites": [
       {
         "type": "race",
         "value": "dragonborn"
       }
     ],
-    "ability_score_increase": {
-      "choices": ["strength", "constitution", "charisma"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "You can replace your Breath Weapon with a terrifying roar that frightens nearby creatures."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "constitution", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "dragon_hide",
     "name": "Dragon Hide",
     "source": "xgte",
-    "description": "Develop tougher scales and natural weapons.",
+    "description": "Develop scales and claws like your draconic ancestors.",
     "prerequisites": [
       {
         "type": "race",
         "value": "dragonborn"
       }
     ],
-    "ability_score_increase": {
-      "choices": ["strength", "constitution", "charisma"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "Your scales harden, giving you a base AC of 13 + your Dexterity modifier while not wearing armor.",
+      "You grow retractable claws that can be used as natural weapons."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "constitution", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": [
+        {
+          "type": "base_armor_class",
+          "amount": 13
+        }
+      ]
     }
   },
   {
     "key": "drow_high_magic",
     "name": "Drow High Magic",
     "source": "xgte",
-    "description": "Learn additional innate drow magic.",
+    "description": "Expand your innate drow spellcasting.",
     "prerequisites": [
       {
-        "type": "subrace",
-        "value": "drow"
+        "type": "race",
+        "value": "elf",
+        "subrace": "drow"
       }
-    ]
+    ],
+    "details": [
+      "You learn the Detect Magic spell and can cast it at will without expending a spell slot.",
+      "You learn the Levitate spell and can cast it once without expending a spell slot. You regain the ability to do so when you finish a long rest.",
+      "You learn the Dispel Magic spell and can cast it once without expending a spell slot. You regain the ability to do so when you finish a long rest.",
+      "Charisma is your spellcasting ability for these spells."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
   },
   {
     "key": "dwarven_fortitude",
     "name": "Dwarven Fortitude",
     "source": "xgte",
-    "description": "Recover vitality while defending yourself.",
+    "description": "Recover from injuries while defending yourself.",
     "prerequisites": [
       {
         "type": "race",
         "value": "dwarf"
       }
     ],
-    "ability_score_increase": {
-      "choices": ["constitution"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "Whenever you take the Dodge action in combat, you can spend one Hit Die to heal yourself."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["constitution"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   },
   {
     "key": "elven_accuracy",
     "name": "Elven Accuracy",
     "source": "xgte",
-    "description": "Strike with remarkable precision when you have advantage.",
+    "description": "Your aim is exceptionally precise.",
     "prerequisites": [
       {
         "type": "race",
         "value": "elf"
       }
     ],
-    "ability_score_increase": {
-      "choices": ["dexterity", "intelligence", "wisdom", "charisma"],
-      "amount": 1,
-      "count": 1
+    "details": [
+      "Whenever you have advantage on an attack roll using Dexterity, Intelligence, Wisdom, or Charisma, you can reroll one of the dice once."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["dexterity", "intelligence", "wisdom", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "fade_away",
+    "name": "Fade Away",
+    "source": "xgte",
+    "description": "Briefly vanish after taking damage.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "gnome"
+      }
+    ],
+    "details": [
+      "Immediately after you take damage, you can use a reaction to magically become invisible until the end of your next turn or until you attack, deal damage, or force a creature to make a saving throw."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["dexterity", "intelligence"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "fey_teleportation",
+    "name": "Fey Teleportation",
+    "source": "xgte",
+    "description": "Harness the magic of the Feywild.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "elf",
+        "subrace": "high_elf"
+      }
+    ],
+    "details": [
+      "You learn to speak, read, and write Sylvan.",
+      "You learn the Misty Step spell and can cast it once without expending a spell slot.",
+      "You regain the ability to cast Misty Step in this way when you finish a short or long rest.",
+      "Intelligence is your spellcasting ability for this spell."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["intelligence", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "flames_of_phlegethos",
+    "name": "Flames of Phlegethos",
+    "source": "xgte",
+    "description": "Your infernal heritage empowers your fire magic.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "tiefling"
+      }
+    ],
+    "details": [
+      "When you roll fire damage for a spell, you can reroll any 1s on the damage dice once.",
+      "Whenever you cast a spell that deals fire damage, flames can wreath you until the end of your next turn, shedding bright and dim light.",
+      "While wreathed in flames, a creature that hits you with a melee attack from within 5 feet takes fire damage equal to your proficiency bonus."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["intelligence", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "infernal_constitution",
+    "name": "Infernal Constitution",
+    "source": "xgte",
+    "description": "Your fiendish blood grants increased resilience.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "tiefling"
+      }
+    ],
+    "details": [
+      "You gain resistance to cold damage and poison damage.",
+      "You have advantage on saving throws against being poisoned."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["constitution"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "orcish_fury",
+    "name": "Orcish Fury",
+    "source": "xgte",
+    "description": "Unleash the ferocity of your orcish heritage.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "half_orc"
+      }
+    ],
+    "details": [
+      "Once per short or long rest, when you hit with a weapon attack using a simple or martial weapon, you can roll one additional damage die and add it to the damage.",
+      "Immediately after using Relentless Endurance, you can use your reaction to make one weapon attack."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "constitution"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "prodigy",
+    "name": "Prodigy",
+    "source": "xgte",
+    "description": "Develop exceptional talent in multiple disciplines.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "choices": ["half_elf", "half_orc", "human"]
+      }
+    ],
+    "details": [
+      "Gain proficiency in one skill of your choice.",
+      "Gain proficiency with one tool of your choice.",
+      "Learn one language of your choice.",
+      "Choose one skill in which you have proficiency. You gain expertise with that skill."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": [
+          "strength",
+          "dexterity",
+          "constitution",
+          "intelligence",
+          "wisdom",
+          "charisma"
+        ],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": {
+        "choices": "any",
+        "amount": 1,
+        "count": 1
+      },
+      "other": []
+    }
+  },
+  {
+    "key": "second_chance",
+    "name": "Second Chance",
+    "source": "xgte",
+    "description": "Your luck helps you avoid danger.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "halfling"
+      }
+    ],
+    "details": [
+      "When a creature hits you with an attack roll, you can force it to reroll the attack.",
+      "Once you use this feature, you can't use it again until you finish a combat or a short or long rest."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["dexterity", "constitution", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "squat_nimbleness",
+    "name": "Squat Nimbleness",
+    "source": "xgte",
+    "description": "Your small stature makes you exceptionally agile.",
+    "prerequisites": [
+      {
+        "type": "size",
+        "value": "small"
+      }
+    ],
+    "details": [
+      "You gain proficiency in the Acrobatics or Athletics skill (your choice).",
+      "If you are already proficient in the chosen skill, you instead gain expertise with that skill.",
+      "Your walking speed increases by 5 feet."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "dexterity"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": {
+        "choices": ["acrobatics", "athletics"],
+        "amount": 1,
+        "count": 1
+      },
+      "other": [
+        {
+          "type": "speed",
+          "amount": 5
+        }
+      ]
+    }
+  },
+  {
+    "key": "wood_elf_magic",
+    "name": "Wood Elf Magic",
+    "source": "xgte",
+    "description": "Expand the innate magic of the wood elves.",
+    "prerequisites": [
+      {
+        "type": "race",
+        "value": "elf",
+        "subrace": "wood_elf"
+      }
+    ],
+    "details": [
+      "You learn one druid cantrip of your choice.",
+      "You learn the Longstrider spell and can cast it once without expending a spell slot.",
+      "You learn the Pass without Trace spell and can cast it once without expending a spell slot.",
+      "You regain the ability to cast each of these spells in this way when you finish a long rest.",
+      "Wisdom is your spellcasting ability for these spells."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "artificer_initiate",
+    "name": "Artificer Initiate",
+    "source": "tcoe",
+    "description": "Learn a touch of artificer magic.",
+    "prerequisites": [],
+    "details": [
+      "You learn one cantrip of your choice from the artificer spell list.",
+      "You learn one 1st-level artificer spell of your choice.",
+      "You can cast the 1st-level spell once without expending a spell slot and regain the ability after a long rest.",
+      "You can use artisan's tools as a spellcasting focus for Intelligence spells."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "chef",
+    "name": "Chef",
+    "source": "tcoe",
+    "description": "Prepare nourishing meals and treats.",
+    "prerequisites": [],
+    "details": [
+      "You gain proficiency with cook's utensils if you don't already have it.",
+      "During a short rest, you can prepare special food that grants additional healing to creatures who spend Hit Dice.",
+      "After a long rest, you can prepare treats equal to your proficiency bonus. A creature can eat one as a bonus action to gain temporary hit points."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["constitution", "wisdom"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "crusher",
+    "name": "Crusher",
+    "source": "tcoe",
+    "description": "Master the use of bludgeoning weapons.",
+    "prerequisites": [],
+    "details": [
+      "Once per turn, when you hit a creature with an attack that deals bludgeoning damage, you can move it 5 feet to an unoccupied space, provided it is no more than one size larger than you.",
+      "When you score a critical hit that deals bludgeoning damage, attack rolls against that creature have advantage until the start of your next turn."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "constitution"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "eldritch_adept",
+    "name": "Eldritch Adept",
+    "source": "tcoe",
+    "description": "Gain an eldritch invocation.",
+    "prerequisites": [
+      {
+        "type": "spellcasting"
+      }
+    ],
+    "details": [
+      "Learn one Eldritch Invocation of your choice for which you meet the prerequisites.",
+      "Whenever you gain a level, you may replace the chosen invocation with another eligible invocation."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "fey_touched",
+    "name": "Fey Touched",
+    "source": "tcoe",
+    "description": "Your exposure to the Feywild grants magical abilities.",
+    "prerequisites": [],
+    "details": [
+      "You learn the Misty Step spell.",
+      "Choose one 1st-level Divination or Enchantment spell. You learn that spell.",
+      "You can cast each of these spells once without expending a spell slot and regain the ability after a long rest.",
+      "You can also cast them using spell slots you have."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["intelligence", "wisdom", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "fighting_initiate",
+    "name": "Fighting Initiate",
+    "source": "tcoe",
+    "description": "Learn a Fighting Style.",
+    "prerequisites": [
+      {
+        "type": "weapon_proficiency",
+        "value": "martial"
+      }
+    ],
+    "details": [
+      "You learn one Fighting Style available to the Fighter class.",
+      "Whenever you gain an Ability Score Improvement, you may replace the Fighting Style with another one for which you qualify."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "gunner",
+    "name": "Gunner",
+    "source": "tcoe",
+    "description": "Master the use of firearms.",
+    "prerequisites": [],
+    "details": [
+      "You gain proficiency with firearms.",
+      "You ignore the loading property of firearms.",
+      "Being within 5 feet of a hostile creature doesn't impose disadvantage on your ranged attack rolls."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["dexterity"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "metamagic_adept",
+    "name": "Metamagic Adept",
+    "source": "tcoe",
+    "description": "Learn to shape your spells like a sorcerer.",
+    "prerequisites": [
+      {
+        "type": "spellcasting"
+      }
+    ],
+    "details": [
+      "Learn two Metamagic options from the Sorcerer class.",
+      "Gain 2 sorcery points to fuel those Metamagic options.",
+      "You regain all expended sorcery points when you finish a long rest."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": [
+        {
+          "type": "sorcery_points",
+          "amount": 2
+        }
+      ]
+    }
+  },
+  {
+    "key": "piercer",
+    "name": "Piercer",
+    "source": "tcoe",
+    "description": "Master the use of piercing weapons.",
+    "prerequisites": [],
+    "details": [
+      "Once per turn, when you hit a creature with an attack that deals piercing damage, you can reroll one of the attack's damage dice, and you must use the new roll.",
+      "When you score a critical hit that deals piercing damage, you can roll one additional damage die when determining the extra piercing damage."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "dexterity"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "poisoner",
+    "name": "Poisoner",
+    "source": "tcoe",
+    "description": "Create and apply potent poisons.",
+    "prerequisites": [],
+    "details": [
+      "When you make a damage roll that deals poison damage, you ignore resistance to poison damage.",
+      "You gain proficiency with the poisoner's kit if you don't already have it.",
+      "You can apply poison to a weapon or piece of ammunition as a bonus action instead of an action.",
+      "During a long rest, you can use a poisoner's kit and expend 50 gp worth of materials to create a number of doses of potent poison equal to your proficiency bonus."
+    ],
+    "bonuses": {
+      "abilities": null,
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "shadow_touched",
+    "name": "Shadow Touched",
+    "source": "tcoe",
+    "description": "The Shadowfell has infused you with magical power.",
+    "prerequisites": [],
+    "details": [
+      "You learn the Invisibility spell.",
+      "Choose one 1st-level spell from the Illusion or Necromancy schools. You learn that spell.",
+      "You can cast each of these spells once without expending a spell slot, regaining the ability when you finish a long rest.",
+      "You can also cast these spells using any spell slots you have."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["intelligence", "wisdom", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "skill_expert",
+    "name": "Skill Expert",
+    "source": "tcoe",
+    "description": "Develop exceptional talent in a chosen field.",
+    "prerequisites": [],
+    "details": [
+      "You gain proficiency in one skill of your choice.",
+      "Choose one skill in which you have proficiency. You gain expertise with that skill."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": [
+          "strength",
+          "dexterity",
+          "constitution",
+          "intelligence",
+          "wisdom",
+          "charisma"
+        ],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": {
+        "choices": "any",
+        "amount": 1,
+        "count": 1
+      },
+      "other": []
+    }
+  },
+  {
+    "key": "slasher",
+    "name": "Slasher",
+    "source": "tcoe",
+    "description": "Master the use of slashing weapons.",
+    "prerequisites": [],
+    "details": [
+      "Once per turn, when you hit a creature with an attack that deals slashing damage, you can reduce its speed by 10 feet until the start of your next turn.",
+      "When you score a critical hit that deals slashing damage, the target has disadvantage on all attack rolls until the start of your next turn."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["strength", "dexterity"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "telekinetic",
+    "name": "Telekinetic",
+    "source": "tcoe",
+    "description": "Develop innate telekinetic abilities.",
+    "prerequisites": [],
+    "details": [
+      "You learn the Mage Hand cantrip. If you already know it, its range increases by 30 feet when you cast it.",
+      "You can cast Mage Hand without verbal or somatic components.",
+      "As a bonus action, you can telekinetically shove one creature you can see within 30 feet. The target must succeed on a Strength saving throw or be moved 5 feet toward or away from you."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["intelligence", "wisdom", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
+    }
+  },
+  {
+    "key": "telepathic",
+    "name": "Telepathic",
+    "source": "tcoe",
+    "description": "Awaken your latent telepathic abilities.",
+    "prerequisites": [],
+    "details": [
+      "You can communicate telepathically with any creature you can see within 60 feet of you, provided you share a language.",
+      "You learn the Detect Thoughts spell.",
+      "You can cast Detect Thoughts once without expending a spell slot, regaining the ability when you finish a long rest.",
+      "You can also cast Detect Thoughts using spell slots you have."
+    ],
+    "bonuses": {
+      "abilities": {
+        "choices": ["intelligence", "wisdom", "charisma"],
+        "amount": 1,
+        "count": 1
+      },
+      "skills": null,
+      "other": []
     }
   }
 ]
