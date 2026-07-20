@@ -1,12 +1,12 @@
-import fs from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import mongoose from 'mongoose';
-import { connectToDb, disconnectFromDb } from '../db.js';
+import fs from "fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
+import mongoose from "mongoose";
+import { connectToDb, disconnectFromDb } from "../config/db.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DB_SEEDING_DIR = path.resolve(__dirname, '..', 'db-seeding');
+const DB_SEEDING_DIR = path.resolve(__dirname, "..", "db-seeding");
 
 // Maps a seed folder directly to its target collection.
 function folderToCollectionName(folderName) {
@@ -19,7 +19,7 @@ function stableObject(value) {
     return value.map(stableObject);
   }
 
-  if (value && typeof value === 'object') {
+  if (value && typeof value === "object") {
     return Object.keys(value)
       .sort()
       .reduce((acc, key) => {
@@ -50,7 +50,7 @@ function documentsMatch(existingDoc, incomingDoc) {
 
 // Reads and parses a JSON file.
 async function readJsonFile(filePath) {
-  const raw = await fs.readFile(filePath, 'utf8');
+  const raw = await fs.readFile(filePath, "utf8");
   return JSON.parse(raw);
 }
 
@@ -59,7 +59,7 @@ async function readFolderJsonFiles(folderName) {
   const folderPath = path.join(DB_SEEDING_DIR, folderName);
   const entries = await fs.readdir(folderPath, { withFileTypes: true });
   const jsonFiles = entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
     .map((entry) => entry.name)
     .sort();
 
@@ -95,8 +95,10 @@ async function upsertByKey(collectionName, documents) {
   let unchanged = 0;
 
   for (const doc of documents) {
-    if (!doc || typeof doc !== 'object' || !doc.key) {
-      throw new Error(`Collection ${collectionName} contains a document without a key.`);
+    if (!doc || typeof doc !== "object" || !doc.key) {
+      throw new Error(
+        `Collection ${collectionName} contains a document without a key.`,
+      );
     }
 
     const existing = await collection.findOne({ key: doc.key });
@@ -131,7 +133,7 @@ async function upsertByKey(collectionName, documents) {
 
 // Seed task for backgrounds.
 async function seedBackgrounds() {
-  const folderName = 'backgrounds';
+  const folderName = "backgrounds";
   const collectionName = folderToCollectionName(folderName);
   const docs = await readFolderJsonFiles(folderName);
   return upsertByKey(collectionName, docs);
@@ -139,7 +141,7 @@ async function seedBackgrounds() {
 
 // Seed task for class features.
 async function seedClassFeatures() {
-  const folderName = 'class_features';
+  const folderName = "class_features";
   const collectionName = folderToCollectionName(folderName);
   const docs = await readFolderJsonFiles(folderName);
   return upsertByKey(collectionName, docs);
@@ -147,7 +149,7 @@ async function seedClassFeatures() {
 
 // Seed task for classes.
 async function seedClasses() {
-  const folderName = 'classes';
+  const folderName = "classes";
   const collectionName = folderToCollectionName(folderName);
   const docs = await readFolderJsonFiles(folderName);
   return upsertByKey(collectionName, docs);
@@ -155,7 +157,7 @@ async function seedClasses() {
 
 // Seed task for feats.
 async function seedFeats() {
-  const folderName = 'feats';
+  const folderName = "feats";
   const collectionName = folderToCollectionName(folderName);
   const docs = await readFolderJsonFiles(folderName);
   return upsertByKey(collectionName, docs);
@@ -163,7 +165,7 @@ async function seedFeats() {
 
 // Seed task for races.
 async function seedRaces() {
-  const folderName = 'races';
+  const folderName = "races";
   const collectionName = folderToCollectionName(folderName);
   const docs = await readFolderJsonFiles(folderName);
   return upsertByKey(collectionName, docs);
@@ -171,7 +173,7 @@ async function seedRaces() {
 
 // Seed task for racial traits.
 async function seedRacialTraits() {
-  const folderName = 'racial_traits';
+  const folderName = "racial_traits";
   const collectionName = folderToCollectionName(folderName);
   const docs = await readFolderJsonFiles(folderName);
   return upsertByKey(collectionName, docs);
@@ -179,40 +181,40 @@ async function seedRacialTraits() {
 
 // Seed task for subclasses.
 async function seedSubclasses() {
-  const folderName = 'subclasses';
+  const folderName = "subclasses";
   const collectionName = folderToCollectionName(folderName);
   const docs = await readFolderJsonFiles(folderName);
   return upsertByKey(collectionName, docs);
 }
 
 const SEED_TASKS = [
-  { name: 'backgrounds', run: seedBackgrounds },
-  { name: 'class_features', run: seedClassFeatures },
-  { name: 'classes', run: seedClasses },
-  { name: 'feats', run: seedFeats },
-  { name: 'races', run: seedRaces },
-  { name: 'racial_traits', run: seedRacialTraits },
-  { name: 'subclasses', run: seedSubclasses },
+  { name: "backgrounds", run: seedBackgrounds },
+  { name: "class_features", run: seedClassFeatures },
+  { name: "classes", run: seedClasses },
+  { name: "feats", run: seedFeats },
+  { name: "races", run: seedRaces },
+  { name: "racial_traits", run: seedRacialTraits },
+  { name: "subclasses", run: seedSubclasses },
 ];
 
 // Parses an optional folder flag from CLI or npm_config_* vars.
 function parseSeedFolderArg(argv) {
   const allowed = new Set(SEED_TASKS.map((task) => task.name));
   const argvFlags = argv
-    .filter((arg) => arg.startsWith('-') && arg.length > 1)
-    .map((arg) => (arg.startsWith('--') ? arg.slice(2) : arg.slice(1)).trim())
+    .filter((arg) => arg.startsWith("-") && arg.length > 1)
+    .map((arg) => (arg.startsWith("--") ? arg.slice(2) : arg.slice(1)).trim())
     .filter(Boolean);
 
   const envFlags = Array.from(allowed).filter((folderName) => {
     const npmConfigKey = `npm_config_${folderName}`;
     const raw = process.env[npmConfigKey];
 
-    if (typeof raw === 'undefined') {
+    if (typeof raw === "undefined") {
       return false;
     }
 
     const normalized = String(raw).toLowerCase();
-    return normalized !== 'false' && normalized !== '0' && normalized !== '';
+    return normalized !== "false" && normalized !== "0" && normalized !== "";
   });
 
   const selectedFlags = [...new Set([...argvFlags, ...envFlags])];
@@ -223,7 +225,7 @@ function parseSeedFolderArg(argv) {
 
   if (selectedFlags.length > 1) {
     throw new Error(
-      `Only one folder flag is supported. Received: ${selectedFlags.join(', ')}`,
+      `Only one folder flag is supported. Received: ${selectedFlags.join(", ")}`,
     );
   }
 
@@ -231,7 +233,7 @@ function parseSeedFolderArg(argv) {
 
   if (!allowed.has(folderName)) {
     throw new Error(
-      `Unknown folder flag -${folderName}. Allowed: ${Array.from(allowed).join(', ')}`,
+      `Unknown folder flag -${folderName}. Allowed: ${Array.from(allowed).join(", ")}`,
     );
   }
 
@@ -240,7 +242,7 @@ function parseSeedFolderArg(argv) {
 
 // Creates a lightweight terminal spinner while async work is running.
 function createSpinner(message) {
-  const frames = ['|', '/', '-', '\\'];
+  const frames = ["|", "/", "-", "\\"];
   let index = 0;
   let timer = null;
 
@@ -305,7 +307,7 @@ async function run() {
   const selectedFolder = parseSeedFolderArg(process.argv.slice(2));
   const spinnerMessage = selectedFolder
     ? `Seeding ${selectedFolder}`
-    : 'Seeding reference folders';
+    : "Seeding reference folders";
   const spinner = createSpinner(spinnerMessage);
 
   await connectToDb();
@@ -316,11 +318,11 @@ async function run() {
       ? await seedSingleReferenceFolder(selectedFolder)
       : await seedAllReferenceData();
 
-    spinner.stop('Seeding complete.');
-    console.log('Reference data seeding complete.');
+    spinner.stop("Seeding complete.");
+    console.log("Reference data seeding complete.");
     console.log(JSON.stringify(summary, null, 2));
   } catch (error) {
-    spinner.stop('Seeding failed.');
+    spinner.stop("Seeding failed.");
     throw error;
   } finally {
     await disconnectFromDb();
@@ -328,6 +330,6 @@ async function run() {
 }
 
 run().catch((error) => {
-  console.error('Failed to seed reference data from files:', error);
+  console.error("Failed to seed reference data from files:", error);
   process.exit(1);
 });

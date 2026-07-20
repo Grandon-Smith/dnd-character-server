@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
-import { connectToDb, disconnectFromDb } from '../db.js';
+import mongoose from "mongoose";
+import { connectToDb, disconnectFromDb } from "../config/db.js";
 
-const API_ORIGIN = 'https://www.dnd5eapi.co';
-const API_INDEX_PATH = '/api/2014';
-const EXCLUDED_ENDPOINTS = new Set(['monsters', 'rules', 'rule-sections']);
+const API_ORIGIN = "https://www.dnd5eapi.co";
+const API_INDEX_PATH = "/api/2014";
+const EXCLUDED_ENDPOINTS = new Set(["monsters", "rules", "rule-sections"]);
 const DEFAULT_CONCURRENCY = 8;
 const DEFAULT_RETRIES = 3;
 const REQUEST_TIMEOUT_MS = 20000;
@@ -11,12 +11,12 @@ const REQUEST_TIMEOUT_MS = 20000;
 function normalizePath(apiPath) {
   if (!apiPath) return null;
 
-  if (apiPath.startsWith('http://') || apiPath.startsWith('https://')) {
+  if (apiPath.startsWith("http://") || apiPath.startsWith("https://")) {
     const url = new URL(apiPath);
     return `${url.pathname}${url.search}`;
   }
 
-  return apiPath.startsWith('/') ? apiPath : `/${apiPath}`;
+  return apiPath.startsWith("/") ? apiPath : `/${apiPath}`;
 }
 
 function toAbsoluteUrl(apiPath) {
@@ -45,13 +45,13 @@ function createResourceKey(payload, fallbackPath, fallbackIndex) {
     payload?.name ??
     fallbackIndex ??
     normalizePath(fallbackPath) ??
-    'unknown';
+    "unknown";
 
   return String(raw).trim();
 }
 
 function endpointCollectionName(endpoint) {
-  return `reference_${endpoint.replace(/[^a-z0-9_-]/gi, '_').toLowerCase()}`;
+  return `reference_${endpoint.replace(/[^a-z0-9_-]/gi, "_").toLowerCase()}`;
 }
 
 async function fetchJsonWithRetry(url, retries = DEFAULT_RETRIES) {
@@ -81,7 +81,9 @@ async function fetchJsonWithRetry(url, retries = DEFAULT_RETRIES) {
     }
   }
 
-  throw new Error(`Failed to fetch ${url}: ${lastError?.message ?? 'Unknown error'}`);
+  throw new Error(
+    `Failed to fetch ${url}: ${lastError?.message ?? "Unknown error"}`,
+  );
 }
 
 async function mapWithConcurrency(items, concurrency, mapper) {
@@ -116,10 +118,10 @@ async function upsertMany(collection, operations) {
 async function ensureIndexes(collection) {
   await collection.createIndex(
     { index: 1 },
-    { unique: true, sparse: true, name: 'index_unique' },
+    { unique: true, sparse: true, name: "index_unique" },
   );
-  await collection.createIndex({ index: 1 }, { name: 'index_idx' });
-  await collection.createIndex({ syncedAt: -1 }, { name: 'syncedAt_idx' });
+  await collection.createIndex({ index: 1 }, { name: "index_idx" });
+  await collection.createIndex({ syncedAt: -1 }, { name: "syncedAt_idx" });
 }
 
 async function collectionExists(collectionName) {
@@ -166,7 +168,11 @@ async function syncEndpoint({ endpoint, apiPath, concurrency }) {
         return {
           path,
           payload: detailPayload,
-          key: createResourceKey(detailPayload, path, item?.index ?? String(idx)),
+          key: createResourceKey(
+            detailPayload,
+            path,
+            item?.index ?? String(idx),
+          ),
         };
       },
     );
@@ -238,17 +244,17 @@ function parseArgs(argv) {
   };
 
   for (const arg of argv) {
-    if (arg.startsWith('--endpoints=')) {
-      const value = arg.replace('--endpoints=', '').trim();
+    if (arg.startsWith("--endpoints=")) {
+      const value = arg.replace("--endpoints=", "").trim();
       options.endpointAllowList = value
-        .split(',')
+        .split(",")
         .map((entry) => entry.trim())
         .filter(Boolean);
       continue;
     }
 
-    if (arg.startsWith('--concurrency=')) {
-      const value = Number(arg.replace('--concurrency=', '').trim());
+    if (arg.startsWith("--concurrency=")) {
+      const value = Number(arg.replace("--concurrency=", "").trim());
       if (!Number.isNaN(value) && value > 0) {
         options.concurrency = Math.floor(value);
       }
@@ -264,7 +270,9 @@ async function run() {
   await connectToDb();
 
   try {
-    const indexPayload = await fetchJsonWithRetry(toAbsoluteUrl(API_INDEX_PATH));
+    const indexPayload = await fetchJsonWithRetry(
+      toAbsoluteUrl(API_INDEX_PATH),
+    );
     const entries = Object.entries(indexPayload).filter(([endpoint]) => {
       if (EXCLUDED_ENDPOINTS.has(endpoint)) return false;
       if (!endpointAllowList) return true;
@@ -272,11 +280,13 @@ async function run() {
     });
 
     if (!entries.length) {
-      console.log('No endpoints selected for sync.');
+      console.log("No endpoints selected for sync.");
       return;
     }
 
-    console.log(`Selected endpoints: ${entries.map(([name]) => name).join(', ')}`);
+    console.log(
+      `Selected endpoints: ${entries.map(([name]) => name).join(", ")}`,
+    );
 
     const summary = [];
 
@@ -289,7 +299,7 @@ async function run() {
       });
       summary.push(result);
       console.log(
-        `Completed ${endpoint} -> ${result.collection}: upserts=${result.totalUpserts}, detailRecords=${result.detailSynced}, listed=${result.listCount ?? 'n/a'}`,
+        `Completed ${endpoint} -> ${result.collection}: upserts=${result.totalUpserts}, detailRecords=${result.detailSynced}, listed=${result.listCount ?? "n/a"}`,
       );
     }
 
@@ -302,12 +312,12 @@ async function run() {
       { upserts: 0, details: 0 },
     );
 
-    console.log('\nSync complete.');
+    console.log("\nSync complete.");
     console.log(`Endpoints synced: ${summary.length}`);
     console.log(`Detail records synced: ${totals.details}`);
     console.log(`Total upserts: ${totals.upserts}`);
     console.log(
-      `Collections created/updated: ${summary.map((item) => item.collection).join(', ')}`,
+      `Collections created/updated: ${summary.map((item) => item.collection).join(", ")}`,
     );
   } finally {
     await disconnectFromDb();
@@ -315,6 +325,6 @@ async function run() {
 }
 
 run().catch((error) => {
-  console.error('5e sync failed:', error);
+  console.error("5e sync failed:", error);
   process.exit(1);
 });
