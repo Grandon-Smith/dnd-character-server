@@ -1,0 +1,50 @@
+{
+  "key": "warlock",
+  "name": "Warlock",
+  "source": "PHB",
+  "hit_die": 8,
+  "primary_abilities": ["charisma"],
+  "saving_throws": ["wisdom", "charisma"],
+  "armor_proficiencies": ["light"],
+  "weapon_proficiencies": ["simple"],
+  "tool_proficiencies": [],
+  "skill_choices": {
+    "choose": 2,
+    "options": [
+      "arcana",
+      "deception",
+      "history",
+      "intimidation",
+      "investigation",
+      "nature",
+      "religion"
+    ]
+  },
+  "starting_equipment": {
+    "choices": [
+      [
+        "light_crossbow",
+        {
+          "simple_weapon": 1
+        }
+      ],
+      ["component_pouch", "arcane_focus"],
+      ["scholars_pack", "dungeoneers_pack"]
+    ],
+    "fixed": [
+      "leather_armor",
+      {
+        "dagger": 2
+      }
+    ]
+  },
+  "subclass_level": 1,
+  "spellcasting": {
+    "ability": "charisma",
+    "spell_list": "warlock",
+    "preparation": "known",
+    "ritual_casting": false,
+    "spellcasting_focus": ["arcane_focus"],
+    "can_change_known_spells": "level_up"
+  }
+}

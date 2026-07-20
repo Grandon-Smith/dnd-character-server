@@ -1,0 +1,191 @@
+{
+  "classKey": "fighter",
+  "subclasses": [
+    {
+      "key": "champion",
+      "classKey": "fighter",
+      "name": "Champion",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["martial", "critical_hits", "athletics"],
+      "desc": [
+        "The archetypal Champion focuses on the development of raw physical power, athleticism, and martial excellence."
+      ],
+      "features": [
+        { "level": 3, "key": "improved_critical" },
+        { "level": 7, "key": "remarkable_athlete" },
+        { "level": 10, "key": "additional_fighting_style" },
+        { "level": 15, "key": "superior_critical" },
+        { "level": 18, "key": "survivor" }
+      ]
+    },
+    {
+      "key": "battle_master",
+      "classKey": "fighter",
+      "name": "Battle Master",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["martial", "maneuvers", "tactical"],
+      "desc": [
+        "Battle Masters employ martial techniques passed down through generations, using superior tactics and precision in combat."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "combat_superiority",
+          "archetype_subchoice": {
+            "referenceKey": "battle_master_maneuvers"
+          }
+        },
+        { "level": 3, "key": "student_of_war" },
+        { "level": 7, "key": "know_your_enemy" },
+        { "level": 10, "key": "improved_combat_superiority" },
+        { "level": 15, "key": "relentless" }
+      ]
+    },
+    {
+      "key": "eldritch_knight",
+      "classKey": "fighter",
+      "name": "Eldritch Knight",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["martial", "spellcasting", "arcane"],
+      "desc": [
+        "Eldritch Knights blend martial mastery with arcane magic, studying wizardry to enhance their combat prowess."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "spellcasting",
+          "referenceKey": "eldritch_knight_spellcasting"
+        },
+        { "level": 3, "key": "weapon_bond" },
+        { "level": 7, "key": "war_magic" },
+        { "level": 10, "key": "eldritch_strike" },
+        { "level": 15, "key": "arcane_charge" },
+        { "level": 18, "key": "improved_war_magic" }
+      ]
+    },
+    {
+      "key": "arcane_archer",
+      "classKey": "fighter",
+      "name": "Arcane Archer",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["archery", "arcane", "ranged"],
+      "desc": [
+        "Arcane Archers weave elven magic into their arrows, producing a variety of mystical effects."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "arcane_shot",
+          "archetype_subchoice": {
+            "referenceKey": "arcane_shot_options"
+          }
+        },
+        { "level": 3, "key": "arcane_archer_lore" },
+        { "level": 7, "key": "curving_shot" },
+        { "level": 10, "key": "magic_arrow" },
+        { "level": 15, "key": "ever_ready_shot" },
+        { "level": 18, "key": "improved_arcane_shot" }
+      ]
+    },
+    {
+      "key": "cavalier",
+      "classKey": "fighter",
+      "name": "Cavalier",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["mounted", "defender", "martial"],
+      "desc": [
+        "Cavaliers are skilled riders and steadfast defenders, protecting allies while controlling the battlefield."
+      ],
+      "features": [
+        { "level": 3, "key": "bonus_proficiency" },
+        { "level": 3, "key": "born_to_the_saddle" },
+        { "level": 3, "key": "unwavering_mark" },
+        { "level": 7, "key": "warding_maneuver" },
+        { "level": 10, "key": "hold_the_line" },
+        { "level": 15, "key": "ferocious_charger" },
+        { "level": 18, "key": "vigilant_defender" }
+      ]
+    },
+    {
+      "key": "samurai",
+      "classKey": "fighter",
+      "name": "Samurai",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["martial", "social", "resilience"],
+      "desc": [
+        "Samurai combine exceptional combat prowess with unwavering resolve and refined social grace."
+      ],
+      "features": [
+        { "level": 3, "key": "bonus_proficiency" },
+        { "level": 3, "key": "fighting_spirit" },
+        { "level": 7, "key": "elegant_courtier" },
+        { "level": 10, "key": "tireless_spirit" },
+        { "level": 15, "key": "rapid_strike" },
+        { "level": 18, "key": "strength_before_death" }
+      ]
+    },
+    {
+      "key": "psi_warrior",
+      "classKey": "fighter",
+      "name": "Psi Warrior",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["psionics", "martial", "telekinesis"],
+      "desc": [
+        "Psi Warriors awaken psionic power within themselves, channeling mental energy to enhance their martial abilities."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "psionic_power",
+          "referenceKey": "psionic_power_options"
+        },
+        { "level": 3, "key": "telekinetic_adept" },
+        { "level": 7, "key": "guarded_mind" },
+        { "level": 10, "key": "bulwark_of_force" },
+        { "level": 15, "key": "telekinetic_master" }
+      ]
+    },
+    {
+      "key": "rune_knight",
+      "classKey": "fighter",
+      "name": "Rune Knight",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["giants", "runes", "martial"],
+      "desc": [
+        "Rune Knights learn the ancient magic of giant runes, augmenting their weapons, armor, and bodies with mystical power."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "bonus_proficiency"
+        },
+        {
+          "level": 3,
+          "key": "rune_carver",
+          "archetype_subchoice": {
+            "referenceKey": "giant_runes"
+          }
+        },
+        { "level": 3, "key": "giants_might" },
+        { "level": 7, "key": "runic_shield" },
+        { "level": 10, "key": "great_stature" },
+        {
+          "level": 15,
+          "key": "master_of_runes"
+        },
+        {
+          "level": 18,
+          "key": "runic_juggernaut"
+        }
+      ]
+    }
+  ]
+}

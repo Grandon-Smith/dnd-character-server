@@ -1,0 +1,62 @@
+{
+  "key": "druid",
+  "name": "Druid",
+  "source": "PHB",
+  "hitDie": 8,
+  "primaryAbilities": ["wisdom"],
+  "savingThrows": ["intelligence", "wisdom"],
+  "armorProficiencies": ["light", "medium", "shields"],
+  "weaponProficiencies": [
+    "club",
+    "dagger",
+    "dart",
+    "javelin",
+    "mace",
+    "quarterstaff",
+    "scimitar",
+    "sickle",
+    "sling",
+    "spear"
+  ],
+  "toolProficiencies": [],
+  "skillChoices": {
+    "choose": 2,
+    "options": [
+      "arcana",
+      "animalHandling",
+      "insight",
+      "medicine",
+      "nature",
+      "perception",
+      "religion",
+      "survival"
+    ]
+  },
+  "startingEquipment": {
+    "choices": [
+      [
+        "woodenShield",
+        {
+          "simpleWeapon": 1
+        }
+      ],
+      [
+        "scimitar",
+        {
+          "simpleMeleeWeapon": 1
+        }
+      ]
+    ],
+    "fixed": ["leatherArmor", "explorersPack", "druidicFocus"]
+  },
+  "subclassLevel": 2,
+  "spellcasting": {
+    "ability": "wisdom",
+    "spellList": "druid",
+    "preparation": "prepared",
+    "preparationFormula": "level + wisdomModifier",
+    "ritualCasting": true,
+    "spellcastingFocus": ["druidicFocus"],
+    "canChangePreparedSpells": "longRest"
+  }
+}

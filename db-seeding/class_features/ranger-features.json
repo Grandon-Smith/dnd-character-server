@@ -1,0 +1,86 @@
+[
+  {
+    "key": "favored_enemy",
+    "name": "Favored Enemy",
+    "source": "phb",
+    "description": "Choose one type of favored enemy. You gain benefits when tracking, recalling information about, and interacting with those creatures.",
+    "type": "choice"
+  },
+  {
+    "key": "natural_explorer",
+    "name": "Natural Explorer",
+    "source": "phb",
+    "description": "Choose a favored terrain. You gain benefits while traveling and surviving in that environment.",
+    "type": "choice"
+  },
+  {
+    "key": "deft_explorer",
+    "name": "Deft Explorer",
+    "source": "tcoe",
+    "description": "An optional class feature that replaces Natural Explorer, granting exploration-focused benefits that improve as you gain Ranger levels.",
+    "type": "choice"
+  },
+  {
+    "key": "favored_foe",
+    "name": "Favored Foe",
+    "source": "tcoe",
+    "description": "An optional class feature that replaces Favored Enemy, allowing you to mark a creature as your favored foe and deal additional damage to it.",
+    "type": "active"
+  },
+  {
+    "key": "ranger_archetype",
+    "name": "Ranger Archetype",
+    "source": "phb",
+    "description": "Choose a Ranger Archetype, which grants additional features as you gain Ranger levels.",
+    "type": "choice"
+  },
+  {
+    "key": "primeval_awareness",
+    "name": "Primeval Awareness",
+    "source": "phb",
+    "description": "You can expend a spell slot to sense whether certain creature types are present within a specified range.",
+    "type": "active"
+  },
+  {
+    "key": "primal_awareness",
+    "name": "Primal Awareness",
+    "source": "tcoe",
+    "description": "An optional class feature that replaces Primeval Awareness, granting additional spells that enhance your awareness of the natural world.",
+    "type": "passive"
+  },
+  {
+    "key": "hide_in_plain_sight",
+    "name": "Hide in Plain Sight",
+    "source": "phb",
+    "description": "You can camouflage yourself, gaining a bonus to Stealth checks while you remain motionless.",
+    "type": "active"
+  },
+  {
+    "key": "natures_veil",
+    "name": "Nature's Veil",
+    "source": "tcoe",
+    "description": "An optional class feature that replaces Hide in Plain Sight, allowing you to magically become invisible for a short time.",
+    "type": "active"
+  },
+  {
+    "key": "vanish",
+    "name": "Vanish",
+    "source": "phb",
+    "description": "You can Hide as a bonus action, and magical means can't track you except by magical methods.",
+    "type": "passive"
+  },
+  {
+    "key": "feral_senses",
+    "name": "Feral Senses",
+    "source": "phb",
+    "description": "You gain extraordinary awareness of nearby creatures, helping you detect unseen foes.",
+    "type": "passive"
+  },
+  {
+    "key": "foe_slayer",
+    "name": "Foe Slayer",
+    "source": "phb",
+    "description": "You can add your Wisdom modifier to an attack roll or damage roll against one of your favored enemies.",
+    "type": "passive"
+  }
+]

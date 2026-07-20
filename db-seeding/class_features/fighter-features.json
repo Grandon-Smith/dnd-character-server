@@ -1,0 +1,30 @@
+[
+  {
+    "key": "second_wind",
+    "name": "Second Wind",
+    "source": "phb",
+    "description": "You have a limited well of stamina that you can draw upon to regain hit points as a bonus action.",
+    "type": "active"
+  },
+  {
+    "key": "action_surge",
+    "name": "Action Surge",
+    "source": "phb",
+    "description": "You can push yourself beyond your normal limits, taking one additional action on your turn.",
+    "type": "active"
+  },
+  {
+    "key": "martial_archetype",
+    "name": "Martial Archetype",
+    "source": "phb",
+    "description": "Choose a Martial Archetype, which grants additional features as you gain Fighter levels.",
+    "type": "choice"
+  },
+  {
+    "key": "indomitable",
+    "name": "Indomitable",
+    "source": "phb",
+    "description": "You can reroll a failed saving throw, but must use the new roll.",
+    "type": "active"
+  }
+]

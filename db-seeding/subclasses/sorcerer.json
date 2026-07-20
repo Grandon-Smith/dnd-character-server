@@ -1,0 +1,254 @@
+{
+  "classKey": "sorcerer",
+  "subclasses": [
+    {
+      "key": "draconic_bloodline",
+      "classKey": "sorcerer",
+      "name": "Draconic Bloodline",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["dragon", "durability", "elemental"],
+      "desc": [
+        "Your innate magic comes from draconic ancestry, granting you abilities connected to the power and resilience of dragons."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "draconic_ancestry",
+          "archetype_subchoice": {
+            "referenceKey": "dragon_ancestry_options"
+          }
+        },
+        {
+          "level": 1,
+          "key": "draconic_resilience"
+        },
+        {
+          "level": 6,
+          "key": "elemental_affinity",
+          "archetype_subchoice": {
+            "referenceKey": "dragon_ancestry_options"
+          }
+        },
+        {
+          "level": 14,
+          "key": "dragon_wings"
+        },
+        {
+          "level": 18,
+          "key": "draconic_presence"
+        }
+      ]
+    },
+    {
+      "key": "wild_magic",
+      "classKey": "sorcerer",
+      "name": "Wild Magic",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["chaos", "magic", "randomness"],
+      "desc": [
+        "Your magic comes from the forces of chaos, causing unpredictable and powerful magical effects."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "wild_magic_surge",
+          "referenceKey": "wild_magic_surge_table"
+        },
+        {
+          "level": 1,
+          "key": "tides_of_chaos"
+        },
+        {
+          "level": 6,
+          "key": "bend_luck"
+        },
+        {
+          "level": 14,
+          "key": "controlled_chaos"
+        },
+        {
+          "level": 18,
+          "key": "spell_bombardment"
+        }
+      ]
+    },
+    {
+      "key": "divine_soul",
+      "classKey": "sorcerer",
+      "name": "Divine Soul",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["divine", "healing", "versatility"],
+      "desc": [
+        "A divine soul sorcerer draws power from a divine connection, allowing them access to magic normally associated with clerics."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "divine_magic",
+          "archetype_subchoice": {
+            "referenceKey": "divine_soul_origin_options"
+          }
+        },
+        {
+          "level": 1,
+          "key": "favored_by_the_gods"
+        },
+        {
+          "level": 6,
+          "key": "empowered_healing"
+        },
+        {
+          "level": 14,
+          "key": "otherworldly_wings"
+        },
+        {
+          "level": 18,
+          "key": "unearthly_recovery"
+        }
+      ]
+    },
+    {
+      "key": "shadow_magic",
+      "classKey": "sorcerer",
+      "name": "Shadow Magic",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["shadow", "darkness", "necrotic"],
+      "desc": [
+        "Shadow magic sorcerers draw their power from the Shadowfell, gaining abilities connected to darkness and death."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "eyes_of_the_dark"
+        },
+        {
+          "level": 1,
+          "key": "strength_of_the_grave"
+        },
+        {
+          "level": 6,
+          "key": "hound_of_ill_omen",
+          "referenceKey": "shadow_hound"
+        },
+        {
+          "level": 14,
+          "key": "shadow_walk"
+        },
+        {
+          "level": 18,
+          "key": "umbral_form"
+        }
+      ]
+    },
+    {
+      "key": "storm_sorcery",
+      "classKey": "sorcerer",
+      "name": "Storm Sorcery",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["storm", "lightning", "mobility"],
+      "desc": [
+        "Storm sorcerers draw power from elemental air and the fury of storms, allowing them to manipulate wind and lightning."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "wind_speaker"
+        },
+        {
+          "level": 1,
+          "key": "tempestuous_magic"
+        },
+        {
+          "level": 6,
+          "key": "heart_of_the_storm",
+          "referenceKey": "storm_sorcery_elements"
+        },
+        {
+          "level": 6,
+          "key": "storm_guide"
+        },
+        {
+          "level": 14,
+          "key": "storms_fury"
+        },
+        {
+          "level": 18,
+          "key": "wind_soul"
+        }
+      ]
+    },
+    {
+      "key": "aberrant_mind",
+      "classKey": "sorcerer",
+      "name": "Aberrant Mind",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["psionic", "telepathy", "aberration"],
+      "desc": [
+        "Aberrant Mind sorcerers draw power from alien influences, strange entities, or mysterious psychic origins."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "aberrant_mind_spellcasting",
+          "referenceKey": "aberrant_mind_spell_list"
+        },
+        {
+          "level": 1,
+          "key": "telepathic_speech"
+        },
+        {
+          "level": 6,
+          "key": "psionic_sorcery"
+        },
+        {
+          "level": 14,
+          "key": "revelation_in_flesh"
+        },
+        {
+          "level": 18,
+          "key": "warped_being"
+        }
+      ]
+    },
+    {
+      "key": "clockwork_soul",
+      "classKey": "sorcerer",
+      "name": "Clockwork Soul",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["law", "order", "construct"],
+      "desc": [
+        "Clockwork Soul sorcerers draw their power from the cosmic force of order, seeking balance and stability."
+      ],
+      "features": [
+        {
+          "level": 1,
+          "key": "clockwork_magic",
+          "referenceKey": "clockwork_soul_spell_list"
+        },
+        {
+          "level": 1,
+          "key": "restore_balance"
+        },
+        {
+          "level": 6,
+          "key": "bastion_of_law"
+        },
+        {
+          "level": 14,
+          "key": "trance_of_order"
+        },
+        {
+          "level": 18,
+          "key": "clockwork_cavalcade"
+        }
+      ]
+    }
+  ]
+}

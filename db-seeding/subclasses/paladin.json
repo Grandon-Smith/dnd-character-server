@@ -1,0 +1,229 @@
+{
+  "classKey": "paladin",
+  "subclasses": [
+    {
+      "key": "oath_of_devotion",
+      "classKey": "paladin",
+      "name": "Oath of Devotion",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["holy", "support", "defense"],
+      "desc": [
+        "The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "channel_divinity_devotion",
+          "archetype_subchoice": {
+            "referenceKey": "oath_of_devotion_channel_divinity_options"
+          }
+        },
+        {
+          "level": 3,
+          "key": "oath_spells",
+          "referenceKey": "oath_of_devotion_spell_list"
+        },
+        { "level": 7, "key": "aura_of_devotion" },
+        { "level": 15, "key": "purity_of_spirit" },
+        { "level": 20, "key": "holy_nimbus" }
+      ]
+    },
+    {
+      "key": "oath_of_the_ancients",
+      "classKey": "paladin",
+      "name": "Oath of the Ancients",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["nature", "fey", "protection"],
+      "desc": [
+        "The Oath of the Ancients calls paladins to preserve the light of hope, beauty, and life."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "channel_divinity_ancients",
+          "archetype_subchoice": {
+            "referenceKey": "oath_of_the_ancients_channel_divinity_options"
+          }
+        },
+        {
+          "level": 3,
+          "key": "oath_spells",
+          "referenceKey": "oath_of_the_ancients_spell_list"
+        },
+        { "level": 7, "key": "aura_of_warding" },
+        { "level": 15, "key": "undying_sentinel" },
+        { "level": 20, "key": "elder_champion" }
+      ]
+    },
+    {
+      "key": "oath_of_vengeance",
+      "classKey": "paladin",
+      "name": "Oath of Vengeance",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["offense", "justice", "martial"],
+      "desc": [
+        "The Oath of Vengeance is a solemn commitment to punish those who have committed grievous sins."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "channel_divinity_vengeance",
+          "archetype_subchoice": {
+            "referenceKey": "oath_of_vengeance_channel_divinity_options"
+          }
+        },
+        {
+          "level": 3,
+          "key": "oath_spells",
+          "referenceKey": "oath_of_vengeance_spell_list"
+        },
+        { "level": 7, "key": "relentless_avenger" },
+        { "level": 15, "key": "soul_of_vengeance" },
+        { "level": 20, "key": "avenging_angel" }
+      ]
+    },
+    {
+      "key": "oathbreaker",
+      "classKey": "paladin",
+      "name": "Oathbreaker",
+      "source": "dungeon_masters_guide",
+      "version": "2014",
+      "tags": ["undead", "necromancy", "dark"],
+      "desc": [
+        "An Oathbreaker is a paladin who has forsaken their sacred vows to pursue dark ambitions or serve evil powers."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "channel_divinity_oathbreaker",
+          "archetype_subchoice": {
+            "referenceKey": "oathbreaker_channel_divinity_options"
+          }
+        },
+        {
+          "level": 3,
+          "key": "oath_spells",
+          "referenceKey": "oathbreaker_spell_list"
+        },
+        { "level": 7, "key": "aura_of_hate" },
+        { "level": 15, "key": "supernatural_resistance" },
+        { "level": 20, "key": "dread_lord" }
+      ]
+    },
+    {
+      "key": "oath_of_conquest",
+      "classKey": "paladin",
+      "name": "Oath of Conquest",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["fear", "control", "martial"],
+      "desc": [
+        "Paladins who swear the Oath of Conquest seek to crush the forces of chaos and rule through strength and fear."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "channel_divinity_conquest",
+          "archetype_subchoice": {
+            "referenceKey": "oath_of_conquest_channel_divinity_options"
+          }
+        },
+        {
+          "level": 3,
+          "key": "oath_spells",
+          "referenceKey": "oath_of_conquest_spell_list"
+        },
+        { "level": 7, "key": "aura_of_conquest" },
+        { "level": 15, "key": "scornful_rebuke" },
+        { "level": 20, "key": "invincible_conqueror" }
+      ]
+    },
+    {
+      "key": "oath_of_redemption",
+      "classKey": "paladin",
+      "name": "Oath of Redemption",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["peace", "support", "defense"],
+      "desc": [
+        "The Oath of Redemption teaches that violence is a last resort and that compassion can overcome evil."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "channel_divinity_redemption",
+          "archetype_subchoice": {
+            "referenceKey": "oath_of_redemption_channel_divinity_options"
+          }
+        },
+        {
+          "level": 3,
+          "key": "oath_spells",
+          "referenceKey": "oath_of_redemption_spell_list"
+        },
+        { "level": 7, "key": "aura_of_the_guardian" },
+        { "level": 15, "key": "protective_spirit" },
+        { "level": 20, "key": "emissary_of_redemption" }
+      ]
+    },
+    {
+      "key": "oath_of_glory",
+      "classKey": "paladin",
+      "name": "Oath of Glory",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["heroic", "mobility", "martial"],
+      "desc": [
+        "Paladins who swear the Oath of Glory strive to achieve heroic destiny through mighty deeds and legendary accomplishments."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "channel_divinity_glory",
+          "archetype_subchoice": {
+            "referenceKey": "oath_of_glory_channel_divinity_options"
+          }
+        },
+        {
+          "level": 3,
+          "key": "oath_spells",
+          "referenceKey": "oath_of_glory_spell_list"
+        },
+        { "level": 7, "key": "aura_of_alacrity" },
+        { "level": 15, "key": "glorious_defense" },
+        { "level": 20, "key": "living_legend" }
+      ]
+    },
+    {
+      "key": "oath_of_the_watchers",
+      "classKey": "paladin",
+      "name": "Oath of the Watchers",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["aberrations", "fiends", "protection"],
+      "desc": [
+        "The Oath of the Watchers charges paladins with guarding the mortal realm against extraplanar threats."
+      ],
+      "features": [
+        {
+          "level": 3,
+          "key": "channel_divinity_watchers",
+          "archetype_subchoice": {
+            "referenceKey": "oath_of_the_watchers_channel_divinity_options"
+          }
+        },
+        {
+          "level": 3,
+          "key": "oath_spells",
+          "referenceKey": "oath_of_the_watchers_spell_list"
+        },
+        { "level": 7, "key": "aura_of_the_sentinel" },
+        { "level": 15, "key": "vigilant_rebuke" },
+        { "level": 20, "key": "mortal_bulwark" }
+      ]
+    }
+  ]
+}

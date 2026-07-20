@@ -1,0 +1,137 @@
+{
+  "classKey": "bard",
+  "subclasses": [
+    {
+      "key": "college_of_lore",
+      "classKey": "bard",
+      "name": "College of Lore",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["support", "skills", "magic"],
+      "desc": [
+        "Bards of the College of Lore know something about nearly everything, collecting secrets, stories, and magical knowledge from across the world."
+      ],
+      "features": [
+        { "level": 3, "key": "bonus_proficiencies" },
+        { "level": 3, "key": "cutting_words" },
+        {
+          "level": 6,
+          "key": "additional_magical_secrets",
+          "referenceKey": "spell_list"
+        },
+        { "level": 14, "key": "peerless_skill" }
+      ]
+    },
+    {
+      "key": "college_of_valor",
+      "classKey": "bard",
+      "name": "College of Valor",
+      "source": "players_handbook",
+      "version": "2014",
+      "tags": ["martial", "combat", "support"],
+      "desc": [
+        "Bards of the College of Valor inspire others through heroic deeds and tales of legendary champions."
+      ],
+      "features": [
+        { "level": 3, "key": "bonus_proficiencies" },
+        { "level": 3, "key": "combat_inspiration" },
+        { "level": 6, "key": "extra_attack" },
+        { "level": 14, "key": "battle_magic" }
+      ]
+    },
+    {
+      "key": "college_of_glamour",
+      "classKey": "bard",
+      "name": "College of Glamour",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["fey", "support", "charm"],
+      "desc": [
+        "Your magic is infused with the beauty and power of the Feywild, allowing you to captivate audiences and inspire allies."
+      ],
+      "features": [
+        { "level": 3, "key": "mantle_of_inspiration" },
+        { "level": 3, "key": "enthralling_performance" },
+        { "level": 6, "key": "mantle_of_majesty" },
+        { "level": 14, "key": "unbreakable_majesty" }
+      ]
+    },
+    {
+      "key": "college_of_swords",
+      "classKey": "bard",
+      "name": "College of Swords",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["martial", "duelist", "combat"],
+      "desc": [
+        "Bards of the College of Swords entertain through daring displays of weapon skill and mastery."
+      ],
+      "features": [
+        { "level": 3, "key": "bonus_proficiencies" },
+        {
+          "level": 3,
+          "key": "blade_flourish",
+          "referenceKey": "blade_flourish_options"
+        },
+        { "level": 6, "key": "extra_attack" },
+        { "level": 14, "key": "masters_flourish" }
+      ]
+    },
+    {
+      "key": "college_of_whispers",
+      "classKey": "bard",
+      "name": "College of Whispers",
+      "source": "xanathars_guide_to_everything",
+      "version": "2014",
+      "tags": ["psychic", "deception", "intrigue"],
+      "desc": [
+        "Bards of the College of Whispers manipulate fear and secrets, serving as spies, interrogators, and agents of intrigue."
+      ],
+      "features": [
+        { "level": 3, "key": "psychic_blades" },
+        { "level": 3, "key": "words_of_terror" },
+        { "level": 6, "key": "mantle_of_whispers" },
+        { "level": 14, "key": "shadow_lore" }
+      ]
+    },
+    {
+      "key": "college_of_creation",
+      "classKey": "bard",
+      "name": "College of Creation",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["creation", "support", "magic"],
+      "desc": [
+        "Bards of the College of Creation harness the Song of Creation to bring ideas and objects into existence."
+      ],
+      "features": [
+        { "level": 3, "key": "mote_of_potential" },
+        { "level": 3, "key": "performance_of_creation" },
+        {
+          "level": 6,
+          "key": "animating_performance",
+          "referenceKey": "dancing_item"
+        },
+        { "level": 14, "key": "creative_crescendo" }
+      ]
+    },
+    {
+      "key": "college_of_eloquence",
+      "classKey": "bard",
+      "name": "College of Eloquence",
+      "source": "tashas_cauldron_of_everything",
+      "version": "2014",
+      "tags": ["support", "persuasion", "oratory"],
+      "desc": [
+        "Members of the College of Eloquence master the art of persuasion, wielding language as a powerful weapon and an inspiring gift."
+      ],
+      "features": [
+        { "level": 3, "key": "silver_tongue" },
+        { "level": 3, "key": "unsettling_words" },
+        { "level": 6, "key": "unfailing_inspiration" },
+        { "level": 6, "key": "universal_speech" },
+        { "level": 14, "key": "infectious_inspiration" }
+      ]
+    }
+  ]
+}

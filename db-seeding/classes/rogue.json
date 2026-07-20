@@ -1,0 +1,49 @@
+{
+  "key": "rogue",
+  "name": "Rogue",
+  "source": "PHB",
+  "hit_die": 8,
+  "primary_abilities": ["dexterity"],
+  "saving_throws": ["dexterity", "intelligence"],
+  "armor_proficiencies": ["light"],
+  "weapon_proficiencies": [
+    "simple",
+    "hand_crossbow",
+    "longsword",
+    "rapier",
+    "shortsword"
+  ],
+  "tool_proficiencies": ["thieves_tools"],
+  "skill_choices": {
+    "choose": 4,
+    "options": [
+      "acrobatics",
+      "athletics",
+      "deception",
+      "insight",
+      "intimidation",
+      "investigation",
+      "perception",
+      "performance",
+      "persuasion",
+      "sleight_of_hand",
+      "stealth"
+    ]
+  },
+  "starting_equipment": {
+    "choices": [
+      ["rapier", "shortsword"],
+      ["shortbow", "shortsword"],
+      ["burglars_pack", "dungeoneers_pack", "explorers_pack"]
+    ],
+    "fixed": [
+      "leather_armor",
+      {
+        "dagger": 2
+      },
+      "thieves_tools"
+    ]
+  },
+  "subclass_level": 3,
+  "spellcasting": null
+}

@@ -1,0 +1,73 @@
+{
+  "key": "bard",
+  "name": "Bard",
+  "source": "PHB",
+  "hitDie": 8,
+  "primaryAbilities": ["charisma"],
+  "savingThrows": ["dexterity", "charisma"],
+  "armorProficiencies": ["light"],
+  "weaponProficiencies": [
+    "simple",
+    "handCrossbow",
+    "longsword",
+    "rapier",
+    "shortsword"
+  ],
+  "toolProficiencies": [
+    {
+      "choose": 3,
+      "options": ["musicalInstrument"]
+    }
+  ],
+  "skillChoices": {
+    "choose": 3,
+    "options": [
+      "acrobatics",
+      "animalHandling",
+      "arcana",
+      "athletics",
+      "deception",
+      "history",
+      "insight",
+      "intimidation",
+      "investigation",
+      "medicine",
+      "nature",
+      "perception",
+      "performance",
+      "persuasion",
+      "religion",
+      "sleightOfHand",
+      "stealth",
+      "survival"
+    ]
+  },
+  "startingEquipment": {
+    "choices": [
+      [
+        "rapier",
+        "longsword",
+        {
+          "simpleWeapon": 1
+        }
+      ],
+      ["diplomatsPack", "entertainersPack"],
+      [
+        "lute",
+        {
+          "musicalInstrument": 1
+        }
+      ]
+    ],
+    "fixed": ["leatherArmor", "dagger"]
+  },
+  "subclassLevel": 3,
+  "spellcasting": {
+    "ability": "charisma",
+    "spellList": "bard",
+    "preparation": "known",
+    "ritualCasting": true,
+    "spellcastingFocus": ["musicalInstrument"],
+    "canChangeKnownSpells": "levelUp"
+  }
+}

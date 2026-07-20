@@ -1,0 +1,37 @@
+[
+  {
+    "key": "sorcerous_origin",
+    "name": "Sorcerous Origin",
+    "source": "phb",
+    "description": "Choose a Sorcerous Origin, which grants additional features as you gain Sorcerer levels.",
+    "type": "choice"
+  },
+  {
+    "key": "font_of_magic",
+    "name": "Font of Magic",
+    "source": "phb",
+    "description": "You gain sorcery points that fuel your magical abilities and can be converted into spell slots or used by other Sorcerer features.",
+    "type": "special"
+  },
+  {
+    "key": "metamagic",
+    "name": "Metamagic",
+    "source": "phb",
+    "description": "You gain the ability to alter your spells by applying Metamagic options using your sorcery points.",
+    "type": "choice"
+  },
+  {
+    "key": "magical_guidance",
+    "name": "Magical Guidance",
+    "source": "tcoe",
+    "description": "When you fail an ability check, you can spend 1 sorcery point to reroll the d20, using the new result.",
+    "type": "active"
+  },
+  {
+    "key": "sorcerous_restoration",
+    "name": "Sorcerous Restoration",
+    "source": "phb",
+    "description": "You regain a number of expended sorcery points whenever you finish a short rest.",
+    "type": "passive"
+  }
+]

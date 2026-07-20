@@ -1,0 +1,128 @@
+[
+  {
+    "key": "martial_arts",
+    "name": "Martial Arts",
+    "source": "phb",
+    "description": "Your practice of martial arts grants benefits while you are unarmed or wielding monk weapons, including using Dexterity for attacks, making bonus unarmed strikes, and increasing your Martial Arts damage die as you gain levels.",
+    "type": "passive"
+  },
+  {
+    "key": "ki",
+    "name": "Ki",
+    "source": "phb",
+    "description": "You harness mystical energy called ki to fuel special techniques such as Flurry of Blows, Patient Defense, and Step of the Wind.",
+    "type": "special"
+  },
+  {
+    "key": "unarmored_movement",
+    "name": "Unarmored Movement",
+    "source": "phb",
+    "description": "Your speed increases while you are not wearing armor or wielding a shield, and you gain additional movement benefits as you gain Monk levels.",
+    "type": "passive"
+  },
+  {
+    "key": "monastic_tradition",
+    "name": "Monastic Tradition",
+    "source": "phb",
+    "description": "Choose a Monastic Tradition, which grants additional features as you gain Monk levels.",
+    "type": "choice"
+  },
+  {
+    "key": "dedicated_weapon",
+    "name": "Dedicated Weapon",
+    "source": "tcoe",
+    "description": "You can designate a qualifying weapon as a monk weapon after finishing a short or long rest.",
+    "type": "passive"
+  },
+  {
+    "key": "ki_fueled_attack",
+    "name": "Ki-Fueled Attack",
+    "source": "tcoe",
+    "description": "After spending ki as part of your action, you can make one attack with a monk weapon or unarmed strike as a bonus action.",
+    "type": "passive"
+  },
+  {
+    "key": "quickened_healing",
+    "name": "Quickened Healing",
+    "source": "tcoe",
+    "description": "As an action, you can spend ki points to regain hit points.",
+    "type": "active"
+  },
+  {
+    "key": "focused_aim",
+    "name": "Focused Aim",
+    "source": "tcoe",
+    "description": "When you miss with an attack roll, you can spend ki points to increase the roll, potentially turning it into a hit.",
+    "type": "active"
+  },
+  {
+    "key": "slow_fall",
+    "name": "Slow Fall",
+    "source": "phb",
+    "description": "You can use your reaction to reduce falling damage you take.",
+    "type": "passive"
+  },
+  {
+    "key": "stunning_strike",
+    "name": "Stunning Strike",
+    "source": "phb",
+    "description": "When you hit a creature with a melee weapon attack, you can spend ki to attempt to stun the target.",
+    "type": "active"
+  },
+  {
+    "key": "ki_empowered_strikes",
+    "name": "Ki-Empowered Strikes",
+    "source": "phb",
+    "description": "Your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.",
+    "type": "passive"
+  },
+  {
+    "key": "evasion",
+    "name": "Evasion",
+    "source": "phb",
+    "description": "You can nimbly dodge certain area effects, taking less or no damage on a successful Dexterity saving throw.",
+    "type": "passive"
+  },
+  {
+    "key": "stillness_of_mind",
+    "name": "Stillness of Mind",
+    "source": "phb",
+    "description": "You can use your action to end one effect on yourself that is causing you to be charmed or frightened.",
+    "type": "active"
+  },
+  {
+    "key": "purity_of_body",
+    "name": "Purity of Body",
+    "source": "phb",
+    "description": "Your mastery of ki makes you immune to disease and poison.",
+    "type": "passive"
+  },
+  {
+    "key": "tongue_of_the_sun_and_moon",
+    "name": "Tongue of the Sun and Moon",
+    "source": "phb",
+    "description": "You can understand all spoken languages, and creatures that can understand a language can understand what you say.",
+    "type": "passive"
+  },
+  {
+    "key": "diamond_soul",
+    "name": "Diamond Soul",
+    "source": "phb",
+    "description": "You gain proficiency in all saving throws and can spend ki to reroll a failed saving throw.",
+    "type": "passive"
+  },
+  {
+    "key": "empty_body",
+    "name": "Empty Body",
+    "source": "phb",
+    "description": "You can spend ki to become invisible and gain resistance to most damage, or project yourself onto the Astral Plane.",
+    "type": "active"
+  },
+  {
+    "key": "perfect_self",
+    "name": "Perfect Self",
+    "source": "phb",
+    "description": "When you roll initiative with no ki points remaining, you regain a number of ki points.",
+    "type": "passive"
+  }
+]

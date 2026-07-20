@@ -1,0 +1,960 @@
+[
+  {
+    "key": "darkvision",
+    "name": "Darkvision",
+    "source": "phb",
+    "description": "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light.",
+    "type": "passive",
+    "modifiers": {
+      "darkvision": 60
+    }
+  },
+  {
+    "key": "superior_darkvision",
+    "name": "Superior Darkvision",
+    "source": "phb",
+    "description": "You can see in dim light within 120 feet as if it were bright light, and in darkness as if it were dim light.",
+    "type": "passive",
+    "modifiers": {
+      "darkvision": 120
+    }
+  },
+  {
+    "key": "fey_ancestry",
+    "name": "Fey Ancestry",
+    "source": "phb",
+    "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
+    "type": "passive",
+    "modifiers": {
+      "saving_throw_advantages": ["charmed"],
+      "magic_sleep_immunity": true
+    }
+  },
+  {
+    "key": "keen_senses",
+    "name": "Keen Senses",
+    "source": "phb",
+    "description": "You have proficiency in the Perception skill.",
+    "type": "passive",
+    "modifiers": {
+      "skill_proficiencies": ["perception"]
+    }
+  },
+  {
+    "key": "trance",
+    "name": "Trance",
+    "source": "phb",
+    "description": "Elves meditate deeply instead of sleeping.",
+    "type": "passive"
+  },
+  {
+    "key": "elf_weapon_training",
+    "name": "Elf Weapon Training",
+    "source": "phb",
+    "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+    "type": "passive",
+    "modifiers": {
+      "weapon_proficiencies": ["longsword", "shortsword", "shortbow", "longbow"]
+    }
+  },
+  {
+    "key": "high_elf_cantrip",
+    "name": "Cantrip",
+    "source": "phb",
+    "description": "You know one cantrip of your choice from the wizard spell list.",
+    "type": "choice",
+    "choices": {
+      "wizard_cantrip": {
+        "count": 1,
+        "spell_list": "wizard"
+      }
+    }
+  },
+  {
+    "key": "extra_language",
+    "name": "Extra Language",
+    "source": "phb",
+    "description": "You can speak, read, and write one extra language of your choice.",
+    "type": "choice",
+    "choices": {
+      "language": {
+        "count": 1
+      }
+    }
+  },
+  {
+    "key": "fleet_of_foot",
+    "name": "Fleet of Foot",
+    "source": "phb",
+    "description": "Your base walking speed increases to 35 feet.",
+    "type": "passive",
+    "modifiers": {
+      "speed": 35
+    }
+  },
+  {
+    "key": "mask_of_the_wild",
+    "name": "Mask of the Wild",
+    "source": "phb",
+    "description": "You can attempt to hide even when only lightly obscured by natural phenomena.",
+    "type": "passive"
+  },
+  {
+    "key": "drow_magic",
+    "name": "Drow Magic",
+    "source": "phb",
+    "description": "Your drow heritage grants you innate spellcasting.",
+    "type": "spellcasting",
+    "spellcasting_ability": "charisma",
+    "spells": [
+      {
+        "level": 1,
+        "spell": "dancing_lights"
+      },
+      {
+        "character_level": 3,
+        "spell": "faerie_fire",
+        "uses": 1,
+        "reset": "long_rest"
+      },
+      {
+        "character_level": 5,
+        "spell": "darkness",
+        "uses": 1,
+        "reset": "long_rest"
+      }
+    ]
+  },
+  {
+    "key": "drow_weapon_training",
+    "name": "Drow Weapon Training",
+    "source": "phb",
+    "description": "You have proficiency with rapiers, shortswords, and hand crossbows.",
+    "type": "passive",
+    "modifiers": {
+      "weapon_proficiencies": ["rapier", "shortsword", "hand_crossbow"]
+    }
+  },
+  {
+    "key": "sunlight_sensitivity",
+    "name": "Sunlight Sensitivity",
+    "source": "phb",
+    "description": "You have disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when you or your target are in direct sunlight.",
+    "type": "passive"
+  },
+  {
+    "key": "dwarven_resilience",
+    "name": "Dwarven Resilience",
+    "source": "phb",
+    "description": "You have advantage on saving throws against poison, and you have resistance against poison damage.",
+    "type": "passive",
+    "modifiers": {
+      "saving_throw_advantages": ["poison"],
+      "damage_resistances": ["poison"]
+    }
+  },
+  {
+    "key": "dwarven_combat_training",
+    "name": "Dwarven Combat Training",
+    "source": "phb",
+    "description": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
+    "type": "passive",
+    "modifiers": {
+      "weapon_proficiencies": [
+        "battleaxe",
+        "handaxe",
+        "light_hammer",
+        "warhammer"
+      ]
+    }
+  },
+  {
+    "key": "tool_proficiency",
+    "name": "Tool Proficiency",
+    "source": "phb",
+    "description": "You gain proficiency with one type of artisan's tools of your choice.",
+    "type": "choice",
+    "choices": {
+      "tool_proficiency": {
+        "count": 1,
+        "options": ["smiths_tools", "brewers_supplies", "masons_tools"]
+      }
+    }
+  },
+  {
+    "key": "stonecunning",
+    "name": "Stonecunning",
+    "source": "phb",
+    "description": "You have expertise on Intelligence (History) checks related to the origin of stonework.",
+    "type": "passive"
+  },
+  {
+    "key": "dwarven_toughness",
+    "name": "Dwarven Toughness",
+    "source": "phb",
+    "description": "Your hit point maximum increases by 1, and it increases by 1 whenever you gain a level.",
+    "type": "passive"
+  },
+  {
+    "key": "dwarven_armor_training",
+    "name": "Dwarven Armor Training",
+    "source": "phb",
+    "description": "You have proficiency with light and medium armor.",
+    "type": "passive",
+    "modifiers": {
+      "armor_proficiencies": ["light", "medium"]
+    }
+  },
+  {
+    "key": "lucky",
+    "name": "Lucky",
+    "source": "phb",
+    "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die.",
+    "type": "passive"
+  },
+  {
+    "key": "brave",
+    "name": "Brave",
+    "source": "phb",
+    "description": "You have advantage on saving throws against being frightened.",
+    "type": "passive",
+    "modifiers": {
+      "saving_throw_advantages": ["frightened"]
+    }
+  },
+  {
+    "key": "halfling_nimbleness",
+    "name": "Halfling Nimbleness",
+    "source": "phb",
+    "description": "You can move through the space of any creature that is of a size larger than yours.",
+    "type": "passive"
+  },
+  {
+    "key": "naturally_stealthy",
+    "name": "Naturally Stealthy",
+    "source": "phb",
+    "description": "You can attempt to hide even when obscured only by a creature at least one size larger than you.",
+    "type": "passive"
+  },
+  {
+    "key": "stout_resilience",
+    "name": "Stout Resilience",
+    "source": "phb",
+    "description": "You have advantage on saving throws against poison, and you have resistance against poison damage.",
+    "type": "passive",
+    "modifiers": {
+      "saving_throw_advantages": ["poison"],
+      "damage_resistances": ["poison"]
+    }
+  },
+  {
+    "key": "draconic_ancestry",
+    "name": "Draconic Ancestry",
+    "source": "phb",
+    "description": "Choose a type of dragon. Your choice determines your Breath Weapon and Damage Resistance traits.",
+    "type": "choice",
+    "choices": {
+      "draconic_ancestry": {
+        "count": 1,
+        "options": [
+          "black",
+          "blue",
+          "brass",
+          "bronze",
+          "copper",
+          "gold",
+          "green",
+          "red",
+          "silver",
+          "white"
+        ]
+      }
+    }
+  },
+  {
+    "key": "breath_weapon",
+    "name": "Breath Weapon",
+    "source": "phb",
+    "description": "You can use your action to exhale destructive energy determined by your draconic ancestry.",
+    "type": "passive"
+  },
+  {
+    "key": "damage_resistance",
+    "name": "Damage Resistance",
+    "source": "phb",
+    "description": "You have resistance to the damage type associated with your draconic ancestry.",
+    "type": "passive"
+  },
+  {
+    "key": "black_draconic_ancestry",
+    "name": "Black Draconic Ancestry",
+    "source": "phb",
+    "description": "Black dragon ancestry grants an acid breath weapon and acid resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "acid",
+        "shape": "line",
+        "size": 30
+      },
+      "damage_resistances": ["acid"]
+    }
+  },
+  {
+    "key": "blue_draconic_ancestry",
+    "name": "Blue Draconic Ancestry",
+    "source": "phb",
+    "description": "Blue dragon ancestry grants a lightning breath weapon and lightning resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "lightning",
+        "shape": "line",
+        "size": 30
+      },
+      "damage_resistances": ["lightning"]
+    }
+  },
+  {
+    "key": "brass_draconic_ancestry",
+    "name": "Brass Draconic Ancestry",
+    "source": "phb",
+    "description": "Brass dragon ancestry grants a fire breath weapon and fire resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "fire",
+        "shape": "line",
+        "size": 30
+      },
+      "damage_resistances": ["fire"]
+    }
+  },
+  {
+    "key": "bronze_draconic_ancestry",
+    "name": "Bronze Draconic Ancestry",
+    "source": "phb",
+    "description": "Bronze dragon ancestry grants a lightning breath weapon and lightning resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "lightning",
+        "shape": "line",
+        "size": 30
+      },
+      "damage_resistances": ["lightning"]
+    }
+  },
+  {
+    "key": "copper_draconic_ancestry",
+    "name": "Copper Draconic Ancestry",
+    "source": "phb",
+    "description": "Copper dragon ancestry grants an acid breath weapon and acid resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "acid",
+        "shape": "line",
+        "size": 30
+      },
+      "damage_resistances": ["acid"]
+    }
+  },
+  {
+    "key": "gold_draconic_ancestry",
+    "name": "Gold Draconic Ancestry",
+    "source": "phb",
+    "description": "Gold dragon ancestry grants a fire breath weapon and fire resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "fire",
+        "shape": "cone",
+        "size": 15
+      },
+      "damage_resistances": ["fire"]
+    }
+  },
+  {
+    "key": "green_draconic_ancestry",
+    "name": "Green Draconic Ancestry",
+    "source": "phb",
+    "description": "Green dragon ancestry grants a poison breath weapon and poison resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "poison",
+        "shape": "cone",
+        "size": 15
+      },
+      "damage_resistances": ["poison"]
+    }
+  },
+  {
+    "key": "red_draconic_ancestry",
+    "name": "Red Draconic Ancestry",
+    "source": "phb",
+    "description": "Red dragon ancestry grants a fire breath weapon and fire resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "fire",
+        "shape": "cone",
+        "size": 15
+      },
+      "damage_resistances": ["fire"]
+    }
+  },
+  {
+    "key": "silver_draconic_ancestry",
+    "name": "Silver Draconic Ancestry",
+    "source": "phb",
+    "description": "Silver dragon ancestry grants a cold breath weapon and cold resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "cold",
+        "shape": "cone",
+        "size": 15
+      },
+      "damage_resistances": ["cold"]
+    }
+  },
+  {
+    "key": "white_draconic_ancestry",
+    "name": "White Draconic Ancestry",
+    "source": "phb",
+    "description": "White dragon ancestry grants a cold breath weapon and cold resistance.",
+    "type": "modifier",
+    "modifiers": {
+      "breath_weapon": {
+        "damage_type": "cold",
+        "shape": "cone",
+        "size": 15
+      },
+      "damage_resistances": ["cold"]
+    }
+  },
+  {
+    "key": "gnome_cunning",
+    "name": "Gnome Cunning",
+    "source": "phb",
+    "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.",
+    "type": "passive"
+  },
+  {
+    "key": "natural_illusionist",
+    "name": "Natural Illusionist",
+    "source": "phb",
+    "description": "You know the Minor Illusion cantrip. Intelligence is your spellcasting ability for it.",
+    "type": "spellcasting",
+    "spellcasting_ability": "intelligence",
+    "spells": [
+      {
+        "level": 1,
+        "spell": "minor_illusion"
+      }
+    ]
+  },
+  {
+    "key": "speak_with_small_beasts",
+    "name": "Speak with Small Beasts",
+    "source": "phb",
+    "description": "You can communicate simple ideas with Small or smaller beasts.",
+    "type": "passive"
+  },
+  {
+    "key": "artificers_lore",
+    "name": "Artificer's Lore",
+    "source": "phb",
+    "description": "Add twice your proficiency bonus to Intelligence (History) checks related to magic items, alchemical objects, or technological devices.",
+    "type": "passive"
+  },
+  {
+    "key": "tinker",
+    "name": "Tinker",
+    "source": "phb",
+    "description": "You have proficiency with artisan's tools and can construct Tiny clockwork devices.",
+    "type": "passive",
+    "modifiers": {
+      "tool_proficiencies": ["tinkers_tools"]
+    }
+  },
+  {
+    "key": "skill_versatility",
+    "name": "Skill Versatility",
+    "source": "phb",
+    "description": "You gain proficiency in two skills of your choice.",
+    "type": "choice",
+    "choices": {
+      "skill_proficiency": {
+        "count": 2
+      }
+    }
+  },
+  {
+    "key": "menacing",
+    "name": "Menacing",
+    "source": "phb",
+    "description": "You gain proficiency in the Intimidation skill.",
+    "type": "passive",
+    "modifiers": {
+      "skill_proficiencies": ["intimidation"]
+    }
+  },
+  {
+    "key": "relentless_endurance",
+    "name": "Relentless Endurance",
+    "source": "phb",
+    "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead once per long rest.",
+    "type": "passive"
+  },
+  {
+    "key": "savage_attacks",
+    "name": "Savage Attacks",
+    "source": "phb",
+    "description": "When you score a critical hit with a melee weapon attack, roll one additional weapon damage die.",
+    "type": "passive"
+  },
+  {
+    "key": "hellish_resistance",
+    "name": "Hellish Resistance",
+    "source": "phb",
+    "description": "You have resistance to fire damage.",
+    "type": "passive",
+    "modifiers": {
+      "damage_resistances": ["fire"]
+    }
+  },
+  {
+    "key": "infernal_legacy",
+    "name": "Infernal Legacy",
+    "source": "phb",
+    "description": "Your infernal heritage grants you innate spellcasting.",
+    "type": "spellcasting",
+    "spellcasting_ability": "charisma",
+    "spells": [
+      {
+        "level": 1,
+        "spell": "thaumaturgy"
+      },
+      {
+        "character_level": 3,
+        "spell": "hellish_rebuke",
+        "uses": 1,
+        "reset": "long_rest"
+      },
+      {
+        "character_level": 5,
+        "spell": "darkness",
+        "uses": 1,
+        "reset": "long_rest"
+      }
+    ]
+  },
+  {
+    "key": "celestial_resistance",
+    "name": "Celestial Resistance",
+    "source": "vgtm",
+    "description": "You have resistance to necrotic damage and radiant damage.",
+    "type": "passive",
+    "modifiers": {
+      "damage_resistances": ["necrotic", "radiant"]
+    }
+  },
+  {
+    "key": "healing_hands",
+    "name": "Healing Hands",
+    "source": "vgtm",
+    "description": "As an action, you can restore hit points to a creature equal to your level once per long rest.",
+    "type": "passive"
+  },
+  {
+    "key": "light_bearer",
+    "name": "Light Bearer",
+    "source": "vgtm",
+    "description": "You know the Light cantrip. Charisma is your spellcasting ability for it.",
+    "type": "spellcasting",
+    "spellcasting_ability": "charisma",
+    "spells": [
+      {
+        "level": 1,
+        "spell": "light"
+      }
+    ]
+  },
+  {
+    "key": "radiant_soul",
+    "name": "Radiant Soul",
+    "source": "vgtm",
+    "description": "You can unleash your celestial power, gaining a flying speed and dealing extra radiant damage once per turn.",
+    "type": "passive"
+  },
+  {
+    "key": "radiant_consumption",
+    "name": "Radiant Consumption",
+    "source": "vgtm",
+    "description": "You radiate searing divine energy that damages nearby creatures and empowers your attacks.",
+    "type": "passive"
+  },
+  {
+    "key": "necrotic_shroud",
+    "name": "Necrotic Shroud",
+    "source": "vgtm",
+    "description": "You transform to frighten nearby creatures while empowering your attacks with necrotic energy.",
+    "type": "passive"
+  },
+  {
+    "key": "firbolg_magic",
+    "name": "Firbolg Magic",
+    "source": "vgtm",
+    "description": "Your connection to nature grants you innate spellcasting.",
+    "type": "spellcasting",
+    "spellcasting_ability": "wisdom",
+    "spells": [
+      {
+        "level": 1,
+        "spell": "detect_magic"
+      },
+      {
+        "level": 1,
+        "spell": "disguise_self",
+        "uses": 1,
+        "reset": "short_or_long_rest"
+      }
+    ]
+  },
+  {
+    "key": "hidden_step",
+    "name": "Hidden Step",
+    "source": "vgtm",
+    "description": "You can magically turn invisible until the start of your next turn or until you attack, deal damage, or force a saving throw.",
+    "type": "passive"
+  },
+  {
+    "key": "powerful_build",
+    "name": "Powerful Build",
+    "source": "vgtm",
+    "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.",
+    "type": "passive"
+  },
+  {
+    "key": "speech_of_beast_and_leaf",
+    "name": "Speech of Beast and Leaf",
+    "source": "vgtm",
+    "description": "You can communicate simple ideas with beasts and plants.",
+    "type": "passive"
+  },
+  {
+    "key": "natural_athlete",
+    "name": "Natural Athlete",
+    "source": "vgtm",
+    "description": "You have proficiency in the Athletics skill.",
+    "type": "passive",
+    "modifiers": {
+      "skill_proficiencies": ["athletics"]
+    }
+  },
+  {
+    "key": "stone_endurance",
+    "name": "Stone's Endurance",
+    "source": "vgtm",
+    "description": "You can use your reaction to reduce damage taken once per short or long rest.",
+    "type": "passive"
+  },
+  {
+    "key": "mountain_born",
+    "name": "Mountain Born",
+    "source": "vgtm",
+    "description": "You are acclimated to high altitude and naturally adapted to cold climates.",
+    "type": "passive"
+  },
+  {
+    "key": "expert_forgery",
+    "name": "Expert Forgery",
+    "source": "vgtm",
+    "description": "You have advantage on checks made to produce forgeries or duplicates of existing objects.",
+    "type": "passive"
+  },
+  {
+    "key": "kenku_training",
+    "name": "Kenku Training",
+    "source": "vgtm",
+    "description": "Gain proficiency in two skills of your choice from Acrobatics, Deception, Stealth, and Sleight of Hand.",
+    "type": "choice",
+    "choices": {
+      "skill_proficiency": {
+        "count": 2,
+        "options": ["acrobatics", "deception", "sleight_of_hand", "stealth"]
+      }
+    }
+  },
+  {
+    "key": "mimicry",
+    "name": "Mimicry",
+    "source": "vgtm",
+    "description": "You can mimic sounds you have heard, including voices.",
+    "type": "passive"
+  },
+  {
+    "key": "bite",
+    "name": "Bite",
+    "source": "vgtm",
+    "description": "Your fanged maw is a natural weapon.",
+    "type": "passive"
+  },
+  {
+    "key": "cunning_artisan",
+    "name": "Cunning Artisan",
+    "source": "vgtm",
+    "description": "You can craft simple weapons or shields from the remains of slain creatures.",
+    "type": "passive"
+  },
+  {
+    "key": "hold_breath",
+    "name": "Hold Breath",
+    "source": "vgtm",
+    "description": "You can hold your breath for up to 15 minutes at a time.",
+    "type": "passive"
+  },
+  {
+    "key": "hungry_jaws",
+    "name": "Hungry Jaws",
+    "source": "vgtm",
+    "description": "You can make a special bite attack that grants temporary hit points once per short or long rest.",
+    "type": "passive"
+  },
+  {
+    "key": "natural_armor",
+    "name": "Natural Armor",
+    "source": "vgtm",
+    "description": "Your tough scales provide a base Armor Class of 13 + your Dexterity modifier.",
+    "type": "passive"
+  },
+  {
+    "key": "natures_intuition",
+    "name": "Nature's Intuition",
+    "source": "vgtm",
+    "description": "Gain proficiency in two skills of your choice from Animal Handling, Nature, Perception, Stealth, and Survival.",
+    "type": "choice",
+    "choices": {
+      "skill_proficiency": {
+        "count": 2,
+        "options": [
+          "animal_handling",
+          "nature",
+          "perception",
+          "stealth",
+          "survival"
+        ]
+      }
+    }
+  },
+  {
+    "key": "feline_agility",
+    "name": "Feline Agility",
+    "source": "vgtm",
+    "description": "Your reflexes and agility allow you to move with a burst of speed.",
+    "type": "passive"
+  },
+  {
+    "key": "cats_claws",
+    "name": "Cat's Claws",
+    "source": "vgtm",
+    "description": "Your claws are natural weapons, and you gain a climbing speed of 20 feet.",
+    "type": "passive",
+    "modifiers": {
+      "climbing_speed": 20
+    }
+  },
+  {
+    "key": "cats_talent",
+    "name": "Cat's Talent",
+    "source": "vgtm",
+    "description": "You have proficiency in the Perception and Stealth skills.",
+    "type": "passive",
+    "modifiers": {
+      "skill_proficiencies": ["perception", "stealth"]
+    }
+  },
+  {
+    "key": "amphibious",
+    "name": "Amphibious",
+    "source": "vgtm",
+    "description": "You can breathe air and water.",
+    "type": "passive"
+  },
+  {
+    "key": "control_air_and_water",
+    "name": "Control Air and Water",
+    "source": "vgtm",
+    "description": "You know the Fog Cloud spell and gain additional innate spells as you gain levels.",
+    "type": "spellcasting",
+    "spellcasting_ability": "charisma",
+    "spells": [
+      {
+        "character_level": 1,
+        "spell": "fog_cloud",
+        "uses": 1,
+        "reset": "long_rest"
+      },
+      {
+        "character_level": 3,
+        "spell": "gust_of_wind",
+        "uses": 1,
+        "reset": "long_rest"
+      },
+      {
+        "character_level": 5,
+        "spell": "wall_of_water",
+        "uses": 1,
+        "reset": "long_rest"
+      }
+    ]
+  },
+  {
+    "key": "emissary_of_the_sea",
+    "name": "Emissary of the Sea",
+    "source": "vgtm",
+    "description": "You can communicate simple ideas with beasts that have an innate swimming speed.",
+    "type": "passive"
+  },
+  {
+    "key": "guardians_of_the_depths",
+    "name": "Guardians of the Depths",
+    "source": "vgtm",
+    "description": "You have resistance to cold damage and ignore drawbacks caused by deep underwater environments.",
+    "type": "passive",
+    "modifiers": {
+      "damage_resistances": ["cold"]
+    }
+  },
+  {
+    "key": "long_limbed",
+    "name": "Long-Limbed",
+    "source": "vgtm",
+    "description": "When you make a melee attack on your turn, your reach is 5 feet greater than normal.",
+    "type": "passive"
+  },
+  {
+    "key": "sneaky",
+    "name": "Sneaky",
+    "source": "vgtm",
+    "description": "You have proficiency in the Stealth skill.",
+    "type": "passive",
+    "modifiers": {
+      "skill_proficiencies": ["stealth"]
+    }
+  },
+  {
+    "key": "surprise_attack",
+    "name": "Surprise Attack",
+    "source": "vgtm",
+    "description": "You deal extra damage when you hit a surprised creature on the first round of combat.",
+    "type": "passive"
+  },
+  {
+    "key": "fury_of_the_small",
+    "name": "Fury of the Small",
+    "source": "vgtm",
+    "description": "Once per short or long rest, you can deal extra damage to a creature larger than you.",
+    "type": "passive"
+  },
+  {
+    "key": "nimble_escape",
+    "name": "Nimble Escape",
+    "source": "vgtm",
+    "description": "You can take the Disengage or Hide action as a bonus action on each of your turns.",
+    "type": "passive"
+  },
+  {
+    "key": "martial_training",
+    "name": "Martial Training",
+    "source": "vgtm",
+    "description": "You are proficient with two martial weapons of your choice and with light armor.",
+    "type": "choice",
+    "choices": {
+      "weapon_proficiency": {
+        "count": 2,
+        "category": "martial"
+      }
+    },
+    "modifiers": {
+      "armor_proficiencies": ["light"]
+    }
+  },
+  {
+    "key": "saving_face",
+    "name": "Saving Face",
+    "source": "vgtm",
+    "description": "When you miss with an attack roll or fail an ability check or saving throw, you can gain a bonus based on nearby allies once per short or long rest.",
+    "type": "passive"
+  },
+  {
+    "key": "grovel_cower_and_beg",
+    "name": "Grovel, Cower, and Beg",
+    "source": "vgtm",
+    "description": "As an action, distract nearby foes, granting your allies an opening.",
+    "type": "passive"
+  },
+  {
+    "key": "pack_tactics",
+    "name": "Pack Tactics",
+    "source": "vgtm",
+    "description": "You have advantage on attack rolls against a creature if at least one ally is adjacent to it and isn't incapacitated.",
+    "type": "passive"
+  },
+  {
+    "key": "aggressive",
+    "name": "Aggressive",
+    "source": "vgtm",
+    "description": "As a bonus action, you can move up to your speed toward a hostile creature you can see.",
+    "type": "passive"
+  },
+  {
+    "key": "innate_spellcasting",
+    "name": "Innate Spellcasting",
+    "source": "vgtm",
+    "description": "Your serpentine heritage grants you innate spellcasting.",
+    "type": "spellcasting",
+    "spellcasting_ability": "charisma",
+    "spells": [
+      {
+        "level": 1,
+        "spell": "poison_spray"
+      },
+      {
+        "character_level": 3,
+        "spell": "animal_friendship",
+        "uses": null,
+        "restrictions": {
+          "target_type": "snake"
+        }
+      },
+      {
+        "character_level": 5,
+        "spell": "suggestion",
+        "uses": 1,
+        "reset": "long_rest"
+      }
+    ]
+  },
+  {
+    "key": "magic_resistance",
+    "name": "Magic Resistance",
+    "source": "vgtm",
+    "description": "You have advantage on saving throws against spells and other magical effects.",
+    "type": "passive"
+  },
+  {
+    "key": "poison_immunity",
+    "name": "Poison Immunity",
+    "source": "vgtm",
+    "description": "You are immune to poison damage and the poisoned condition.",
+    "type": "passive",
+    "modifiers": {
+      "damage_immunities": ["poison"],
+      "condition_immunities": ["poisoned"]
+    }
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "key": "fighter",
+  "name": "Fighter",
+  "source": "PHB",
+  "hit_die": 10,
+  "primary_abilities": ["strength", "dexterity"],
+  "saving_throws": ["strength", "constitution"],
+  "armor_proficiencies": ["light", "medium", "heavy", "shields"],
+  "weapon_proficiencies": ["simple", "martial"],
+  "tool_proficiencies": [],
+  "skill_choices": {
+    "choose": 2,
+    "options": [
+      "acrobatics",
+      "animal_handling",
+      "athletics",
+      "history",
+      "insight",
+      "intimidation",
+      "perception",
+      "survival"
+    ]
+  },
+  "starting_equipment": {
+    "choices": [
+      ["chain_mail", "leather_armor"],
+      [
+        {
+          "martial_weapon": 1,
+          "shield": 1
+        },
+        {
+          "martial_weapon": 2
+        }
+      ],
+      [
+        "light_crossbow",
+        {
+          "handaxe": 2
+        }
+      ],
+      ["dungeoneers_pack", "explorers_pack"]
+    ],
+    "fixed": []
+  },
+  "subclass_level": 3,
+  "spellcasting": null
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "key": "otherworldly_patron",
+    "name": "Otherworldly Patron",
+    "source": "phb",
+    "description": "Choose an Otherworldly Patron, which grants additional features as you gain Warlock levels.",
+    "type": "choice"
+  },
+  {
+    "key": "pact_magic",
+    "name": "Pact Magic",
+    "source": "phb",
+    "description": "Your patron grants you magical power through Pact Magic, using spell slots that recharge on a short or long rest.",
+    "type": "special"
+  },
+  {
+    "key": "eldritch_invocations",
+    "name": "Eldritch Invocations",
+    "source": "phb",
+    "description": "You learn eldritch invocations, magical abilities granted by your patron. You gain additional invocations as you gain Warlock levels.",
+    "type": "choice"
+  },
+  {
+    "key": "pact_boon",
+    "name": "Pact Boon",
+    "source": "phb",
+    "description": "Choose a Pact Boon, gaining a special gift from your patron that shapes your abilities.",
+    "type": "choice"
+  },
+  {
+    "key": "mystic_arcanum",
+    "name": "Mystic Arcanum",
+    "source": "phb",
+    "description": "Your patron bestows powerful magical secrets, allowing you to cast high-level spells once without expending a spell slot.",
+    "type": "special"
+  },
+  {
+    "key": "eldritch_master",
+    "name": "Eldritch Master",
+    "source": "phb",
+    "description": "You can spend 1 minute entreating your patron to regain all of your expended Pact Magic spell slots.",
+    "type": "active"
+  }
+]

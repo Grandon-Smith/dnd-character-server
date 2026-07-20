@@ -1,0 +1,55 @@
+{
+  "key": "paladin",
+  "name": "Paladin",
+  "source": "PHB",
+  "hit_die": 10,
+  "primary_abilities": ["strength", "charisma"],
+  "saving_throws": ["wisdom", "charisma"],
+  "armor_proficiencies": ["light", "medium", "heavy", "shields"],
+  "weapon_proficiencies": ["simple", "martial"],
+  "tool_proficiencies": [],
+  "skill_choices": {
+    "choose": 2,
+    "options": [
+      "athletics",
+      "insight",
+      "intimidation",
+      "medicine",
+      "persuasion",
+      "religion"
+    ]
+  },
+  "starting_equipment": {
+    "choices": [
+      [
+        {
+          "martial_weapon": 1,
+          "shield": 1
+        },
+        {
+          "martial_weapon": 2
+        }
+      ],
+      [
+        {
+          "javelin": 5
+        },
+        {
+          "simple_melee_weapon": 1
+        }
+      ],
+      ["priests_pack", "explorers_pack"]
+    ],
+    "fixed": ["chain_mail", "holy_symbol"]
+  },
+  "subclass_level": 3,
+  "spellcasting": {
+    "ability": "charisma",
+    "spell_list": "paladin",
+    "preparation": "prepared",
+    "preparation_formula": "charisma_modifier + floor(level / 2)",
+    "ritual_casting": false,
+    "spellcasting_focus": ["holy_symbol"],
+    "can_change_prepared_spells": "long_rest"
+  }
+}

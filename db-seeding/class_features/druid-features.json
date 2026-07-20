@@ -1,0 +1,51 @@
+[
+  {
+    "key": "druidic",
+    "name": "Druidic",
+    "source": "phb",
+    "description": "You know Druidic, the secret language of druids.",
+    "type": "passive"
+  },
+  {
+    "key": "wild_shape",
+    "name": "Wild Shape",
+    "source": "phb",
+    "description": "You can magically assume the shape of a beast you have seen, following the limitations of the Wild Shape feature.",
+    "type": "active"
+  },
+  {
+    "key": "druid_circle",
+    "name": "Druid Circle",
+    "source": "phb",
+    "description": "Choose a Druid Circle, which grants additional features as you gain Druid levels.",
+    "type": "choice"
+  },
+  {
+    "key": "wild_companion",
+    "name": "Wild Companion",
+    "source": "tcoe",
+    "description": "You can expend a use of Wild Shape to cast Find Familiar without material components, summoning a temporary fey familiar.",
+    "type": "active"
+  },
+  {
+    "key": "natures_sanctuary",
+    "name": "Nature's Sanctuary",
+    "source": "phb",
+    "description": "Beasts and plants are reluctant to attack you, unless magically compelled to do so.",
+    "type": "passive"
+  },
+  {
+    "key": "beast_spells",
+    "name": "Beast Spells",
+    "source": "phb",
+    "description": "You can cast many of your druid spells while using Wild Shape.",
+    "type": "passive"
+  },
+  {
+    "key": "archdruid",
+    "name": "Archdruid",
+    "source": "phb",
+    "description": "You can use Wild Shape an unlimited number of times and ignore verbal and somatic spell components while transformed, subject to the feature's rules.",
+    "type": "passive"
+  }
+]

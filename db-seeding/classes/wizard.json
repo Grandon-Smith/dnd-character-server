@@ -1,0 +1,46 @@
+{
+  "key": "wizard",
+  "name": "Wizard",
+  "source": "PHB",
+  "hit_die": 6,
+  "primary_abilities": ["intelligence"],
+  "saving_throws": ["intelligence", "wisdom"],
+  "armor_proficiencies": [],
+  "weapon_proficiencies": [
+    "dagger",
+    "dart",
+    "sling",
+    "quarterstaff",
+    "light_crossbow"
+  ],
+  "tool_proficiencies": [],
+  "skill_choices": {
+    "choose": 2,
+    "options": [
+      "arcana",
+      "history",
+      "insight",
+      "investigation",
+      "medicine",
+      "religion"
+    ]
+  },
+  "starting_equipment": {
+    "choices": [
+      ["quarterstaff", "dagger"],
+      ["component_pouch", "arcane_focus"],
+      ["scholars_pack", "explorers_pack"]
+    ],
+    "fixed": ["spellbook"]
+  },
+  "subclass_level": 2,
+  "spellcasting": {
+    "ability": "intelligence",
+    "spell_list": "wizard",
+    "preparation": "prepared",
+    "preparation_formula": "intelligence_modifier + level",
+    "ritual_casting": true,
+    "spellcasting_focus": ["arcane_focus"],
+    "can_change_prepared_spells": "long_rest"
+  }
+}
