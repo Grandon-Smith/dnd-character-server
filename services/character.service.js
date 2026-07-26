@@ -1,4 +1,4 @@
-import { CLASS_SAVING_THROWS } from '../utils/constants.js';
+import mongoose from 'mongoose';
 import { AppError } from '../utils/app-error.js';
 import {
   countCharactersByPlayer,
@@ -20,6 +20,24 @@ const ABILITY_KEYS = [
   'wisdom',
   'charisma',
 ];
+
+async function getSavingThrowsForPrimaryClass(primaryClassName) {
+  if (!primaryClassName) {
+    return [];
+  }
+
+  const normalizedPrimaryClass = String(primaryClassName).toLowerCase().trim();
+
+  if (!normalizedPrimaryClass) {
+    return [];
+  }
+
+  const classDoc = await mongoose.connection
+    .collection('reference_classes')
+    .findOne({ key: normalizedPrimaryClass });
+
+  return Array.isArray(classDoc?.savingThrows) ? classDoc.savingThrows : [];
+}
 
 // Coerces query values safely; service keeps pagination defaults consistent.
 export function toPositiveInt(value, fallback) {
@@ -70,12 +88,15 @@ export async function createCharacterForUser(userId, payload) {
   }
 
   // Derive class-based saving throws server-side so clients stay lightweight.
-  const primaryClass = payload.classes[0]?.name?.toLowerCase();
+  const normalizedClasses = Array.isArray(payload.classes) ? payload.classes : [];
+  const primaryClass = normalizedClasses[0]?.name;
+  const savingThrowProficiencies = await getSavingThrowsForPrimaryClass(primaryClass);
 
   const characterPayload = {
     ...payload,
+    classes: normalizedClasses,
     player: userId,
-    savingThrowProficiencies: CLASS_SAVING_THROWS[primaryClass] || [],
+    savingThrowProficiencies,
   };
 
   return createCharacter(characterPayload);
@@ -202,7 +223,8 @@ export async function updateCharacterForUser(userId, characterId, payload) {
     (sum, cls) => sum + Number(cls?.level || 0),
     0,
   );
-  const primaryClass = normalizedClasses[0]?.name?.toLowerCase();
+  const primaryClass = normalizedClasses[0]?.name;
+  const derivedSavingThrows = await getSavingThrowsForPrimaryClass(primaryClass);
 
   const updatePayload = {
     name: payload.name,
@@ -220,7 +242,7 @@ export async function updateCharacterForUser(userId, characterId, payload) {
     savingThrowProficiencies:
       payload.savingThrowProficiencies && payload.savingThrowProficiencies.length
         ? payload.savingThrowProficiencies
-        : CLASS_SAVING_THROWS[primaryClass] || [],
+        : derivedSavingThrows,
     inventory: payload.inventory,
     spells: payload.spells,
     notes: payload.notes,

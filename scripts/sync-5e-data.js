@@ -1,22 +1,26 @@
-import mongoose from "mongoose";
-import { connectToDb, disconnectFromDb } from "../config/db.js";
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { mkdir, writeFile } from 'fs/promises';
 
-const API_ORIGIN = "https://www.dnd5eapi.co";
-const API_INDEX_PATH = "/api/2014";
-const EXCLUDED_ENDPOINTS = new Set(["monsters", "rules", "rule-sections"]);
+const API_ORIGIN = 'https://www.dnd5eapi.co';
+const SPELLS_PATH = '/api/2014/spells';
 const DEFAULT_CONCURRENCY = 8;
 const DEFAULT_RETRIES = 3;
 const REQUEST_TIMEOUT_MS = 20000;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const SPELLS_OUTPUT_DIR = path.resolve(__dirname, '../db-seeding/spells');
+
 function normalizePath(apiPath) {
   if (!apiPath) return null;
 
-  if (apiPath.startsWith("http://") || apiPath.startsWith("https://")) {
+  if (apiPath.startsWith('http://') || apiPath.startsWith('https://')) {
     const url = new URL(apiPath);
     return `${url.pathname}${url.search}`;
   }
 
-  return apiPath.startsWith("/") ? apiPath : `/${apiPath}`;
+  return apiPath.startsWith('/') ? apiPath : `/${apiPath}`;
 }
 
 function toAbsoluteUrl(apiPath) {
@@ -26,32 +30,6 @@ function toAbsoluteUrl(apiPath) {
   }
 
   return `${API_ORIGIN}${normalized}`;
-}
-
-function chunkArray(items, size) {
-  const chunks = [];
-
-  for (let i = 0; i < items.length; i += size) {
-    chunks.push(items.slice(i, i + size));
-  }
-
-  return chunks;
-}
-
-function createResourceKey(payload, fallbackPath, fallbackIndex) {
-  const raw =
-    payload?.index ??
-    payload?.slug ??
-    payload?.name ??
-    fallbackIndex ??
-    normalizePath(fallbackPath) ??
-    "unknown";
-
-  return String(raw).trim();
-}
-
-function endpointCollectionName(endpoint) {
-  return `reference_${endpoint.replace(/[^a-z0-9_-]/gi, "_").toLowerCase()}`;
 }
 
 async function fetchJsonWithRetry(url, retries = DEFAULT_RETRIES) {
@@ -81,9 +59,7 @@ async function fetchJsonWithRetry(url, retries = DEFAULT_RETRIES) {
     }
   }
 
-  throw new Error(
-    `Failed to fetch ${url}: ${lastError?.message ?? "Unknown error"}`,
-  );
+  throw new Error(`Failed to fetch ${url}: ${lastError?.message ?? 'Unknown error'}`);
 }
 
 async function mapWithConcurrency(items, concurrency, mapper) {
@@ -105,156 +81,110 @@ async function mapWithConcurrency(items, concurrency, mapper) {
   return results;
 }
 
-async function upsertMany(collection, operations) {
-  if (!operations.length) return;
-
-  const chunks = chunkArray(operations, 200);
-
-  for (const batch of chunks) {
-    await collection.bulkWrite(batch, { ordered: false });
-  }
-}
-
-async function ensureIndexes(collection) {
-  await collection.createIndex(
-    { index: 1 },
-    { unique: true, sparse: true, name: "index_unique" },
-  );
-  await collection.createIndex({ index: 1 }, { name: "index_idx" });
-  await collection.createIndex({ syncedAt: -1 }, { name: "syncedAt_idx" });
-}
-
-async function collectionExists(collectionName) {
-  const matches = await mongoose.connection.db
-    .listCollections({ name: collectionName }, { nameOnly: true })
-    .toArray();
-
-  return matches.length > 0;
-}
-
-async function syncEndpoint({ endpoint, apiPath, concurrency }) {
-  const collectionName = endpointCollectionName(endpoint);
-  const collection = mongoose.connection.collection(collectionName);
-
-  if (await collectionExists(collectionName)) {
-    await collection.deleteMany({});
+function sanitizeSpellValue(value) {
+  if (Array.isArray(value)) {
+    return value.map((item) => sanitizeSpellValue(item));
   }
 
-  await ensureIndexes(collection);
+  if (!value || typeof value !== 'object') {
+    return value;
+  }
 
-  const endpointPath = normalizePath(apiPath);
-  const endpointUrl = toAbsoluteUrl(endpointPath);
+  const cleaned = {};
 
-  const listPayload = await fetchJsonWithRetry(endpointUrl);
-  const listCount = Array.isArray(listPayload?.results)
-    ? listPayload.results.length
-    : null;
-
-  const operations = [];
-
-  let detailSynced = 0;
-
-  if (Array.isArray(listPayload?.results) && listPayload.results.length > 0) {
-    const detailDescriptors = listPayload.results
-      .map((item, idx) => ({ item, idx, path: normalizePath(item?.url) }))
-      .filter((entry) => Boolean(entry.path));
-
-    const detailDocs = await mapWithConcurrency(
-      detailDescriptors,
-      concurrency,
-      async ({ item, idx, path }) => {
-        const detailPayload = await fetchJsonWithRetry(toAbsoluteUrl(path));
-
-        return {
-          path,
-          payload: detailPayload,
-          key: createResourceKey(
-            detailPayload,
-            path,
-            item?.index ?? String(idx),
-          ),
-        };
-      },
-    );
-
-    for (const detail of detailDocs) {
-      const key = String(detail.key);
-      const payload = { ...detail.payload };
-      delete payload.url;
-
-      operations.push({
-        updateOne: {
-          filter: {
-            index: key,
-          },
-          update: {
-            $set: {
-              key,
-              index: detail.payload?.index ?? key,
-              name: detail.payload?.name ?? key,
-              ...payload,
-              syncedAt: new Date(),
-            },
-          },
-          upsert: true,
-        },
-      });
+  for (const [rawKey, rawVal] of Object.entries(value)) {
+    if (rawKey === 'url') {
+      continue;
     }
 
-    detailSynced = detailDocs.length;
-  } else {
-    const key = createResourceKey(listPayload, endpointPath, endpoint);
-    const payload = { ...listPayload };
-    delete payload.url;
+    const nextKey = rawKey === 'index' ? 'key' : rawKey;
+    if (Object.prototype.hasOwnProperty.call(cleaned, nextKey)) {
+      continue;
+    }
 
-    operations.push({
-      updateOne: {
-        filter: {
-          index: key,
-        },
-        update: {
-          $set: {
-            key,
-            index: listPayload?.index ?? key,
-            name: listPayload?.name ?? endpoint,
-            ...payload,
-            syncedAt: new Date(),
-          },
-        },
-        upsert: true,
-      },
+    if (rawKey === 'index') {
+      const normalizedIndex = String(rawVal ?? '').replace(/-/g, '_');
+      cleaned[nextKey] = normalizedIndex;
+      continue;
+    }
+
+    cleaned[nextKey] = sanitizeSpellValue(rawVal);
+  }
+
+  return cleaned;
+}
+
+function normalizeSpellLevel(levelValue) {
+  const level = Number(levelValue);
+  if (!Number.isInteger(level) || level < 0 || level > 9) {
+    return null;
+  }
+
+  return level;
+}
+
+async function fetchAllSpellDetails(concurrency) {
+  const listPayload = await fetchJsonWithRetry(toAbsoluteUrl(SPELLS_PATH));
+  const results = Array.isArray(listPayload?.results) ? listPayload.results : [];
+
+  const detailDescriptors = results
+    .map((item) => normalizePath(item?.url))
+    .filter(Boolean);
+
+  const spells = await mapWithConcurrency(
+    detailDescriptors,
+    concurrency,
+    async (spellPath) => {
+      const rawSpell = await fetchJsonWithRetry(toAbsoluteUrl(spellPath));
+      return sanitizeSpellValue(rawSpell);
+    },
+  );
+
+  return spells;
+}
+
+function groupSpellsByLevel(spells) {
+  const grouped = Array.from({ length: 10 }, () => []);
+
+  for (const spell of spells) {
+    const level = normalizeSpellLevel(spell?.level);
+    if (level === null) {
+      continue;
+    }
+
+    grouped[level].push(spell);
+  }
+
+  for (const levelSpells of grouped) {
+    levelSpells.sort((a, b) => {
+      const aName = String(a?.name ?? '');
+      const bName = String(b?.name ?? '');
+      return aName.localeCompare(bName);
     });
   }
 
-  await upsertMany(collection, operations);
+  return grouped;
+}
 
-  return {
-    endpoint,
-    collection: collection.collectionName,
-    listCount,
-    detailSynced,
-    totalUpserts: operations.length,
-  };
+async function writeSpellFiles(groupedSpells) {
+  await mkdir(SPELLS_OUTPUT_DIR, { recursive: true });
+
+  for (let level = 0; level <= 9; level += 1) {
+    const fileName = `level-${level}.json`;
+    const filePath = path.join(SPELLS_OUTPUT_DIR, fileName);
+    const payload = JSON.stringify(groupedSpells[level], null, 2);
+    await writeFile(filePath, `${payload}\n`, 'utf8');
+  }
 }
 
 function parseArgs(argv) {
   const options = {
-    endpointAllowList: null,
     concurrency: DEFAULT_CONCURRENCY,
   };
 
   for (const arg of argv) {
-    if (arg.startsWith("--endpoints=")) {
-      const value = arg.replace("--endpoints=", "").trim();
-      options.endpointAllowList = value
-        .split(",")
-        .map((entry) => entry.trim())
-        .filter(Boolean);
-      continue;
-    }
-
-    if (arg.startsWith("--concurrency=")) {
-      const value = Number(arg.replace("--concurrency=", "").trim());
+    if (arg.startsWith('--concurrency=')) {
+      const value = Number(arg.replace('--concurrency=', '').trim());
       if (!Number.isNaN(value) && value > 0) {
         options.concurrency = Math.floor(value);
       }
@@ -265,66 +195,26 @@ function parseArgs(argv) {
 }
 
 async function run() {
-  const { endpointAllowList, concurrency } = parseArgs(process.argv.slice(2));
+  const { concurrency } = parseArgs(process.argv.slice(2));
 
-  await connectToDb();
+  console.log('Fetching spell index...');
+  const spells = await fetchAllSpellDetails(concurrency);
 
-  try {
-    const indexPayload = await fetchJsonWithRetry(
-      toAbsoluteUrl(API_INDEX_PATH),
-    );
-    const entries = Object.entries(indexPayload).filter(([endpoint]) => {
-      if (EXCLUDED_ENDPOINTS.has(endpoint)) return false;
-      if (!endpointAllowList) return true;
-      return endpointAllowList.includes(endpoint);
-    });
+  console.log(`Fetched ${spells.length} spells.`);
 
-    if (!entries.length) {
-      console.log("No endpoints selected for sync.");
-      return;
-    }
+  const groupedSpells = groupSpellsByLevel(spells);
+  await writeSpellFiles(groupedSpells);
 
-    console.log(
-      `Selected endpoints: ${entries.map(([name]) => name).join(", ")}`,
-    );
+  const countsByLevel = groupedSpells.map((levelSpells, level) => {
+    return `level-${level}: ${levelSpells.length}`;
+  });
 
-    const summary = [];
-
-    for (const [endpoint, apiPath] of entries) {
-      console.log(`\nSyncing endpoint: ${endpoint}`);
-      const result = await syncEndpoint({
-        endpoint,
-        apiPath,
-        concurrency,
-      });
-      summary.push(result);
-      console.log(
-        `Completed ${endpoint} -> ${result.collection}: upserts=${result.totalUpserts}, detailRecords=${result.detailSynced}, listed=${result.listCount ?? "n/a"}`,
-      );
-    }
-
-    const totals = summary.reduce(
-      (acc, item) => {
-        acc.upserts += item.totalUpserts;
-        acc.details += item.detailSynced;
-        return acc;
-      },
-      { upserts: 0, details: 0 },
-    );
-
-    console.log("\nSync complete.");
-    console.log(`Endpoints synced: ${summary.length}`);
-    console.log(`Detail records synced: ${totals.details}`);
-    console.log(`Total upserts: ${totals.upserts}`);
-    console.log(
-      `Collections created/updated: ${summary.map((item) => item.collection).join(", ")}`,
-    );
-  } finally {
-    await disconnectFromDb();
-  }
+  console.log('Spell sync complete.');
+  console.log(`Output directory: ${SPELLS_OUTPUT_DIR}`);
+  console.log(`Files written: ${countsByLevel.join(', ')}`);
 }
 
 run().catch((error) => {
-  console.error("5e sync failed:", error);
+  console.error('5e sync failed:', error);
   process.exit(1);
 });
