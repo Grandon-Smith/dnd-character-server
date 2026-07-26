@@ -20,6 +20,6 @@
     "dev": "nodemon app.js",
     "go": "concurrently \"npm run dev\" \"npm --prefix ../client run dev\"",
     "seed:reference": "node scripts/seed-reference-from-files.js",
-    "sync:5e": "node scripts/sync-5e-data.js"
+    "sync:5e-spells": "node scripts/sync-5e-data.js"
   }
 }
