@@ -57,3 +57,19 @@ export async function updateCharacterByIdAndPlayer(characterId, playerId, update
     { new: true },
   ).exec();
 }
+
+export async function updateCharacterInventory(characterId, playerId, inventory) {
+  return CharacterModel.findOneAndUpdate(
+    { _id: characterId, player: playerId },
+    { inventory },
+    { new: true },
+  ).exec();
+}
+
+export async function updateCharacterEquipped(characterId, playerId, equipped) {
+  return CharacterModel.findOneAndUpdate(
+    { _id: characterId, player: playerId },
+    { equipped },
+    { new: true },
+  ).exec();
+}

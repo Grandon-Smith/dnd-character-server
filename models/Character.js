@@ -31,6 +31,20 @@ const HitPointsSchema = new Schema(
   { _id: false },
 );
 
+const EquippedItemSchema = new Schema(
+  {
+    itemKey: { type: String, required: true, trim: true },
+    sourceType: {
+      type: String,
+      enum: ['equipment', 'magic-item'],
+      required: true,
+    },
+    slot: { type: String, trim: true, default: '' },
+    attuned: { type: Boolean, default: false },
+  },
+  { _id: false },
+);
+
 // Character document is user-owned and query-optimized for list endpoints.
 const Character = mongoose.model(
   'Character',
@@ -64,6 +78,7 @@ const Character = mongoose.model(
       feats: { type: [String], default: [] },
       savingThrowProficiencies: { type: [String], default: [] },
       inventory: { type: [Schema.Types.Mixed], default: [] },
+      equipped: { type: [EquippedItemSchema], default: [] },
       spells: { type: [String], default: [] },
       avatarUrl: { type: String, trim: true, default: '' },
       notes: { type: String, maxlength: 5000 },

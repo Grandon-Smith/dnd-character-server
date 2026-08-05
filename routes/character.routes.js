@@ -13,7 +13,9 @@ import {
   getAllCharacters,
   updateCharacter,
   updateCharacterAbilityScores,
+  updateCharacterEquipped,
   updateCharacterHitPoints,
+  updateCharacterInventory,
   uploadCharacterAvatar,
 } from '../controllers/character.controller.js';
 
@@ -33,6 +35,8 @@ router.post(
 );
 router.post('/:id/avatar', isAuthenticated, uploadCharacterAvatar);
 router.patch('/:id', isAuthenticated, updateCharacter);
+router.patch('/:id/inventory', isAuthenticated, updateCharacterInventory);
+router.patch('/:id/equipped', isAuthenticated, updateCharacterEquipped);
 router.patch('/:id/ability-scores', isAuthenticated, updateCharacterAbilityScores);
 router.patch('/:id/hit-points', isAuthenticated, updateCharacterHitPoints);
 router.delete('/:id', isAuthenticated, deleteCharacter);

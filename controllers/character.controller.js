@@ -6,7 +6,9 @@ import {
   setCharacterAvatarForUser,
   updateAbilityScoresForUser,
   updateCharacterForUser,
+  updateEquippedForUser,
   updateHitPointsForUser,
+  updateInventoryForUser,
 } from '../services/character.service.js';
 import { asyncHandler } from '../utils/async-handler.js';
 import { promises as fs } from 'fs';
@@ -151,6 +153,26 @@ export const updateCharacter = asyncHandler(async (req, res) => {
   const payload = req.body;
 
   const updatedCharacter = await updateCharacterForUser(userId, characterId, payload);
+
+  return res.status(200).json({ character: updatedCharacter });
+});
+
+export const updateCharacterInventory = asyncHandler(async (req, res) => {
+  const userId = req.user?._id;
+  const characterId = req.params.id;
+  const inventory = req.body?.inventory;
+
+  const updatedCharacter = await updateInventoryForUser(userId, characterId, inventory);
+
+  return res.status(200).json({ character: updatedCharacter });
+});
+
+export const updateCharacterEquipped = asyncHandler(async (req, res) => {
+  const userId = req.user?._id;
+  const characterId = req.params.id;
+  const equipped = req.body?.equipped;
+
+  const updatedCharacter = await updateEquippedForUser(userId, characterId, equipped);
 
   return res.status(200).json({ character: updatedCharacter });
 });

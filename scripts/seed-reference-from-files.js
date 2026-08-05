@@ -54,6 +54,14 @@ async function readJsonFile(filePath) {
   return JSON.parse(raw);
 }
 
+function normalizeSeedDocs(parsed, sourceLabel) {
+  if (Array.isArray(parsed)) {
+    return parsed;
+  }
+
+  throw new Error(`Expected array JSON in ${sourceLabel}.`);
+}
+
 // Loads all JSON docs in a folder and normalizes file-shape differences.
 async function readFolderJsonFiles(folderName) {
   const folderPath = path.join(DB_SEEDING_DIR, folderName);
@@ -84,6 +92,12 @@ async function readFolderJsonFiles(folderName) {
   }
 
   return docs;
+}
+
+async function readNamedJsonFile(folderName, fileName) {
+  const filePath = path.join(DB_SEEDING_DIR, folderName, fileName);
+  const parsed = await readJsonFile(filePath);
+  return normalizeSeedDocs(parsed, `${folderName}/${fileName}`);
 }
 
 // Upserts all docs by key and returns a summary for reporting.
@@ -153,6 +167,18 @@ async function seedClasses() {
   return upsertByKey(collectionName, docs);
 }
 
+// Seed task for equipment.
+async function seedEquipment() {
+  const docs = await readNamedJsonFile('equipment', 'equipment.json');
+  return upsertByKey('reference_equipment', docs);
+}
+
+// Seed task for magic items.
+async function seedMagicItems() {
+  const docs = await readNamedJsonFile('equipment', 'magic-items.json');
+  return upsertByKey('reference_magic-items', docs);
+}
+
 // Seed task for feats.
 async function seedFeats() {
   const folderName = 'feats';
@@ -164,6 +190,14 @@ async function seedFeats() {
 // Seed task for races.
 async function seedRaces() {
   const folderName = 'races';
+  const collectionName = folderToCollectionName(folderName);
+  const docs = await readFolderJsonFiles(folderName);
+  return upsertByKey(collectionName, docs);
+}
+
+// Seed task for skills.
+async function seedSkills() {
+  const folderName = 'skills';
   const collectionName = folderToCollectionName(folderName);
   const docs = await readFolderJsonFiles(folderName);
   return upsertByKey(collectionName, docs);
@@ -197,8 +231,11 @@ const SEED_TASKS = [
   { name: 'backgrounds', run: seedBackgrounds },
   { name: 'class_features', run: seedClassFeatures },
   { name: 'classes', run: seedClasses },
+  { name: 'equipment', run: seedEquipment },
+  { name: 'magic-items', run: seedMagicItems },
   { name: 'feats', run: seedFeats },
   { name: 'races', run: seedRaces },
+  { name: 'skills', run: seedSkills },
   { name: 'racial_traits', run: seedRacialTraits },
   { name: 'subclasses', run: seedSubclasses },
   { name: 'spells', run: seedSpells },
@@ -214,7 +251,8 @@ function parseSeedFolderArg(argv) {
 
   const envFlags = Array.from(allowed).filter((folderName) => {
     const npmConfigKey = `npm_config_${folderName}`;
-    const raw = process.env[npmConfigKey];
+    const npmConfigUnderscoredKey = `npm_config_${folderName.replace(/-/g, '_')}`;
+    const raw = process.env[npmConfigKey] ?? process.env[npmConfigUnderscoredKey];
 
     if (typeof raw === 'undefined') {
       return false;
